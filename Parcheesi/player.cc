@@ -1,6 +1,6 @@
 #include "player.h"
 
-const int Player::kPieceNum = 4;
+//const int Player::kPieceNum = 4;
 
 Player::Player(Colors color)
   : color_{color}

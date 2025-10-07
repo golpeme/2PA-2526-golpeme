@@ -1,12 +1,9 @@
 
 //Parchis 26/09/2025
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
-
 #include "parcheesi.h"
+#include <time.h>
+#include <stdlib.h>
 
 const int Parcheesi::safePoint[Parcheesi::kSafePoints] = {5, 12, 17, 22, 29, 34, 39, 46, 51, 56, 63, 68};
 const int Parcheesi::startPoint[Parcheesi::kMaxPlayers] = {5, 22, 39, 56};
@@ -22,7 +19,6 @@ Parcheesi::Parcheesi(int num_players)
   , repeated_sixes_{0}
   , current_player_{kColor_Yellow}
   , player_{kColor_Yellow,kColor_Blue,kColor_Red,kColor_Green} {
-
 }
 
 int Parcheesi::CountPiecesOnBox(int box){
