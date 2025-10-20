@@ -37,67 +37,12 @@ struct Deck{
   static const int kSuitCount = 4;
   static const int kCardTotal = kCardPerSuit * kSuitCount;
   
-  int deck[kCardTotal];
-  Card drawn_card;
-
+  Card deck[kCardTotal];
+  CardType TypeFromRank(int rank);
   Deck();
+  void ShuffleDeck(Card deck[kCardTotal]);
 };
 
-struct Node{
-  Card data;
-  Node* prev;
-  Node* next;
-};
 
-struct CardList{
-  Node* head;
-  Node* tail;
-  int size;
-};
-
-void CardListInit(CardList* list);
-void CardListFree(CardList* list);
-int CardListSize(const CardList* list);
-Node* CreateCardNode(Card *card);
-Node* AddCardToList(CardList* list, Card card);
-
-void CardListInit(CardList* list){
-  list->head = nullptr;
-  list->tail = nullptr;
-  list->size = 0;
-}
-
-void CardListFree(CardList* list){
-  Node* aux = list->head;
-  while(aux){
-    Node* next = aux->next;
-    free(aux);
-    aux = next;
-  }
-
-  list->head = nullptr;
-  list->tail = nullptr;
-  list->size = 0;
-}
-
-int CardListSize(const CardList* list){ return list->size; }
-
-Node* CreateCardNode(Card *card){
-  Node* new_node = (Node*) malloc(sizeof(Node));
-  if(!new_node){
-    printf("error allocating card node");
-    return nullptr;
-  }
-  new_node->data = *card;
-  new_node->next = nullptr;
-  new_node->prev = nullptr;
-}
-
-Node* AddCardToList(CardList* list, Card card){
-  Node* new_node = CreateCardNode(&card);
-  new_node->prev = list->tail;
-  
-  list
-}
 
 #endif

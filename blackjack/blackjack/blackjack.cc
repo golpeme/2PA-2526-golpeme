@@ -2,7 +2,8 @@
 #include <time.h>
 #include <stdlib.h>
 
-void main(){
+int main(){
   srand(time(NULL));
 
+  return 0;
 }

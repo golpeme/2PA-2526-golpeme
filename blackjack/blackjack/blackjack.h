@@ -33,17 +33,8 @@ struct BlackJack
 
   
   TableState Bets();
-  void DealHand(int num_players);
   HandResult HandResult();
   void NextPlayer();
 };
 
-void DealHand(int num_players, bool first_hand){
-  if (first_hand)
-  {
-    for (int i = 0; i < num_players; i++)
-    {
-      Player::drawn_card = DrawCard();
-    }
-  }
-}
+

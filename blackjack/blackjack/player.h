@@ -17,12 +17,37 @@ enum PlayerBehaivour{
   kPB_End
 };
 
+struct Hand{
+  CardList cards;
+  int bet;
+  bool finished;
+
+  void Init(int initial_bet = 0);
+  void Clear();
+  void AddCard(Card card);
+  int Value() const;
+  bool IsBlackjack() const;
+  bool IsBust() const;
+  bool CanSplit() const;
+};
+
 struct Player
 {
   PlayerAction action;
   PlayerBehaivour behaivour;
 
-  Card drawn_card;
+  int money;
+  int base_bet;
 
-  PlayerAction DecideAction(PlayerBehaivour behaivour);
+  Hand hands[4];
+  int hand_count;
+
+  void Init(PlayerBehaivour bhv, int money_init, int base_bet_init);
+  void NewRound();
+  void RecieveCard(int hand_idx, Card card);
+  void FinishHand(int hand_idx);
+
+  PlayerAction DecideAction(const Hand& hand, Card dealer_card) const;
+  bool TrySplit(int hand_idx);
+  bool CanDouble(const Hand& hand) const;
 };
