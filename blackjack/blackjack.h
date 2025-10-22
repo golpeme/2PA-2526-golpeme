@@ -1,5 +1,7 @@
+#pragma once
 #include "deck.h"
 #include "player.h"
+#include "crupier.h"
 
 enum TableState{
   kTS_MakeBets = 0,
@@ -28,10 +30,28 @@ struct BlackJack
   static const int initial_budget = 500;
   static const int max_bet = 300;
 
+  Crupier dealer;
+  Player players[kMaxPlayers];
+  int num_players = 1;
+
+  CardList dealer_hand;
+  int current_player = 0;
+
+  bool first_hand = true;
+
   BlackJack(int num_players);
 
-  void DealHand();
+  void StartRound();
+  void PlayerPhase(int player_idx);
+  void DealerPhase();
+  void Settle();
+  
   TableState Bets();
-  void NextPlayer();
   HandResult HandResult();
+  void NextPlayer();
+
+  static int HandValue(const CardList& hand);
+  static bool IsBlackJack(const CardList& hand);
 };
+
+
