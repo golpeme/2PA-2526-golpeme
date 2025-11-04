@@ -6,7 +6,7 @@
 
 class IPlayer {
   public:
-    virtual int DecideMove(const IParcheesi& parcheesi, int dice_roll) const = 0;
+    virtual int DecideMove(const IParcheesi& parcheesi, int player_index, int dice_roll) const = 0;
     virtual ~IPlayer() = default;
 };
 

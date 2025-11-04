@@ -13,8 +13,11 @@ class MockParcheesi : public IParcheesi {
     bool IsBoxSafe(int box_index) const override { return false; }
     Color ColorofPiece(int box_index, int piece_index) const override { return Color::None; }
 
-    Movement ApplyMovement(int piece_index, int count) override { return Movement::NoMoves; }
-    void SendPieceHome(int piece_index) override {};
+    Movement ApplyMovement(int piece_index, int player_index, int count) override { return Movement::NoMoves; }
+    void SendPieceHome(int piece_index, int player_index) override {};
+
+    IParcheesi* Clone() const override { return new MockParcheesi(*this); }
+    ~MockParcheesi() override = default;
 };
 
 #endif // MOCK_PARCHEESI_H

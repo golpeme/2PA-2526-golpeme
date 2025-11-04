@@ -59,7 +59,7 @@ void Game::PlayTurn() {
     }
     if (consecutive_sixes == 3) {
       printf("  ⚠️  THREE SIXES IN A ROW! Piece #%d sent back home!\n", last_moved_piece);
-      parcheesi_.SendPieceHome(last_moved_piece);
+      parcheesi_.SendPieceHome(last_moved_piece, player_index);
       break;
     }
 
@@ -72,10 +72,10 @@ void Game::PlayTurn() {
 
     // Let the player decide which piece to move
     const IPlayer& current_player = *(players_[player_index]);
-    int piece_to_move = current_player.DecideMove(parcheesi_, movement);
+    int piece_to_move = current_player.DecideMove(parcheesi_, player_index, movement);
     printf("  ➡️  Moving piece #%d by %d spaces...\n", piece_to_move, movement);
     
-    IParcheesi::Movement result = parcheesi_.ApplyMovement(piece_to_move, movement);
+    IParcheesi::Movement result = parcheesi_.ApplyMovement(piece_to_move, player_index, movement);
     
     // Report the result
     const char* result_msgs[] = {

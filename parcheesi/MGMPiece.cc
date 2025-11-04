@@ -1,1 +1,1 @@
-#include "piece.h"
+#include "MGMpiece.h"

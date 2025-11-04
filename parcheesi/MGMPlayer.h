@@ -1,29 +1,31 @@
 #pragma once
-#ifndef PLAYER_H
-#define PLAYER_H
+#ifndef MGMPLAYER_H
+#define MGMPLAYER_H
 
-#include "piece.h"
+#include "MGMpiece.h"
+#include "IParcheesi.h"
+#include "game.h"
 
-enum Colors{
-  kColor_Yellow = 0,
-  kColor_Blue,
-  kColor_Red,
-  kColor_Green
+class MGMPlayer : public IPlayer{
+  public:
+    static const int kPieceNum = 4;
+    static const int kSafePoints = 12;
+
+    MGMPlayer(int player_index);
+    ~MGMPlayer() = default;
+
+    int DecideMove(const IParcheesi& parcheesi, int player_index, int dice_roll) const override;
+    
+    
+  private:
+    IParcheesi::Color color_{IParcheesi::Color::None};
+    int entry_point{ 0 };
+    int safe_points[kSafePoints]{};
+    int player_index_{ 0 };
+    Piece piece_[kPieceNum];
 };
 
-struct Player{
-  static const int kPieceNum = 4;
-
-  Colors color_;
-  
-  Piece piece_[kPieceNum];
-
-  Player(Colors color);
-  bool PiecesAtHome();
-  int CountPiecesOnBox(int box);
-};
-
-#endif // __PLAYER_H__
+#endif // MGMPLAYER_H
 
 
 
