@@ -1,5 +1,6 @@
 #include "ITable.h"
 #include "Rules.h"
+#include "MGMPlayer.h"
 #include <algorithm>
 #include <random>
 
@@ -34,15 +35,26 @@ class MGMTable: public ITable {
     void FillDeck();
     void ShuffleDeck();
 
+    void SetPlayer(int player_index, IPlayer* player){
+      players_[player_index] = player;
+    }
+
+    IPlayer* GetPlayer(int player_index) const{
+      return players_[player_index];
+    }
+
 
   private:
     std::vector<std::vector<Hand> > hands_;              //hands_[player_index][hand_index];
     std::vector<std::vector<int> > player_bets_;         //player_bets_[player_index][hand_index];
     std::vector<int> total_player_money_;  //total_player_money_[player_index];
-    std::vector<int> num_players_;
+    std::vector<IPlayer*> players_;
+    int num_players_;
     std::vector<Card> deck_;
+    Hand dealer_hand_;
     int dealer_money_;
     const BaseRules& rules_;
     const int kSuitNum = 4;
     const int kValueNum = 13;
+    int GetValue(Hand hand);
 };

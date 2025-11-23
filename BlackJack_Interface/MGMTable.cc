@@ -2,11 +2,28 @@
 
 MGMTable::MGMTable(int num_players, const BaseRules& rules)
     : rules_{ rules },
-    num_players_{ num_players },
-    dealer_money_{ rules.InitialDealerMoney() }
+      num_players_{ num_players },
+      dealer_money_{ rules.InitialDealerMoney() }
 {
-    for (int i = 0; i < num_players; i++)
+    total_player_money_.resize(num_players_);
+    player_bets_.resize(num_players_);
+    hands_.resize(num_players_);
+    players_.resize(num_players_, nullptr);
+
+    for (int i = 0; i < num_players_; i++)
         total_player_money_[i] = rules.InitialPlayerMoney();
+}
+
+int MGMTable::ValueToInteger(Hand hand){
+    switch (hand.value)
+    {
+    case constant expression:
+        /* code */
+        break;
+    
+    default:
+        break;
+    }
 }
 
 void MGMTable::FillDeck() {
@@ -53,7 +70,7 @@ MGMTable::Result MGMTable::PlayInitialBet(int player_index, int money) {
 }
 
 MGMTable::Card MGMTable::GetDealerCard() const {
-    return 
+    return dealer_hand_.back();
 }
 
 int MGMTable::DealerMoney() const {
