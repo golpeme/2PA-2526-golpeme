@@ -56,5 +56,16 @@ class MGMTable: public ITable {
     const BaseRules& rules_;
     const int kSuitNum = 4;
     const int kValueNum = 13;
-    int GetValue(Hand hand);
+    int GetCardValue(Card card);
+    
+    struct HandInfo{
+      //can be split
+      bool is_pair;
+      //hard hand -> ace as 1
+      //soft hand -> ace as 11 (can be worth 1)
+      bool is_soft;
+      int total;
+    };
+    
+    HandInfo HandData(const Hand& hand);
 };
