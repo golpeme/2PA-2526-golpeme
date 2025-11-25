@@ -16,80 +16,44 @@ MGMTable::MGMTable(int num_players, const BaseRules& rules)
 
 int MGMTable::GetCardValue(Card card){
     Value value = card.value_;
-    int current_value = 0;
 
     switch (value)
     {
-      case ITable::Value::ACE:
-      // Ace (1 or 11)
-      current_value += 11;
+      case ITable::Value::ACE: return 11;
+      
+      case ITable::Value::TWO: return 2;
+      
+      case ITable::Value::THREE: return 3;
+      
+      case ITable::Value::FOUR: return 4;
+      
+      case ITable::Value::FIVE: return 5;
+      
+      case ITable::Value::SIX: return 6;
+      
+      case ITable::Value::SEVEN: return 7;
+      
+      case ITable::Value::EIGHT: return 8;
       break;
       
-      case ITable::Value::TWO:
-      // 2
-      current_value += 2;
+      case ITable::Value::NINE: return 9;
       break;
       
-      case ITable::Value::THREE:
-      // 3
-      current_value += 3;
+      case ITable::Value::TEN: return 10;
       break;
       
-      case ITable::Value::FOUR:
-      // 4
-      current_value += 4;
+      case ITable::Value::JACK: return 10;
       break;
       
-      case ITable::Value::FIVE:
-      // 5
-      current_value += 5;
+      case ITable::Value::QUEEN: return 10;
       break;
       
-      case ITable::Value::SIX:
-      // 6
-      current_value += 6;
+      case ITable::Value::KING: return 10;
       break;
       
-      case ITable::Value::SEVEN:
-      // 7
-      current_value += 7;
-      break;
-      
-      case ITable::Value::EIGHT:
-      // 8
-      current_value += 8;
-      break;
-      
-      case ITable::Value::NINE:
-      // 9
-      current_value += 9;
-      break;
-      
-      case ITable::Value::TEN:
-      // 10
-      current_value += 10;
-      break;
-      
-      case ITable::Value::JACK:
-      // Jack (10)
-      current_value += 10;
-      break;
-      
-      case ITable::Value::QUEEN:
-      // Queen (10)
-      current_value += 10;
-      break;
-      
-      case ITable::Value::KING:
-      // King (10)
-      current_value += 10;
-      break;
-      
-      default:
-      current_value += 0;
+      default: return 0;
       break;
     }
-  return current_value;
 }
 
 void MGMTable::FillDeck() {
@@ -154,9 +118,15 @@ void MGMTable::DealCard(int player_index, int hand_index) {
 
 MGMTable::Result MGMTable::PlaySafeBet(int player_index) {//half of bet
     Card dealer_card = GetDealerCard();
-    if(dealer_card.value_ == Value::ACE){
+    int player_money = GetPlayerMoney(player_index);
+    if(dealer_card.value_ == Value::ACE && player_money >= rules_.MinimumInitialBet()){
         int safe_bet = (GetPlayerInitialBet(player_index) / 2);
-    }
+        
+        total_player_money_[player_index] -= safe_bet;
+        dealer_money_ += safe_bet;
+        
+        return Result::Ok;
+    }else return Result::Illegal;
 }
 
 MGMTable::HandInfo MGMTable::HandData(const Hand& hand){
@@ -226,11 +196,42 @@ MGMTable::Result MGMTable::ApplyPlayerAction(int player_index, int hand_index, A
 
 
 void MGMTable::StartRound() {
-
+    
+    if(dealer_hand_.size() > 0){
+        dealer_hand_.clear();
+    }
+    
+    FillDeck();
+    ShuffleDeck();
+    
+    Card dealer_c = deck_.back();
+    dealer_hand_.push_back(dealer_c);
+    deck_.pop_back();
 }
 
 MGMTable::RoundEndInfo MGMTable::FinishRound() {
+    int dealer_value = 0;
+    std::vector<int> hand_values;
+    RoundEndInfo end_info{};
+    for(const Card& card : end_info.dealer_hand){
+        dealer_value += GetCardValue(card);
+    }
+    for (int i = 0; i < player_num_; i++)
+    {   
+        for (int j = 0; j < hand_values.size(); j++)
+        {   
+            for(const Card& card : hands_[i][j]){
+                hand_values[j] += GetCardValue(card);
+            }
+        }
+    }
 
+    for (int i = 0; i < player_num_; i++)
+    {   
+        if(dealer_value > hand_values[i] && dealer_value <= rules_.GetWinPoint()){
+            
+        }
+    }
 }
 
 int MGMTable::GetPlayerInitialBet(int player_index) const {

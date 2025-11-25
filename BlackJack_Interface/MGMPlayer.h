@@ -40,8 +40,8 @@ class MGMPlayer : public IPlayer {
 
 // visible dealer card:
 //      2                 3                 4               5                 6        
-//      7                 8                 9               10                A
-    std::vector<std::vector<Decision> > mat_correct_behaivour_ = {
+//      7                 8                 9               10                A    
+std::vector<std::vector<Decision> > mat_correct_behaivour_ = {
         // Hard totals
         {Decision::Hit,   Decision::Hit,   Decision::Hit,   Decision::Hit,   Decision::Hit,
         Decision::Hit,   Decision::Hit,   Decision::Hit,   Decision::Hit,   Decision::Hit},  // <= 8

@@ -57,6 +57,7 @@ class MGMTable: public ITable {
     const int kSuitNum = 4;
     const int kValueNum = 13;
     int GetCardValue(Card card);
+    int player_num_ = 0;
     
     struct HandInfo{
       //can be split
