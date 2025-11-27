@@ -96,7 +96,12 @@ int MGMTable::GetPlayerCurrentBet(int player_index, int hand_index) const {
 }
 
 MGMTable::Result MGMTable::PlayInitialBet(int player_index, int money) {
-
+    if(total_player_money_[player_index] < money ||
+    money < rules_.MinimumInitialBet() || money > rules_.MaximumInitialBet()){
+        return ITable::Result::Illegal;
+    }else{
+        return ITable::Result::Ok;
+    }
 }
 
 MGMTable::Card MGMTable::GetDealerCard() const {
@@ -211,6 +216,13 @@ void MGMTable::StartRound() {
 
 MGMTable::RoundEndInfo MGMTable::FinishRound() {
     int dealer_value = 0;
+    std::vector<int> hand_num;
+    for (int i = 0; i < player_num_; i++)
+    {
+        hand_num[i] = GetNumberOfHands(i);
+    }
+    
+
     std::vector<int> hand_values;
     RoundEndInfo end_info{};
     for(const Card& card : end_info.dealer_hand){
@@ -229,7 +241,7 @@ MGMTable::RoundEndInfo MGMTable::FinishRound() {
     for (int i = 0; i < player_num_; i++)
     {   
         if(dealer_value > hand_values[i] && dealer_value <= rules_.GetWinPoint()){
-            
+            end_info.winners[i] = ITable::RoundEndInfo::BetResult::Lose;
         }
     }
 }
@@ -239,5 +251,5 @@ int MGMTable::GetPlayerInitialBet(int player_index) const {
 }
 
 void MGMTable::CleanTable() {
-
+    
 }
