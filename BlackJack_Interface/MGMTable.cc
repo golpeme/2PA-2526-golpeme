@@ -1,4 +1,6 @@
 #include "MGMTable.h"
+#include <algorithm>
+#include <random>
 
 MGMTable::MGMTable(int num_players, const BaseRules& rules)
     : rules_{ rules },
@@ -84,7 +86,7 @@ MGMTable::Hand MGMTable::GetHand(int player_index, int hand_index) const {
 }
 
 int MGMTable::GetNumberOfHands(int player_index) const {
-    return hands_[player_index].size();
+    return static_cast<int>(hands_[player_index].size());
 }
 
 int MGMTable::GetPlayerMoney(int player_index) const {
@@ -241,9 +243,10 @@ MGMTable::RoundEndInfo MGMTable::FinishRound() {
     for (int i = 0; i < player_num_; i++)
     {   
         if(dealer_value > hand_values[i] && dealer_value <= rules_.GetWinPoint()){
-            end_info.winners[i] = ITable::RoundEndInfo::BetResult::Lose;
+            //end_info.winners[i] = ITable::RoundEndInfo::BetResult::Lose;
         }
     }
+    return end_info;
 }
 
 int MGMTable::GetPlayerInitialBet(int player_index) const {
@@ -251,5 +254,8 @@ int MGMTable::GetPlayerInitialBet(int player_index) const {
 }
 
 void MGMTable::CleanTable() {
-    
+    hands_.clear();
+    player_bets_.clear();
+    deck_.clear();
+    dealer_hand_.clear();
 }

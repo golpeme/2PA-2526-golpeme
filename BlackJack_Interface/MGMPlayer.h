@@ -141,6 +141,6 @@ std::vector<std::vector<Decision> > mat_correct_behaivour_ = {
     //table helpers
     int HardRowIdx(int total);
     int SoftRowIdx(int total);
-    int PairRowIdx(int pair_rank);
+    static int PairRowIdx(int pair_rank);
 };
 

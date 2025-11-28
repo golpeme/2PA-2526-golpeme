@@ -1,8 +1,7 @@
 #include "ITable.h"
 #include "Rules.h"
 #include "MGMPlayer.h"
-#include <algorithm>
-#include <random>
+
 
 class MGMTable: public ITable {
   public:
@@ -47,7 +46,7 @@ class MGMTable: public ITable {
   private:
     std::vector<std::vector<Hand> > hands_;              //hands_[player_index][hand_index];
     std::vector<std::vector<int> > player_bets_;         //player_bets_[player_index][hand_index];
-    std::vector<int> total_player_money_;  //total_player_money_[player_index];
+    std::vector<int> total_player_money_;                //total_player_money_[player_index];
     std::vector<IPlayer*> players_;
     int num_players_;
     std::vector<Card> deck_;

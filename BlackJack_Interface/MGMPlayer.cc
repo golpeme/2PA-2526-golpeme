@@ -33,31 +33,31 @@ int MGMPlayer::SoftRowIdx(int total){
   return 28 - total;
 }
 
-int PairRowIdx(int pair_rank){
+int MGMPlayer::PairRowIdx(int pair_rank) {
   switch (pair_rank)
   {
   case 11: return 16;
-    break;
+    
   case 9: return 17;
-    break;
+    
   case 8: return 18;
-    break;
+    
   case 7: return 19;
-    break;
+    
   case 6: return 20;
-    break;
+    
   case 5: return 21;
-    break;
+    
   case 4: return 22;
-    break;
+    
   case 3: return 23;
-    break;
+    
   case 2: return 24;
-    break;
+    
   case 10: return 25;
-    break;
+    
   default: return -1;
-    break;
+    
   }
 }
 
@@ -182,29 +182,30 @@ ITable::Action MGMPlayer::DecidePlayerAction(const ITable& table, int player_ind
     switch (player_dec)
     {
     case Decision::Stand: return ITable::Action::Stand;
-      break;
+      
         case Decision::Hit: return ITable::Action::Hit;
-      break;
+      
         case Decision::Split: return ITable::Action::Split;
-      break;
+      
         case Decision::Double: return ITable::Action::Double;
-      break;
+      
     default:
       return ITable::Action::Stand;
-      break;
     }
+    return ITable::Action::Stand;
   }
-    break;
+    
   case kPB_DrunkPlayer:
     return static_cast<ITable::Action>((rand()%4));
-    break;
+    
   case kPB_FearOfSuccess:
     return ITable::Action::Stand;
-    break;
+    
   case kPB_DegenerateGambler:
     return ITable::Action::Hit;
-    break;
+    
   default:
+    return ITable::Action::Stand;
     break;
   }
 }
@@ -237,7 +238,7 @@ bool MGMPlayer::DecideUseSafe(const ITable& table, int player_index){
   switch (behaivour_)
   {
   case kPB_MatCorrect:
-
+      return false;
     break;
   case kPB_DrunkPlayer:
     return static_cast<bool>((rand()%1));
@@ -249,7 +250,7 @@ bool MGMPlayer::DecideUseSafe(const ITable& table, int player_index){
     return true;
     break;
   default:
-
+      return true;
     break;
   }
 }
