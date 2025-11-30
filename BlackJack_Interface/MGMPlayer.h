@@ -1,3 +1,4 @@
+#pragma once
 #include "IPlayer.h"
 #include "MGMRules.h"
 #include "cstdlib"

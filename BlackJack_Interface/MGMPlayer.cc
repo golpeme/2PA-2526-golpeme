@@ -1,3 +1,4 @@
+#pragma once
 #include "MGMPlayer.h"
 
 MGMPlayer::Decision MGMPlayer::GetMatCorrectDecision(HandInfo info, ITable::Card dealer_card){

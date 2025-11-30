@@ -1,3 +1,4 @@
+#pragma once
 #include "MGMTable.h"
 #include <algorithm>
 #include <random>
@@ -254,8 +255,16 @@ int MGMTable::GetPlayerInitialBet(int player_index) const {
 }
 
 void MGMTable::CleanTable() {
+  for (auto& hand : hands_)
+  {
     hands_.clear();
+    hands_.resize(1);
+  }
+  for (auto& bets : player_bets_)
+  {
     player_bets_.clear();
+    player_bets_.resize(1);
+  }
     deck_.clear();
     dealer_hand_.clear();
 }

@@ -1,3 +1,4 @@
+#pragma once
 #include "ITable.h"
 #include "Rules.h"
 #include "MGMPlayer.h"

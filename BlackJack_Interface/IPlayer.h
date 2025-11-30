@@ -2,7 +2,7 @@
 #ifndef ESAT_BLACKJACK_INTERFACES_IPLAYER_H
 #define ESAT_BLACKJACK_INTERFACES_IPLAYER_H
 
-#include "itable.h"
+#include "ITable.h"
 
 /**
  * @interface IPlayer

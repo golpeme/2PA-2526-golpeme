@@ -1,6 +1,7 @@
+#pragma once
 #include "Rules.h"
 
-class MGMRules : BaseRules{
+class MGMRules : public BaseRules{
   public:
   //~BaseRules() = default;
   int GetWinPoint() const { return 21; }
