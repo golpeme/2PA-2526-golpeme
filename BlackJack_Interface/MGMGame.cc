@@ -10,11 +10,11 @@ void MGMGame::PlayGame() {
 
 	MGMRules rules;
 
-	int set_num_players = 0;
-	printf("set player num:");
-	scanf_s("%d", &set_num_players);
+	//int set_num_players = 0;
+	//printf("set player num:");
+	//scanf_s("%d", &set_num_players);
 
-	const int num_players = set_num_players;
+	const int num_players = 4;
 
 	MGMTable table(num_players, rules);
 
@@ -58,6 +58,7 @@ void MGMGame::PlayGame() {
 
 				table.PlayInitialBet(i, bet);
 				printf("\n Player #%d bets %d $\n", i, bet);
+				printf("\nbets done\n");
 			}
 			// 2) Reparto inicial a jugadores (mano 0)
 			for (int i = 0; i < num_players; i++)

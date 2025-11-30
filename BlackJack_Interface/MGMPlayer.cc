@@ -10,11 +10,14 @@ MGMPlayer::Decision MGMPlayer::GetMatCorrectDecision(HandInfo info, ITable::Card
   else filas 0-9*/
   if (info.is_pair){
     row_idx = PairRowIdx(info.total / 2);
+    printf("\nis pair");
   }
   if(info.is_soft){
     row_idx = SoftRowIdx(info.total);
+    printf("\nis soft");
   }else{
     row_idx = HardRowIdx(info.total); 
+    printf("\nis hard");
   }
 
   return mat_correct_behaivour_[row_idx][col_idx];
@@ -31,7 +34,8 @@ int MGMPlayer::SoftRowIdx(int total){
   //18 -> row_idx = 10
   //19 -> 11...
   //total + row = 28
-  return 28 - total;
+
+  return 27 - total;
 }
 
 int MGMPlayer::PairRowIdx(int pair_rank) {
@@ -78,7 +82,7 @@ MGMPlayer::HandInfo MGMPlayer::HandData(const ITable::Hand& hand){
       info.total -= 10;
       info.is_soft = false;
      } else info.is_soft = true;
-
+  printf("*******\n** %d **\n*******", info.total);
   return info;
 }
 

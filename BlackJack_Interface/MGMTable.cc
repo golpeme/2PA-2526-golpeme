@@ -13,8 +13,14 @@ MGMTable::MGMTable(int num_players, const BaseRules& rules)
     hands_.resize(num_players_);
     players_.resize(num_players_, nullptr);
 
-    for (int i = 0; i < num_players_; i++)
-        total_player_money_[i] = rules.InitialPlayerMoney();
+    for (int i = 0; i < num_players_; i++) {
+      total_player_money_[i] = rules.InitialPlayerMoney();
+
+      hands_[i].resize(1);
+
+      player_bets_[i].resize(1, 0);
+    }
+    player_num_ = num_players_;
 }
 
 int MGMTable::GetCardValue(Card card){
@@ -219,7 +225,7 @@ void MGMTable::StartRound() {
 
 MGMTable::RoundEndInfo MGMTable::FinishRound() {
     int dealer_value = 0;
-    std::vector<int> hand_num;
+    std::vector<int> hand_num(player_num_); //resizes vector
     for (int i = 0; i < player_num_; i++)
     {
         hand_num[i] = GetNumberOfHands(i);
@@ -228,11 +234,18 @@ MGMTable::RoundEndInfo MGMTable::FinishRound() {
 
     std::vector<int> hand_values;
     RoundEndInfo end_info{};
+
     for(const Card& card : end_info.dealer_hand){
         dealer_value += GetCardValue(card);
     }
+
+    end_info.winners.resize(num_players_);
+    
     for (int i = 0; i < player_num_; i++)
-    {   
+    {
+
+      end_info.winners[i].resize(hand_num[i]);
+      hand_values.resize(hand_num[i], 0); //resizes vector for each player
         for (int j = 0; j < hand_values.size(); j++)
         {   
             for(const Card& card : hands_[i][j]){
@@ -243,9 +256,24 @@ MGMTable::RoundEndInfo MGMTable::FinishRound() {
 
     for (int i = 0; i < player_num_; i++)
     {   
+      for (int j = 0; j < hand_num[i]; j++)
+      {
         if(dealer_value > hand_values[i] && dealer_value <= rules_.GetWinPoint()){
-            //end_info.winners[i] = ITable::RoundEndInfo::BetResult::Lose;
+            end_info.winners[i][j] = ITable::RoundEndInfo::BetResult::Lose;
         }
+        else if (dealer_value < hand_values[i] && hand_values[i] <= rules_.GetWinPoint()) {
+          for ( i = 0; i < player_num_; i++)
+          {
+            for (int j = i + 1; j < player_num_; j++) {
+
+            }
+          }
+          end_info.winners[i][j] = ITable::RoundEndInfo::BetResult::Win;
+        }
+        else if (dealer_value == hand_values[i] && hand_values[i] <= rules_.GetWinPoint()) {
+          end_info.winners[i][j] = ITable::RoundEndInfo::BetResult::Tie;
+        }
+      }
     }
     return end_info;
 }
@@ -255,15 +283,15 @@ int MGMTable::GetPlayerInitialBet(int player_index) const {
 }
 
 void MGMTable::CleanTable() {
-  for (auto& hand : hands_)
+  for (auto& player_hands : hands_)
   {
-    hands_.clear();
-    hands_.resize(1);
+    player_hands.clear();
+    player_hands.resize(1);
   }
   for (auto& bets : player_bets_)
   {
-    player_bets_.clear();
-    player_bets_.resize(1);
+    bets.clear();
+    bets.resize(1);
   }
     deck_.clear();
     dealer_hand_.clear();
