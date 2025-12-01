@@ -43,13 +43,14 @@ class MGMTable: public ITable {
       return players_[player_index];
     }
 
+    int GetPlayerNum() const { return player_num_; };
 
   private:
     std::vector<std::vector<Hand> > hands_;              //hands_[player_index][hand_index];
     std::vector<std::vector<int> > player_bets_;         //player_bets_[player_index][hand_index];
     std::vector<int> total_player_money_;                //total_player_money_[player_index];
     std::vector<IPlayer*> players_;
-    int num_players_;
+    int player_num_;
     std::vector<Card> deck_;
     Hand dealer_hand_;
     int dealer_money_;
@@ -57,7 +58,6 @@ class MGMTable: public ITable {
     const int kSuitNum = 4;
     const int kValueNum = 13;
     int GetCardValue(Card card);
-    int player_num_ = 0;
     
     struct HandInfo{
       //can be split
@@ -68,5 +68,6 @@ class MGMTable: public ITable {
       int total;
     };
     
+    void RemovePlayers(int player_index);
     HandInfo HandData(const Hand& hand);
 };

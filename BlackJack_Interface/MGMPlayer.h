@@ -27,8 +27,8 @@ class MGMPlayer : public IPlayer {
     PlayerBehaivour behaivour_ = kPB_MatCorrect;
 
 
-    int player_index_;
-    int hand_index_;
+    int player_index_ = 0;
+    int hand_index_ = 0;
     ITable::Hand player_hand_;
 
     enum class Decision : int{

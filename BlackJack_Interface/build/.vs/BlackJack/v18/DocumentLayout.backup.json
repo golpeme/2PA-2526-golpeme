@@ -3,19 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\build\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FBB271BF-671D-2636-B05B-D7DB1C05048B}|BlackJack.vcxproj|C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\MGMPlayer.cc||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FBB271BF-671D-2636-B05B-D7DB1C05048B}|BlackJack.vcxproj|C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\MGMPlayer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FBB271BF-671D-2636-B05B-D7DB1C05048B}|BlackJack.vcxproj|C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\MGMGame.cc||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FBB271BF-671D-2636-B05B-D7DB1C05048B}|BlackJack.vcxproj|C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\MGMTable.cc||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FBB271BF-671D-2636-B05B-D7DB1C05048B}|BlackJack.vcxproj|C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\ITable.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FBB271BF-671D-2636-B05B-D7DB1C05048B}|BlackJack.vcxproj|C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\MGMTable.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
@@ -24,13 +12,31 @@
       "AbsoluteMoniker": "D:0:0:{FBB271BF-671D-2636-B05B-D7DB1C05048B}|BlackJack.vcxproj|C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\MGMGame.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FBB271BF-671D-2636-B05B-D7DB1C05048B}|BlackJack.vcxproj|C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\IPlayer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{FBB271BF-671D-2636-B05B-D7DB1C05048B}|BlackJack.vcxproj|C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\MGMPlayer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBB271BF-671D-2636-B05B-D7DB1C05048B}|BlackJack.vcxproj|C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\MGMTable.cc||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector||{3B902123-F8A7-4915-9F01-361F908088D0}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBB271BF-671D-2636-B05B-D7DB1C05048B}|BlackJack.vcxproj|C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\MGMPlayer.cc||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBB271BF-671D-2636-B05B-D7DB1C05048B}|BlackJack.vcxproj|C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\main.cc||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\xutility||{3B902123-F8A7-4915-9F01-361F908088D0}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBB271BF-671D-2636-B05B-D7DB1C05048B}|BlackJack.vcxproj|C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\ITable.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\MGMRules.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FBB271BF-671D-2636-B05B-D7DB1C05048B}|BlackJack.vcxproj|C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\main.cc||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{FBB271BF-671D-2636-B05B-D7DB1C05048B}|BlackJack.vcxproj|C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\IPlayer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -40,11 +46,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 399,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "xutility",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\xutility",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\xutility",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\xutility",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\xutility",
+              "ViewState": "AgIAAHQSAAAAAAAAAAArwI4SAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-01T19:11:57.078Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "MGMRules.h",
               "DocumentMoniker": "C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\MGMRules.h",
               "RelativeDocumentMoniker": "..\\MGMRules.h",
@@ -57,20 +76,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "ITable.h",
               "DocumentMoniker": "C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\ITable.h",
               "RelativeDocumentMoniker": "..\\ITable.h",
               "ToolTip": "C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\ITable.h",
               "RelativeToolTip": "..\\ITable.h",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAGMAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAADsAAAAAAAAAAAAcwEYAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-11-29T15:45:32.176Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "IPlayer.h",
               "DocumentMoniker": "C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\IPlayer.h",
               "RelativeDocumentMoniker": "..\\IPlayer.h",
@@ -78,12 +97,11 @@
               "RelativeToolTip": "..\\IPlayer.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-29T16:06:04.195Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-29T16:06:04.195Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "MGMGame.h",
               "DocumentMoniker": "C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\MGMGame.h",
               "RelativeDocumentMoniker": "..\\MGMGame.h",
@@ -96,39 +114,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "main.cc",
               "DocumentMoniker": "C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\main.cc",
               "RelativeDocumentMoniker": "..\\main.cc",
               "ToolTip": "C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\main.cc",
               "RelativeToolTip": "..\\main.cc",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-29T16:21:14.282Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "MGMPlayer.cc",
               "DocumentMoniker": "C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\MGMPlayer.cc",
               "RelativeDocumentMoniker": "..\\MGMPlayer.cc",
               "ToolTip": "C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\MGMPlayer.cc",
               "RelativeToolTip": "..\\MGMPlayer.cc",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAJsAAAAAAAAAAAArwOIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-29T13:13:32.006Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "MGMTable.h",
+              "DocumentMoniker": "C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\MGMTable.h",
+              "RelativeDocumentMoniker": "..\\MGMTable.h",
+              "ToolTip": "C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\MGMTable.h",
+              "RelativeToolTip": "..\\MGMTable.h",
+              "ViewState": "AgIAABAAAAAAAAAAAAAvwC0AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-30T14:31:18.766Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "MGMGame.cc",
               "DocumentMoniker": "C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\MGMGame.cc",
               "RelativeDocumentMoniker": "..\\MGMGame.cc",
               "ToolTip": "C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\MGMGame.cc",
               "RelativeToolTip": "..\\MGMGame.cc",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAADwAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-29T13:08:46.196Z",
               "EditorCaption": ""
@@ -142,38 +173,38 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "MGMTable.h",
-              "DocumentMoniker": "C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\MGMTable.h",
-              "RelativeDocumentMoniker": "..\\MGMTable.h",
-              "ToolTip": "C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\MGMTable.h",
-              "RelativeToolTip": "..\\MGMTable.h",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-30T14:31:18.766Z",
+              "Title": "vector",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
+              "ViewState": "AgIAABkDAAAAAAAAAAArwEcDAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-01T17:59:02.804Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "MGMPlayer.h",
               "DocumentMoniker": "C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\MGMPlayer.h",
               "RelativeDocumentMoniker": "..\\MGMPlayer.h",
               "ToolTip": "C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\MGMPlayer.h",
               "RelativeToolTip": "..\\MGMPlayer.h",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAAHEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-11-30T14:42:46.057Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "MGMTable.cc",
               "DocumentMoniker": "C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\MGMTable.cc",
               "RelativeDocumentMoniker": "..\\MGMTable.cc",
               "ToolTip": "C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\MGMTable.cc",
               "RelativeToolTip": "..\\MGMTable.cc",
-              "ViewState": "AgIAANsAAAAAAAAAAAAAAPYAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAKEAAAAAAAAAAAArwD8BAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-29T13:15:05.937Z",
               "EditorCaption": ""
