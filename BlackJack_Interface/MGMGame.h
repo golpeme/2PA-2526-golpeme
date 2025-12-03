@@ -12,4 +12,16 @@ class MGMGame: public IGame {
   public:
     MGMGame() = default;
     void PlayGame() override;
+  private:
+    void DrawHand(const ITable::Hand& hand);
+
+
 };
+
+/*
+class GameRenderer {
+  public: 
+    void DrawHand(const ITable::Hand& hand);
+    void DrawDealerHand(const ITable::Hand& hand);
+    void DrawBalance(int money);
+};*/

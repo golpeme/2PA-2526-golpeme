@@ -110,6 +110,7 @@ MGMTable::Result MGMTable::PlayInitialBet(int player_index, int money) {
         return ITable::Result::Illegal;
     }else{
         total_player_money_[player_index] -= money;
+        this->dealer_money_ += money;
         return ITable::Result::Ok;
     }
 }
@@ -227,21 +228,22 @@ void MGMTable::StartRound() {
 MGMTable::RoundEndInfo MGMTable::FinishRound() {
     int dealer_value = 0;
     RoundEndInfo end_info{};
+
     std::vector<int> hand_num(player_num_); //resizes vector
     for (int i = 0; i < player_num_; i++)
     {
         hand_num[i] = GetNumberOfHands(i);
     }
-    
-    std::vector<std::vector<int> > hand_values;
-    hand_values.resize(player_num_);
 
-    for(const Card& card : end_info.dealer_hand){
-        dealer_value += GetCardValue(card);
+    end_info.dealer_hand = this->dealer_hand_;
+    for (const Card& card : end_info.dealer_hand) {
+      dealer_value += GetCardValue(card);
     }
 
+    std::vector<std::vector<int> > hand_values;
+    hand_values.resize(player_num_);
     end_info.winners.resize(player_num_);
-    
+
     for (int i = 0; i < player_num_; i++)
     {
       end_info.winners[i].resize(hand_num[i]);
@@ -269,6 +271,7 @@ MGMTable::RoundEndInfo MGMTable::FinishRound() {
         if (dealer_value > rules_.GetWinPoint()) {
           end_info.winners[i][j] = ITable::RoundEndInfo::BetResult::Win;
           total_player_money_[i] += player_bets_[i][j] * 2;
+          dealer_money_ -= player_bets_[i][j] * 2;
         }
         //Dealer Wins
         if (dealer_value > value)
@@ -280,10 +283,12 @@ MGMTable::RoundEndInfo MGMTable::FinishRound() {
         if (value > dealer_value) {
           end_info.winners[i][j] = ITable::RoundEndInfo::BetResult::Win;
           total_player_money_[i] += player_bets_[i][j] * 2;
+          dealer_money_ -= player_bets_[i][j] * 2;
         }
         if (value == dealer_value) {
           end_info.winners[i][j] = ITable::RoundEndInfo::BetResult::Tie;
           total_player_money_[i] += player_bets_[i][j];
+          dealer_money_ -= player_bets_[i][j];
         }
       }
     }

@@ -1,8 +1,70 @@
-#pragma once
+﻿#pragma once
 #include "MGMGame.h"
 #include "MGMTable.h"
 #include "MGMRules.h"
 #include "MGMPlayer.h"
+
+void MGMGame::DrawHand(const ITable::Hand& hand) {
+	//lambda to cast value to string
+	auto ValueToString = [](ITable::Value val) -> const char* {
+		switch (val) {
+			case ITable::Value::ACE:   return "A";
+			case ITable::Value::TWO:   return "2";
+			case ITable::Value::THREE: return "3";
+			case ITable::Value::FOUR:  return "4";
+			case ITable::Value::FIVE:  return "5";
+			case ITable::Value::SIX:   return "6";
+			case ITable::Value::SEVEN: return "7";
+			case ITable::Value::EIGHT: return "8";
+			case ITable::Value::NINE:  return "9";
+			case ITable::Value::TEN:   return "10";
+			case ITable::Value::JACK:  return "J";
+			case ITable::Value::QUEEN: return "Q";
+			case ITable::Value::KING:  return "K";
+			default: return "?";
+		}
+	};
+
+	//lambda to cast suits to icons
+	auto SuitToString = [](ITable::Suit suit) -> const char* {
+		switch (suit) {
+			case ITable::Suit::HEARTS:   return "H";
+			case ITable::Suit::DIAMONDS: return "D";
+			case ITable::Suit::CLUBS:    return "C";
+			case ITable::Suit::SPADES:   return "S";
+			default: return "?";
+		}
+	};
+	
+	// Colores ANSI
+	const char* RED = "\033[91m";      // Rojo para ♥ ♦
+	const char* BLACK = "\033[30m";    // Negro para ♠ ♣
+	const char* RESET = "\033[0m";     // Reset color
+	const char* BOLD = "\033[1m";      // Negrita
+
+	auto DrawCard = [ValueToString, SuitToString, RED, BLACK, RESET, BOLD](const ITable::Card& card) {
+		const char* val = ValueToString(card.value_);
+		const char* suit = SuitToString(card.suit_);
+
+		// Determinar color según el palo
+		const char* color = (card.suit_ == ITable::Suit::HEARTS || card.suit_ == ITable::Suit::DIAMONDS) ? RED : BLACK;
+
+		printf("+-------+\n");
+		printf("|%s%s%s       %s|\n", BOLD, color, val, RESET);
+		printf("|       |\n");
+		printf("|   %s%s%s   %s|\n", BOLD, color, suit, RESET);
+		printf("|       |\n");
+		printf("|     %s%s%s%s|\n", BOLD, color, val, RESET);
+		printf("+-------+\n");
+		};
+
+	printf("\n");
+	for (auto& card : hand) {
+
+		DrawCard(card);
+	}
+	printf("\n");
+}
 
 void MGMGame::PlayGame() {
 	std::random_device seed;
@@ -66,13 +128,12 @@ void MGMGame::PlayGame() {
 			for (int i = 0; i < round_players; i++)
 			{
 				//if (table.GetPlayerInitialBet(i) > 0) continue;
-				printf("\n\n\n******************\n\n\n*round players %d*\n\n\n******************\n\n\n", round_players);
+				//printf("\n\n\n******************\n\n\n*round players %d*\n\n\n******************\n\n\n", round_players);
 				int bet = table.GetPlayer(i)->DecideInitialBet(table, i);
-
 				table.PlayInitialBet(i, bet);
 				printf("\n Player #%d bets %d $\n", i, bet);
-				printf("\nbets done\n");
 			}
+				printf("\nbets done\n");
 			// 2) Reparto inicial a jugadores (mano 0)
 			for (int i = 0; i < round_players; i++)
 			{
@@ -80,7 +141,17 @@ void MGMGame::PlayGame() {
 					table.DealCard(i, 0);
 				}
 			}
-			// 3) Safe bet / insurance si el dealer ense�a As
+			for (int i = 0; i < round_players; i++)
+			{
+				int hand_num = table.GetNumberOfHands(i);
+
+				for (int j = 0; j < hand_num; j++){
+					ITable::Hand hand_to_draw = table.GetHand(i, j);
+					DrawHand(hand_to_draw);
+				}
+
+			}
+			// 3) Safe bet / insurance si el dealer enseña As
 			for (int i = 0; i < round_players; i++)
 			{
 				players[i].DecideUseSafe(table, i);
@@ -94,7 +165,9 @@ void MGMGame::PlayGame() {
 				}
 			}
 			// 5) Cerrar ronda (dealer juega + pagar/aplicar resultados) y limpiar
-			table.FinishRound();
+			ITable::RoundEndInfo print_info = table.FinishRound();
+			print_info.winners;
+			printf("\nDealer money -> %d$\n", table.DealerMoney());
 			for (int i = 0; i < round_players; i++)
 			{
 				printf("\nplayer %d money -> %d$\n", i, table.GetPlayerMoney(i));
