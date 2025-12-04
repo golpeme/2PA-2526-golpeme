@@ -12,7 +12,7 @@ MGMPlayer::Decision MGMPlayer::GetMatCorrectDecision(HandInfo info, ITable::Card
     row_idx = PairRowIdx(info.total / 2);
     printf("\nis pair");
   }
-  if(info.is_soft){
+  else if(info.is_soft){
     row_idx = SoftRowIdx(info.total);
     printf("\nis soft");
   }else{

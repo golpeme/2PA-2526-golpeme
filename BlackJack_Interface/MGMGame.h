@@ -13,7 +13,9 @@ class MGMGame: public IGame {
     MGMGame() = default;
     void PlayGame() override;
   private:
-    void DrawHand(const ITable::Hand& hand);
+    void DrawCard(const ITable::Card& card);
+    void PrintPlayerAction(const ITable::Action player_action, int player_index);
+    void DrawRoundEndInfo(const ITable::RoundEndInfo::BetResult& res, int player_index);
 
 
 };

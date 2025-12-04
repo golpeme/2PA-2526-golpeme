@@ -69,7 +69,7 @@ void MGMTable::FillDeck() {
     {
         for (int s = 0; s < kSuitNum; s++)
         {
-            for (int v = 0; v < kValueNum; v++)
+            for (int v = 1; v <= kValueNum; v++)
             {
                 Card tmp = { static_cast<Value>(v), static_cast<Suit>(s) };
                 deck_.push_back(tmp);
@@ -268,24 +268,24 @@ MGMTable::RoundEndInfo MGMTable::FinishRound() {
           end_info.winners[i][j] = ITable::RoundEndInfo::BetResult::Win;
         }
         //Dealer Bust
-        if (dealer_value > rules_.GetWinPoint()) {
+        else if (dealer_value > rules_.GetWinPoint()) {
           end_info.winners[i][j] = ITable::RoundEndInfo::BetResult::Win;
           total_player_money_[i] += player_bets_[i][j] * 2;
           dealer_money_ -= player_bets_[i][j] * 2;
         }
         //Dealer Wins
-        if (dealer_value > value)
+        else if (dealer_value > value)
         {
           end_info.winners[i][j] = ITable::RoundEndInfo::BetResult::Lose;
           dealer_money_ += player_bets_[i][j];
         }
         //Player wins
-        if (value > dealer_value) {
+        else if (value > dealer_value) {
           end_info.winners[i][j] = ITable::RoundEndInfo::BetResult::Win;
           total_player_money_[i] += player_bets_[i][j] * 2;
           dealer_money_ -= player_bets_[i][j] * 2;
         }
-        if (value == dealer_value) {
+        else if (value == dealer_value) {
           end_info.winners[i][j] = ITable::RoundEndInfo::BetResult::Tie;
           total_player_money_[i] += player_bets_[i][j];
           dealer_money_ -= player_bets_[i][j];
