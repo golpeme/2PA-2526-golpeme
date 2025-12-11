@@ -45,6 +45,10 @@ class MGMTable: public ITable {
 
     int GetPlayerNum() const { return player_num_; };
 
+    void DealerRevealSecondCard();
+    Hand GetDealerHand();
+
+
   private:
     std::vector<std::vector<Hand> > hands_;              //hands_[player_index][hand_index];
     std::vector<std::vector<int> > player_bets_;         //player_bets_[player_index][hand_index];
@@ -61,11 +65,11 @@ class MGMTable: public ITable {
     
     struct HandInfo{
       //can be split
-      bool is_pair;
+      bool is_pair = 0;
       //hard hand -> ace as 1
       //soft hand -> ace as 11 (can be worth 1)
-      bool is_soft;
-      int total;
+      bool is_soft = 0;
+      int total = 0;
     };
     
     void RemovePlayers(int player_index);

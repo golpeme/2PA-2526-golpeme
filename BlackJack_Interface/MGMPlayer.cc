@@ -3,7 +3,7 @@
 
 MGMPlayer::Decision MGMPlayer::GetMatCorrectDecision(HandInfo info, ITable::Card dealer_card){
   int row_idx = -1;
-  int col_idx = GetCardValue(dealer_card);
+  int col_idx = GetCardValue(dealer_card) - 2;
   //mat_correct_behaivour[own_cards][dealer_cards]
   /*if(is_pair) filas 16-25
   if(is_soft) filas 10-15
@@ -25,7 +25,7 @@ MGMPlayer::Decision MGMPlayer::GetMatCorrectDecision(HandInfo info, ITable::Card
 
 int MGMPlayer::HardRowIdx(int total){
   if(total <= 8) return 0;
-  if(total >= 17) return 19;
+  if(total >= 17) return 9;
 
   return total - 8;
 }
@@ -35,7 +35,7 @@ int MGMPlayer::SoftRowIdx(int total){
   //19 -> 11...
   //total + row = 28
 
-  return 27 - total;
+  return 28 - total;
 }
 
 int MGMPlayer::PairRowIdx(int pair_rank) {
@@ -76,12 +76,15 @@ MGMPlayer::HandInfo MGMPlayer::HandData(const ITable::Hand& hand){
     info.total += GetCardValue(card);
   }
   
-  if(values[0] == values[1]) info.is_pair = true;
-  if((values[0] == ITable::Value::ACE || values[1] == ITable::Value::ACE)
-     && info.total > 21){
-      info.total -= 10;
-      info.is_soft = false;
-     } else info.is_soft = true;
+  if (values[0] == values[1]) info.is_pair = true;
+  else if ((values[0] == ITable::Value::ACE || values[1] == ITable::Value::ACE)
+    && info.total > 21) {
+    info.total -= 10;
+    info.is_soft = false;
+  }
+  else if (values[0] == ITable::Value::ACE || values[1] == ITable::Value::ACE
+    && info.total <= 21) info.is_soft = true;
+  else info.is_soft == false;
   printf("*******\n** %d **\n*******", info.total);
   return info;
 }
@@ -216,24 +219,45 @@ ITable::Action MGMPlayer::DecidePlayerAction(const ITable& table, int player_ind
 }
 
 int MGMPlayer::DecideInitialBet(const ITable& table, int player_index){
+  BaseRules rules;
   int current_money = table.GetPlayerMoney(player_index);
   int bet = 0;
+  int max_bet = rules.MaximumInitialBet();
+  int min_bet = rules.MinimumInitialBet();
   switch (behaivour_)
   {
   case kPB_MatCorrect:
     bet = current_money / 4;
+    if (bet >= max_bet) bet = max_bet;
+    if (bet <= min_bet) bet = min_bet;
+    if (bet > current_money) bet = current_money;
     break;
   case kPB_DrunkPlayer:
-    bet = ((rand()%current_money + 1));
+    if (current_money > 0)
+    {
+      bet = ((rand() % current_money + 1));
+    }
+    else {
+      bet = 0;
+    }
     break;
   case kPB_FearOfSuccess:
-    bet = 100;
+
+    bet = min_bet;
+    if (bet > current_money) bet = current_money;
     break;
   case kPB_DegenerateGambler:
+
     bet = current_money / 2;
+    if (bet >= max_bet) bet = max_bet;
+    if (bet <= min_bet) bet = min_bet;
+    if (bet > current_money) bet = current_money;
+
     break;
   default:
+
     bet = current_money / 4;
+
     break;
   }
   return bet;

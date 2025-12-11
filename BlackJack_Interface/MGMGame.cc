@@ -4,69 +4,79 @@
 #include "MGMRules.h"
 #include "MGMPlayer.h"
 
-void MGMGame::PrintPlayerAction(const ITable::Action player_action, int player_index) {
-	char* action_to_print = nullptr;
-	switch (player_action)
+void MGMGame::PrintPlayerBehaivour(int player_index, MGMPlayer::PlayerBehaivour behaivour) {
+	switch (behaivour)
 	{
-	case ITable::Action::Double:
-		action_to_print = "doubled";
+	case MGMPlayer::kPB_MatCorrect:
+		printf("\nPlayer %d entered the table, he is known for being mathematically good in the casino\n", player_index);
 		break;
-	case ITable::Action::Hit:
-		action_to_print = "hit";
+	case MGMPlayer::kPB_DrunkPlayer:
+		printf("\nPlayer %d entered the table, he might had had one to many drinks\n", player_index);
+
 		break;
-	case ITable::Action::Split:
-		action_to_print = "split";
+	case MGMPlayer::kPB_FearOfSuccess:
+		printf("\nPlayer %d entered the table, he really doesn't want to be here\n", player_index);
+
 		break;
-	case ITable::Action::Stand:
-		action_to_print = "stand";
+	case MGMPlayer::kPB_DegenerateGambler:
+		printf("\nPlayer %d entered the table, if he could, he would bet his whole life savings on this table\n", player_index);
+
 		break;
 	default:
-		action_to_print = "?";
 		break;
 	}
-	printf("\nPlayer %d has %s\n", player_index, action_to_print);
 }
 
-/*void MGMGame::DrawRoundEndInfo(const ITable::RoundEndInfo& info, int player_index) {
-	for (auto& player_results : info.winners)
+void MGMGame::PrintPlayerAction(const ITable& table, const ITable::Action player_action, int player_index, int hand_index) {
+	switch (player_action)
 	{
-		for (auto& bet_result : player_results)
-		{
-			switch (bet_result)
-			{
-			case ITable::RoundEndInfo::BetResult::Win:
-				printf("player %d has won this round", player_index);
-				break;
-			case ITable::RoundEndInfo::BetResult::Tie:
-				printf("player %d has tied this round", player_index);
-				break;
-			case ITable::RoundEndInfo::BetResult::Lose:
-				printf("player %d has lost this round", player_index);
-				break;
-			default:
-				printf("player %d has lost this round", player_index);
-				break;
-			}
+	case ITable::Action::Double: {
+		printf("\nPlayer %d has doubled\n", player_index);
+
+		ITable::Hand hand = table.GetHand(player_index, hand_index);
+		if (hand.size() > 0) {
+			printf("\nNew Card\n");
+			DrawCard(hand.back());
+		}
+		break;
+	}
+	case ITable::Action::Hit: {
+		printf("\nPlayer %d has hit\n", player_index);
+
+		ITable::Hand hand = table.GetHand(player_index, hand_index);
+		if (hand.size() > 0) {
+			printf("\nNew Card\n");
+			DrawCard(hand.back());
+		}
+
+		break;
+	}
+	case ITable::Action::Split:
+		printf("\nPlayer %d has split\n", player_index);
+		break;
+	case ITable::Action::Stand:
+		printf("\nPlayer %d has stand\n", player_index);
+		break;
+	default:
+		printf("\n?\n");
+		break;
+	}
+}
+
+void MGMGame::DrawRoundEndInfo(const std::vector <ITable::RoundEndInfo::BetResult>& result, int player_index) {
+	for (int i = 0; i < result.size(); i++)
+	{
+		ITable::RoundEndInfo::BetResult res = result[i];
+		if (res == ITable::RoundEndInfo::BetResult::Win) {
+			printf("Player %d hand %d won\n", player_index, i);
+		}
+		else if (res == ITable::RoundEndInfo::BetResult::Lose) {
+			printf("Player %d hand %d lost\n", player_index, i);
+		}
+		else if (res == ITable::RoundEndInfo::BetResult::Tie) {
+			printf("Player %d hand %d tied\n", player_index, i);
 		}
 	}
-}*/
-
-void MGMGame::DrawRoundEndInfo(const ITable::RoundEndInfo::BetResult& res, int player_index) {
-			switch (res)
-			{
-			case ITable::RoundEndInfo::BetResult::Win:
-				printf("player %d has won this round", player_index);
-				break;
-			case ITable::RoundEndInfo::BetResult::Tie:
-				printf("player %d has tied this round", player_index);
-				break;
-			case ITable::RoundEndInfo::BetResult::Lose:
-				printf("player %d has lost this round", player_index);
-				break;
-			default:
-				printf("player %d has lost this round", player_index);
-				break;
-			}
 }
 
 void MGMGame::DrawCard(const ITable::Card& card) {
@@ -132,21 +142,21 @@ void MGMGame::PlayGame() {
 	std::random_device seed;
 	std::mt19937 rand(seed());
 
-	MGMRules rules;
+	players.resize(num_players);
+
+	BaseRules rules;
 
 	//int set_num_players = 0;
 	//printf("set player num:");
 	//scanf_s("%d", &set_num_players);
 
-	const int num_players = 4;
-
 	MGMTable table(num_players, rules);
 
-	std::vector<MGMPlayer> players(num_players);
 	for (int i = 0; i < num_players; i++)
 	{
 		players[i].SetRandomBehaivour();
 		table.SetPlayer(i, &players[i]);
+		PrintPlayerBehaivour(i, players[i].GetPlayerBehaivour(players[i]));
 	}
 
 	//saves a &in var
@@ -172,75 +182,86 @@ void MGMGame::PlayGame() {
 		}
 		return current_player_num;
 		};
-		while (any_alive_players() && table.DealerMoney() > 0)
+	do
+	{
+		printf("\n------------------------------\n--------round starting--------\n------------------------------\n");
+
+		int round_players = current_players();
+
+		table.CleanTable();
+		table.StartRound();
+
+		printf("\n------------------------------\n--------Deck Shuffled and filled--------\n------------------------------\n");
+		printf("\n------------------------------\n--------Make your bets!--------\n------------------------------\n");
+
+
+
+		// 1) initial bets
+		for (int i = 0; i < round_players; i++)
 		{
-			printf("\n------------------------------\n--------round starting--------\n------------------------------\n");
-			
-			int round_players = current_players();
-			
-			table.CleanTable();
-			table.StartRound();
-			
-			printf("\n------------------------------\n--------Deck Shuffled and filled--------\n------------------------------\n");
-			printf("\n------------------------------\n--------Make your bets!--------\n------------------------------\n");
-
-			
-
-			// 1) Apuestas iniciales
-			for (int i = 0; i < round_players; i++)
-			{
-				//if (table.GetPlayerInitialBet(i) > 0) continue;
-				//printf("\n\n\n******************\n\n\n*round players %d*\n\n\n******************\n\n\n", round_players);
-				int bet = table.GetPlayer(i)->DecideInitialBet(table, i);
-				table.PlayInitialBet(i, bet);
-				printf("\n Player #%d bets %d $\n", i, bet);
-			}
-				printf("\nbets done\n");
-			// 2) Reparto inicial a jugadores (mano 0)
-			for (int i = 0; i < round_players; i++)
-			{
-				for (int j = 0; j < rules.InitialCards(); j++) {
-					table.DealCard(i, 0);
-				}
-			}
-			for (int i = 0; i < round_players; i++)
-			{
-				int hand_num = table.GetNumberOfHands(i);
-
-				for (int j = 0; j < hand_num; j++){
-					ITable::Hand hand_to_draw = table.GetHand(i, j);
-					printf("\nHand %d of player %d\n", j, i);
-					for (auto& card : hand_to_draw)
-					{
-						DrawCard(card);
-					}
-				}
-			}
-			// 3) Safe bet / insurance si el dealer enseña As
-			for (int i = 0; i < round_players; i++)
-			{
-				players[i].DecideUseSafe(table, i);
-			}
-			// 4) Turnos de jugadores (incluye splits)
-			for (int i = 0; i < round_players; i++)
-			{
-				for (int j = 0; j < table.GetNumberOfHands(i); j++)
-				{
-					ITable::Action current_player_action = players[i].DecidePlayerAction(table, i, j);
-					table.ApplyPlayerAction(i, j, current_player_action);
-					PrintPlayerAction(current_player_action, i);
-				}
-			}
-			// 5) Cerrar ronda (dealer juega + pagar/aplicar resultados) y limpiar
-			
-			printf("\nDealer card\n");
-			DrawCard(table.GetDealerCard());
-			printf("\nDealer money -> %d$\n", table.DealerMoney());
-			ITable::RoundEndInfo print_info = table.FinishRound();
-			for (int i = 0; i < round_players; i++)
-			{
-				DrawRoundEndInfo(print_info.winners, i);
-				printf("\nplayer %d money -> %d$\n", i, table.GetPlayerMoney(i));
+			//if (table.GetPlayerInitialBet(i) > 0) continue;
+			//printf("\n\n\n******************\n\n\n*round players %d*\n\n\n******************\n\n\n", round_players);
+			int bet = table.GetPlayer(i)->DecideInitialBet(table, i);
+			table.PlayInitialBet(i, bet);
+			printf("\n Player #%d bets %d $\n", i, bet);
+		}
+		printf("\nbets done\n");
+		// 2) initial deal
+		for (int i = 0; i < round_players; i++)
+		{
+			for (int j = 0; j < rules.InitialCards(); j++) {
+				table.DealCard(i, 0);
 			}
 		}
+
+		printf("\nDealer card\n");
+		DrawCard(table.GetDealerCard());
+
+		for (int i = 0; i < round_players; i++)
+		{
+			int hand_num = table.GetNumberOfHands(i);
+
+			for (int j = 0; j < hand_num; j++) {
+				ITable::Hand hand_to_draw = table.GetHand(i, j);
+				printf("\nHand %d of player %d\n", j, i);
+				for (auto& card : hand_to_draw)
+				{
+					DrawCard(card);
+				}
+			}
+		}
+		// 3) Safe bet / insurance
+		for (int i = 0; i < round_players; i++)
+		{
+			players[i].DecideUseSafe(table, i);
+		}
+		// 4) player turns
+		for (int i = 0; i < round_players; i++)
+		{
+			for (int j = 0; j < table.GetNumberOfHands(i); j++)
+			{
+				ITable::Action current_player_action = players[i].DecidePlayerAction(table, i, j);
+				table.ApplyPlayerAction(i, j, current_player_action);
+				PrintPlayerAction(table, current_player_action, i, j);
+			}
+		}
+		// 5) Close round
+
+		table.DealerRevealSecondCard();
+		printf("\nDealer hand\n");
+		int iter = 0;
+		for (const ITable::Card& card : table.GetDealerHand())
+		{
+			DrawCard(card);
+			iter++;
+		}
+		printf("\n\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n %d \n\n++++++++++++++++++++++++++++++++++++++", iter);
+		ITable::RoundEndInfo print_info = table.FinishRound();
+		for (int i = 0; i < round_players; i++)
+		{
+			DrawRoundEndInfo(print_info.winners[i], i);
+			printf("\nplayer %d money -> %d$\n", i, table.GetPlayerMoney(i));
+		}
+		printf("\nDealer money -> %d$\n", table.DealerMoney());
+	} while (any_alive_players() && table.DealerMoney() > 0);
 }

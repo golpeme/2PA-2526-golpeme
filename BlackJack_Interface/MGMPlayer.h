@@ -1,6 +1,6 @@
 #pragma once
 #include "IPlayer.h"
-#include "MGMRules.h"
+#include "MGMTable.h"
 #include "cstdlib"
 #include "ctime"
 
@@ -22,6 +22,7 @@ class MGMPlayer : public IPlayer {
     int DecideInitialBet(const ITable& table, int player_index) override;
     bool DecideUseSafe(const ITable& table, int player_index) override;
     void SetRandomBehaivour();
+    PlayerBehaivour GetPlayerBehaivour(MGMPlayer player) { return player.behaivour_; };
 
   private:
     PlayerBehaivour behaivour_ = kPB_MatCorrect;

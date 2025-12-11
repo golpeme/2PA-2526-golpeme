@@ -13,11 +13,13 @@ class MGMGame: public IGame {
     MGMGame() = default;
     void PlayGame() override;
   private:
+    const int num_players = 4;
+    std::vector<MGMPlayer> players;
+
     void DrawCard(const ITable::Card& card);
-    void PrintPlayerAction(const ITable::Action player_action, int player_index);
-    void DrawRoundEndInfo(const ITable::RoundEndInfo::BetResult& res, int player_index);
-
-
+    void PrintPlayerAction(const ITable& table, const ITable::Action player_action, int player_index, int hand_index);
+    void MGMGame::DrawRoundEndInfo(const std::vector <ITable::RoundEndInfo::BetResult>& result, int player_index);
+    void PrintPlayerBehaivour(int player_index, MGMPlayer::PlayerBehaivour behaivour);
 };
 
 /*
