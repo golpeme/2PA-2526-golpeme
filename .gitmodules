@@ -1,0 +1,3 @@
+[submodule "BlackJack_Interface/ftxui"]
+	path = BlackJack_Interface/ftxui
+	url = https://github.com/ArthurSonzogni/FTXUI.git
