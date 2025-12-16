@@ -1,0 +1,20 @@
+# Visual Studio cache files
+.vs/
+*.ipch
+*.db
+*.db-shm
+*.db-wal
+
+# Build directories
+build/
+bin/
+obj/
+
+# FTXUI build
+ftxui/build/
+
+# Ohers
+.DS_Store
+*.o
+*.a
+*.lib
