@@ -248,15 +248,17 @@ void MGMGame::PlayGame() {
 		// 5) Close round
 
 		table.DealerRevealSecondCard();
-		printf("\nDealer hand\n");
-		int iter = 0;
+		printf("\nDealer initial hand\n");
 		for (const ITable::Card& card : table.GetDealerHand())
 		{
 			DrawCard(card);
-			iter++;
 		}
-		printf("\n\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n %d \n\n++++++++++++++++++++++++++++++++++++++", iter);
 		ITable::RoundEndInfo print_info = table.FinishRound();
+		printf("\nDealer final hand\n");
+		for (const ITable::Card& card : table.GetDealerHand())
+		{
+			DrawCard(card);
+		}
 		for (int i = 0; i < round_players; i++)
 		{
 			DrawRoundEndInfo(print_info.winners[i], i);

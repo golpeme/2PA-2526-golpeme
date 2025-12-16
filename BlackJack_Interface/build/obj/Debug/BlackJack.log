@@ -1,6 +1,5 @@
-﻿  MGMGame.cc
-  MGMTable.cc
-  Generating Code...
+﻿  main.cc
+  LINK : C:\Users\manug\Documents\2PA-2526-golpeme\BlackJack_Interface\build\bin\Debug\BlackJack.exe not found or not built by the last incremental link; performing full link
   BlackJack.vcxproj -> C:\Users\manug\Documents\2PA-2526-golpeme\BlackJack_Interface\build\bin\Debug\BlackJack.exe
   "pwsh.exe" no se reconoce como un comando interno o externo,
   programa o archivo por lotes ejecutable.

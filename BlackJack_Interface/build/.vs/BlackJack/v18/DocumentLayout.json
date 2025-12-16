@@ -49,12 +49,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 399,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 5,
@@ -65,8 +61,7 @@
               "RelativeToolTip": "..\\MGMRules.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-29T11:35:43.597Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-29T11:35:43.597Z"
             },
             {
               "$type": "Document",
@@ -76,7 +71,7 @@
               "RelativeDocumentMoniker": "..\\MGMPlayer.cc",
               "ToolTip": "C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\MGMPlayer.cc",
               "RelativeToolTip": "..\\MGMPlayer.cc",
-              "ViewState": "AgIAANcAAAAAAAAAAAAUwPYAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAANQAAAAAAAAAAAAUwPYAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-29T13:13:32.006Z",
               "EditorCaption": ""
@@ -157,8 +152,7 @@
               "RelativeToolTip": "..\\MGMTable.h",
               "ViewState": "AgIAACkAAAAAAAAAAAAUwEcAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-30T14:31:18.766Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-30T14:31:18.766Z"
             },
             {
               "$type": "Document",
@@ -170,8 +164,7 @@
               "RelativeToolTip": "..\\Rules.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-07T14:39:03.866Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-07T14:39:03.866Z"
             },
             {
               "$type": "Document",
@@ -181,7 +174,7 @@
               "RelativeDocumentMoniker": "..\\MGMGame.cc",
               "ToolTip": "C:\\Users\\manug\\Documents\\2PA-2526-golpeme\\BlackJack_Interface\\MGMGame.cc",
               "RelativeToolTip": "..\\MGMGame.cc",
-              "ViewState": "AgIAAKIAAAAAAAAAAAAUwLoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAUwLoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-29T13:08:46.196Z",
               "EditorCaption": ""
@@ -196,8 +189,7 @@
               "RelativeToolTip": "..\\MGMPlayer.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-30T14:42:46.057Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-30T14:42:46.057Z"
             },
             {
               "$type": "Document",
@@ -209,8 +201,7 @@
               "RelativeToolTip": "..\\MGMTable.cc",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAKEBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-29T13:15:05.937Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-29T13:15:05.937Z"
             },
             {
               "$type": "Document",
