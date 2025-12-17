@@ -27,6 +27,7 @@ class MGMPlayer : public IPlayer {
   private:
     PlayerBehaivour behaivour_ = kPB_MatCorrect;
 
+    //std::string name_;
 
     int player_index_ = 0;
     int hand_index_ = 0;

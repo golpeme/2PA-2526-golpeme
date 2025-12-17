@@ -9,6 +9,12 @@ project "BlackJack"
 kind "ConsoleApp"
    language "C++"
    cppdialect "C++17"
+
+   -- ftxui
+   includedirs { "ftxui/install/include" }
+   libdirs { "ftxui/install/lib" }
+   links { "ftxui-screen", "ftxui-dom", "ftxui-component" }
+
    files
    {
       "IGame.h",
