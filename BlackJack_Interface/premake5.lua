@@ -22,6 +22,8 @@ project "BlackJack"
    kind "ConsoleApp"
    language "C++"
    cppdialect "C++17"
+   targetdir "."
+   objdir "build/obj"
    links { "MGMPlayer", "MGMTable" }
    includedirs { "include", "ftxui/install/include" }
    libdirs { "ftxui/install/lib" }

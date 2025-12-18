@@ -41,14 +41,14 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(ProjectDir)bin\Debug\</OutDir>
+    <OutDir>$(ProjectDir)..\</OutDir>
     <IntDir>$(ProjectDir)obj\Debug\BlackJack\</IntDir>
     <TargetName>BlackJack</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(ProjectDir)bin\Release\</OutDir>
+    <OutDir>$(ProjectDir)..\</OutDir>
     <IntDir>$(ProjectDir)obj\Release\BlackJack\</IntDir>
     <TargetName>BlackJack</TargetName>
     <TargetExt>.exe</TargetExt>

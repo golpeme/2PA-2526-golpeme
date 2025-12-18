@@ -18,3 +18,4 @@ ftxui/build/
 *.o
 *.a
 *.lib
+*.exe
