@@ -26,7 +26,7 @@ A terminal-based Blackjack game implemented in C++ with AI players and multiple 
 ### 1. Clone the repository with submodules
 
 
-git clone --recursive https://github.com/yourusername/MGM-Blackjack.git
+git clone --recursive https://github.com/golpeme/2PA-2526-golpeme.git
 cd MGM-Blackjack
 
 If you already cloned without `--recursive`, initialize the submodules:
