@@ -1,0 +1,51 @@
+\doxysection{IGame Interface Reference}
+\hypertarget{class_i_game}{}\label{class_i_game}\index{IGame@{IGame}}
+
+
+Interface for game execution and control.  
+
+
+
+
+{\ttfamily \#include $<$IGame.\+h$>$}
+
+Inheritance diagram for IGame\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_game}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_i_game_a1f4ecfcd40effad3361cc2873495771c}{Play\+Game}} ()=0
+\begin{DoxyCompactList}\small\item\em Executes the main game loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for game execution and control. 
+
+This interface defines the contract for implementing game logic. Any class implementing this interface should provide the complete game flow and execution logic. 
+
+\label{doc-func-members}
+\Hypertarget{class_i_game_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_game_a1f4ecfcd40effad3361cc2873495771c}\index{IGame@{IGame}!PlayGame@{PlayGame}}
+\index{PlayGame@{PlayGame}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{PlayGame()}{PlayGame()}}
+{\footnotesize\ttfamily \label{class_i_game_a1f4ecfcd40effad3361cc2873495771c} 
+virtual void IGame\+::\+Play\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Executes the main game loop. 
+
+This method contains the complete game flow, including initialization, game rounds, and cleanup. It should handle the entire lifecycle of a game session from start to finish. 
+
+Implemented in \mbox{\hyperlink{class_m_g_m_game_a2bf1bb824e52ae6eae90a029fe9ec13b}{MGMGame}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/IGame.\+h\end{DoxyCompactItemize}

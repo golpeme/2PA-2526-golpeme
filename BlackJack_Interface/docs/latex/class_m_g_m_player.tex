@@ -1,0 +1,209 @@
+\doxysection{MGMPlayer Class Reference}
+\hypertarget{class_m_g_m_player}{}\label{class_m_g_m_player}\index{MGMPlayer@{MGMPlayer}}
+
+
+Blackjack player with configurable behavioral strategies.  
+
+
+
+
+{\ttfamily \#include $<$MGMPlayer.\+h$>$}
+
+Inheritance diagram for MGMPlayer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_m_g_m_player}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5ab}{Player\+Behaivour}} \{ \newline
+\mbox{\hyperlink{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5aba1a9aa07a406bdab4a05165976807da06}{k\+PB\+\_\+\+Mat\+Correct}} = 0
+, \mbox{\hyperlink{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5aba5d92eea194f9113ded09ed158d45ae15}{k\+PB\+\_\+\+Drunk\+Player}}
+, \mbox{\hyperlink{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5aba8eca882d5e42f837d0f11761aea11c30}{k\+PB\+\_\+\+Fear\+Of\+Success}}
+, \mbox{\hyperlink{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5aba3f383be06bbde61e36def5b3f27c829f}{k\+PB\+\_\+\+Degenerate\+Gambler}}
+, \newline
+\mbox{\hyperlink{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5aba2bcd7f571d3cce9e1ad42094bd241a47}{k\+PB\+\_\+\+End}}
+ \}
+\begin{DoxyCompactList}\small\item\em AI behavioral strategies for player decision-\/making. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_m_g_m_player_aba4f356814c502bca6fa5ece24372546}{MGMPlayer}} (\mbox{\hyperlink{class_base_rules}{Base\+Rules}} \&rules)
+\begin{DoxyCompactList}\small\item\em Constructs a player with specific game rules. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_i_table_acd84ec831174e02add7ae9094c140d33}{ITable\+::\+Action}} \mbox{\hyperlink{class_m_g_m_player_a634ca9649f879dea4ba78e36242cca7a}{Decide\+Player\+Action}} (const \mbox{\hyperlink{class_i_table}{ITable}} \&table, int player\+\_\+index, int hand\+\_\+index) override
+\begin{DoxyCompactList}\small\item\em Decides the action to take for a specific hand. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_m_g_m_player_a8e8c944449f8a3101d6e7353a103a7d1}{Decide\+Initial\+Bet}} (const \mbox{\hyperlink{class_i_table}{ITable}} \&table, int player\+\_\+index) override
+\begin{DoxyCompactList}\small\item\em Decides the initial bet amount for a round. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_m_g_m_player_a3e1fa5c02f2a8c11c92400fe4ff0de17}{Decide\+Use\+Safe}} (const \mbox{\hyperlink{class_i_table}{ITable}} \&table, int player\+\_\+index) override
+\begin{DoxyCompactList}\small\item\em Decides whether to use a safe/insurance option when the dealer gets an ace. \end{DoxyCompactList}\item 
+\Hypertarget{class_m_g_m_player_a9bcc3ab5d5d5c0e2b976cbbba69b4f3d}\label{class_m_g_m_player_a9bcc3ab5d5d5c0e2b976cbbba69b4f3d} 
+void {\bfseries Set\+Random\+Behaivour} ()
+\begin{DoxyCompactList}\small\item\em Randomly assigns one of four behavioral strategies. Uses uniform distribution to select k\+PB\+\_\+\+Mat\+Correct through k\+PB\+\_\+\+Degenerate\+Gambler. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5ab}{Player\+Behaivour}} \mbox{\hyperlink{class_m_g_m_player_a66e3ba7cd36349cf0a79a5dffb3cc084}{Get\+Player\+Behaivour}} (\mbox{\hyperlink{class_m_g_m_player}{MGMPlayer}} player)
+\begin{DoxyCompactList}\small\item\em Retrieves this player\textquotesingle{}s current behavior strategy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Blackjack player with configurable behavioral strategies. 
+
+Implements four behavior types\+: mathematically correct (basic strategy), drunk (random), fearful (conservative), and degenerate (aggressive). Each behavior determines decision-\/making throughout the game. 
+
+\label{doc-enum-members}
+\Hypertarget{class_m_g_m_player_doc-enum-members}
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5ab}\index{MGMPlayer@{MGMPlayer}!PlayerBehaivour@{PlayerBehaivour}}
+\index{PlayerBehaivour@{PlayerBehaivour}!MGMPlayer@{MGMPlayer}}
+\doxysubsubsection{\texorpdfstring{PlayerBehaivour}{PlayerBehaivour}}
+{\footnotesize\ttfamily \label{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5ab} 
+enum \mbox{\hyperlink{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5ab}{MGMPlayer\+::\+Player\+Behaivour}}}
+
+
+
+AI behavioral strategies for player decision-\/making. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kPB\_MatCorrect@{kPB\_MatCorrect}!MGMPlayer@{MGMPlayer}}\index{MGMPlayer@{MGMPlayer}!kPB\_MatCorrect@{kPB\_MatCorrect}}}\Hypertarget{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5aba1a9aa07a406bdab4a05165976807da06}\label{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5aba1a9aa07a406bdab4a05165976807da06} 
+k\+PB\+\_\+\+Mat\+Correct&Plays using strategy matrix. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kPB\_DrunkPlayer@{kPB\_DrunkPlayer}!MGMPlayer@{MGMPlayer}}\index{MGMPlayer@{MGMPlayer}!kPB\_DrunkPlayer@{kPB\_DrunkPlayer}}}\Hypertarget{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5aba5d92eea194f9113ded09ed158d45ae15}\label{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5aba5d92eea194f9113ded09ed158d45ae15} 
+k\+PB\+\_\+\+Drunk\+Player&Makes random decisions. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kPB\_FearOfSuccess@{kPB\_FearOfSuccess}!MGMPlayer@{MGMPlayer}}\index{MGMPlayer@{MGMPlayer}!kPB\_FearOfSuccess@{kPB\_FearOfSuccess}}}\Hypertarget{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5aba8eca882d5e42f837d0f11761aea11c30}\label{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5aba8eca882d5e42f837d0f11761aea11c30} 
+k\+PB\+\_\+\+Fear\+Of\+Success&Conservative, stands and bets low. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kPB\_DegenerateGambler@{kPB\_DegenerateGambler}!MGMPlayer@{MGMPlayer}}\index{MGMPlayer@{MGMPlayer}!kPB\_DegenerateGambler@{kPB\_DegenerateGambler}}}\Hypertarget{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5aba3f383be06bbde61e36def5b3f27c829f}\label{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5aba3f383be06bbde61e36def5b3f27c829f} 
+k\+PB\+\_\+\+Degenerate\+Gambler&Aggressive, prefers hits or doubles. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kPB\_End@{kPB\_End}!MGMPlayer@{MGMPlayer}}\index{MGMPlayer@{MGMPlayer}!kPB\_End@{kPB\_End}}}\Hypertarget{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5aba2bcd7f571d3cce9e1ad42094bd241a47}\label{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5aba2bcd7f571d3cce9e1ad42094bd241a47} 
+k\+PB\+\_\+\+End&Sentinel value for enum. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-constructors}
+\Hypertarget{class_m_g_m_player_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_m_g_m_player_aba4f356814c502bca6fa5ece24372546}\index{MGMPlayer@{MGMPlayer}!MGMPlayer@{MGMPlayer}}
+\index{MGMPlayer@{MGMPlayer}!MGMPlayer@{MGMPlayer}}
+\doxysubsubsection{\texorpdfstring{MGMPlayer()}{MGMPlayer()}}
+{\footnotesize\ttfamily \label{class_m_g_m_player_aba4f356814c502bca6fa5ece24372546} 
+MGMPlayer\+::\+MGMPlayer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_base_rules}{Base\+Rules}} \&}]{rules}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a player with specific game rules. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rules} & Reference to the game rules in effect \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_m_g_m_player_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_m_g_m_player_a8e8c944449f8a3101d6e7353a103a7d1}\index{MGMPlayer@{MGMPlayer}!DecideInitialBet@{DecideInitialBet}}
+\index{DecideInitialBet@{DecideInitialBet}!MGMPlayer@{MGMPlayer}}
+\doxysubsubsection{\texorpdfstring{DecideInitialBet()}{DecideInitialBet()}}
+{\footnotesize\ttfamily \label{class_m_g_m_player_a8e8c944449f8a3101d6e7353a103a7d1} 
+int MGMPlayer\+::\+Decide\+Initial\+Bet (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_table}{ITable}} \&}]{table}{, }\item[{int}]{player\+\_\+index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Decides the initial bet amount for a round. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & Reference to the game table containing current game state \\
+\hline
+{\em player\+\_\+index} & Index of the player making the bet \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The bet amount to place 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_player_a267e8bcdb52ebd10ddae1dce8c643d84}{IPlayer}}.
+
+\Hypertarget{class_m_g_m_player_a634ca9649f879dea4ba78e36242cca7a}\index{MGMPlayer@{MGMPlayer}!DecidePlayerAction@{DecidePlayerAction}}
+\index{DecidePlayerAction@{DecidePlayerAction}!MGMPlayer@{MGMPlayer}}
+\doxysubsubsection{\texorpdfstring{DecidePlayerAction()}{DecidePlayerAction()}}
+{\footnotesize\ttfamily \label{class_m_g_m_player_a634ca9649f879dea4ba78e36242cca7a} 
+\mbox{\hyperlink{class_i_table_acd84ec831174e02add7ae9094c140d33}{ITable\+::\+Action}} MGMPlayer\+::\+Decide\+Player\+Action (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_table}{ITable}} \&}]{table}{, }\item[{int}]{player\+\_\+index}{, }\item[{int}]{hand\+\_\+index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Decides the action to take for a specific hand. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & Reference to the game table containing current game state \\
+\hline
+{\em player\+\_\+index} & Index of the player making the decision \\
+\hline
+{\em hand\+\_\+index} & Index of the hand to decide action for (supports split hands) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_i_table_acd84ec831174e02add7ae9094c140d33}{ITable\+::\+Action} The action chosen (e.\+g., hit, stand, double down, split) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_player_af09430a60a750e34fe8251944adb3a53}{IPlayer}}.
+
+\Hypertarget{class_m_g_m_player_a3e1fa5c02f2a8c11c92400fe4ff0de17}\index{MGMPlayer@{MGMPlayer}!DecideUseSafe@{DecideUseSafe}}
+\index{DecideUseSafe@{DecideUseSafe}!MGMPlayer@{MGMPlayer}}
+\doxysubsubsection{\texorpdfstring{DecideUseSafe()}{DecideUseSafe()}}
+{\footnotesize\ttfamily \label{class_m_g_m_player_a3e1fa5c02f2a8c11c92400fe4ff0de17} 
+bool MGMPlayer\+::\+Decide\+Use\+Safe (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_table}{ITable}} \&}]{table}{, }\item[{int}]{player\+\_\+index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Decides whether to use a safe/insurance option when the dealer gets an ace. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & Reference to the game table containing current game state \\
+\hline
+{\em player\+\_\+index} & Index of the player making the decision \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if the player wants to use the safe option, false otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_player_aa1d1bb9ccb12a50c5c3411b3f01786be}{IPlayer}}.
+
+\Hypertarget{class_m_g_m_player_a66e3ba7cd36349cf0a79a5dffb3cc084}\index{MGMPlayer@{MGMPlayer}!GetPlayerBehaivour@{GetPlayerBehaivour}}
+\index{GetPlayerBehaivour@{GetPlayerBehaivour}!MGMPlayer@{MGMPlayer}}
+\doxysubsubsection{\texorpdfstring{GetPlayerBehaivour()}{GetPlayerBehaivour()}}
+{\footnotesize\ttfamily \label{class_m_g_m_player_a66e3ba7cd36349cf0a79a5dffb3cc084} 
+\mbox{\hyperlink{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5ab}{Player\+Behaivour}} MGMPlayer\+::\+Get\+Player\+Behaivour (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_m_g_m_player}{MGMPlayer}}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves this player\textquotesingle{}s current behavior strategy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Reference to the player object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Current \doxylink{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5ab}{Player\+Behaivour} enum value 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/MGMPlayer.\+h\end{DoxyCompactItemize}

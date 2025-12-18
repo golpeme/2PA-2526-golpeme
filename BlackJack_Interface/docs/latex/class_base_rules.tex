@@ -1,0 +1,198 @@
+\doxysection{Base\+Rules Class Reference}
+\hypertarget{class_base_rules}{}\label{class_base_rules}\index{BaseRules@{BaseRules}}
+
+
+Base class defining the core rules and configuration for Blackjack games.  
+
+
+
+
+{\ttfamily \#include $<$Rules.\+h$>$}
+
+Inheritance diagram for Base\+Rules\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_base_rules}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \mbox{\hyperlink{class_base_rules_ac66b1c93fc4a0b5dc8094468c9414c79}{Get\+Win\+Point}} () const
+\begin{DoxyCompactList}\small\item\em Gets the winning point threshold. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_base_rules_af1ba1adfbecb0c0ee32466fb7e8db337}{Number\+Of\+Decks}} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of card decks used in the game. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_base_rules_ad48493ad71eb1db68585f1df377a8e64}{Initial\+Cards}} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of cards dealt to each player at the start. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_base_rules_aa6b020d312f5b15e55dc4b5b91022e4b}{Initial\+Player\+Money}} () const
+\begin{DoxyCompactList}\small\item\em Gets the initial amount of money for each player. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_base_rules_a9c607b39bbc7e8293b98d66bd4c194c0}{Initial\+Dealer\+Money}} () const
+\begin{DoxyCompactList}\small\item\em Gets the initial amount of money for the dealer. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_base_rules_a73c81f5d96b6d10d3bfe981dc10ee6e7}{Minimum\+Initial\+Bet}} () const
+\begin{DoxyCompactList}\small\item\em Gets the minimum initial bet. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_base_rules_a185320a3e6ce5040d052b5f67a37b333}{Maximum\+Initial\+Bet}} () const
+\begin{DoxyCompactList}\small\item\em Gets the maximum initial bet. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_base_rules_af90283a24cbd7d04e61ceb8a0bf81c56}{Dealer\+Stop}} () const
+\begin{DoxyCompactList}\small\item\em Gets the dealer\textquotesingle{}s stop threshold. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class defining the core rules and configuration for Blackjack games. 
+
+This class provides default game rules and settings that can be customized through inheritance. It defines the fundamental parameters that control game behavior.\hypertarget{class_base_rules_game_end_conditions}{}\doxysubsection{\texorpdfstring{Game End Conditions}{Game End Conditions}}\label{class_base_rules_game_end_conditions}
+
+\begin{DoxyItemize}
+\item A player loses when they run out of money
+\item The dealer loses when they run out of money
+\item The game ends when either the dealer loses or all players lose
+\end{DoxyItemize}\hypertarget{class_base_rules_player_ranking}{}\doxysubsection{\texorpdfstring{Player Ranking}{Player Ranking}}\label{class_base_rules_player_ranking}
+Players are ranked in the following order\+:
+\begin{DoxyItemize}
+\item First\+: Players still at the table at the end of the game, ranked by money amount
+\item Second\+: Players who have lost, in reverse order of elimination (last eliminated first) 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_base_rules_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_base_rules_af90283a24cbd7d04e61ceb8a0bf81c56}\index{BaseRules@{BaseRules}!DealerStop@{DealerStop}}
+\index{DealerStop@{DealerStop}!BaseRules@{BaseRules}}
+\doxysubsubsection{\texorpdfstring{DealerStop()}{DealerStop()}}
+{\footnotesize\ttfamily \label{class_base_rules_af90283a24cbd7d04e61ceb8a0bf81c56} 
+virtual int Base\+Rules\+::\+Dealer\+Stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the dealer\textquotesingle{}s stop threshold. 
+
+\begin{DoxyReturn}{Returns}
+int The score at which the dealer must stop drawing cards (default\+: 17) 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_disruptive_rules_a016a24f80b4822ab981161f81d6a7ff1}{Disruptive\+Rules}}, and \mbox{\hyperlink{class_fitfluencer_rules_ab0298d804c01e3ab43d3f92290c9338c}{Fitfluencer\+Rules}}.
+
+\Hypertarget{class_base_rules_ac66b1c93fc4a0b5dc8094468c9414c79}\index{BaseRules@{BaseRules}!GetWinPoint@{GetWinPoint}}
+\index{GetWinPoint@{GetWinPoint}!BaseRules@{BaseRules}}
+\doxysubsubsection{\texorpdfstring{GetWinPoint()}{GetWinPoint()}}
+{\footnotesize\ttfamily \label{class_base_rules_ac66b1c93fc4a0b5dc8094468c9414c79} 
+virtual int Base\+Rules\+::\+Get\+Win\+Point (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the winning point threshold. 
+
+\begin{DoxyReturn}{Returns}
+int The score needed to win (default\+: 21) 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_disruptive_rules_a7ad98af7947f8c5ada7f223447284b92}{Disruptive\+Rules}}, and \mbox{\hyperlink{class_fitfluencer_rules_a73d0ea0bc4e4da79aedfdc47ba5c4912}{Fitfluencer\+Rules}}.
+
+\Hypertarget{class_base_rules_ad48493ad71eb1db68585f1df377a8e64}\index{BaseRules@{BaseRules}!InitialCards@{InitialCards}}
+\index{InitialCards@{InitialCards}!BaseRules@{BaseRules}}
+\doxysubsubsection{\texorpdfstring{InitialCards()}{InitialCards()}}
+{\footnotesize\ttfamily \label{class_base_rules_ad48493ad71eb1db68585f1df377a8e64} 
+virtual int Base\+Rules\+::\+Initial\+Cards (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the number of cards dealt to each player at the start. 
+
+\begin{DoxyReturn}{Returns}
+int Number of initial cards (default\+: 2) 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_disruptive_rules_a783f1d9bb1d06ce39ead0ff74bed425c}{Disruptive\+Rules}}, and \mbox{\hyperlink{class_fitfluencer_rules_ada16d09665eed0a933f83ddc032c2317}{Fitfluencer\+Rules}}.
+
+\Hypertarget{class_base_rules_a9c607b39bbc7e8293b98d66bd4c194c0}\index{BaseRules@{BaseRules}!InitialDealerMoney@{InitialDealerMoney}}
+\index{InitialDealerMoney@{InitialDealerMoney}!BaseRules@{BaseRules}}
+\doxysubsubsection{\texorpdfstring{InitialDealerMoney()}{InitialDealerMoney()}}
+{\footnotesize\ttfamily \label{class_base_rules_a9c607b39bbc7e8293b98d66bd4c194c0} 
+virtual int Base\+Rules\+::\+Initial\+Dealer\+Money (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the initial amount of money for the dealer. 
+
+\begin{DoxyReturn}{Returns}
+int The starting money amount for the dealer 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_disruptive_rules_a1a869110f1d583cfacea193f9134ed1e}{Disruptive\+Rules}}, and \mbox{\hyperlink{class_fitfluencer_rules_aa687fea5200de15841a11b0cd62e852e}{Fitfluencer\+Rules}}.
+
+\Hypertarget{class_base_rules_aa6b020d312f5b15e55dc4b5b91022e4b}\index{BaseRules@{BaseRules}!InitialPlayerMoney@{InitialPlayerMoney}}
+\index{InitialPlayerMoney@{InitialPlayerMoney}!BaseRules@{BaseRules}}
+\doxysubsubsection{\texorpdfstring{InitialPlayerMoney()}{InitialPlayerMoney()}}
+{\footnotesize\ttfamily \label{class_base_rules_aa6b020d312f5b15e55dc4b5b91022e4b} 
+virtual int Base\+Rules\+::\+Initial\+Player\+Money (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the initial amount of money for each player. 
+
+\begin{DoxyReturn}{Returns}
+int The starting money amount for players 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_disruptive_rules_ab2e51bf6661703e484795f123e9aa7f2}{Disruptive\+Rules}}, and \mbox{\hyperlink{class_fitfluencer_rules_a05fe6fc178c61255dc1a9a3339a58a7e}{Fitfluencer\+Rules}}.
+
+\Hypertarget{class_base_rules_a185320a3e6ce5040d052b5f67a37b333}\index{BaseRules@{BaseRules}!MaximumInitialBet@{MaximumInitialBet}}
+\index{MaximumInitialBet@{MaximumInitialBet}!BaseRules@{BaseRules}}
+\doxysubsubsection{\texorpdfstring{MaximumInitialBet()}{MaximumInitialBet()}}
+{\footnotesize\ttfamily \label{class_base_rules_a185320a3e6ce5040d052b5f67a37b333} 
+virtual int Base\+Rules\+::\+Maximum\+Initial\+Bet (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the maximum initial bet. 
+
+\begin{DoxyReturn}{Returns}
+int The maximum initial bet amount 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_disruptive_rules_a9d459bb34746155e27482cede2af4f98}{Disruptive\+Rules}}, and \mbox{\hyperlink{class_fitfluencer_rules_acfb9821a86d02dfc660d6b35313523c6}{Fitfluencer\+Rules}}.
+
+\Hypertarget{class_base_rules_a73c81f5d96b6d10d3bfe981dc10ee6e7}\index{BaseRules@{BaseRules}!MinimumInitialBet@{MinimumInitialBet}}
+\index{MinimumInitialBet@{MinimumInitialBet}!BaseRules@{BaseRules}}
+\doxysubsubsection{\texorpdfstring{MinimumInitialBet()}{MinimumInitialBet()}}
+{\footnotesize\ttfamily \label{class_base_rules_a73c81f5d96b6d10d3bfe981dc10ee6e7} 
+virtual int Base\+Rules\+::\+Minimum\+Initial\+Bet (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the minimum initial bet. 
+
+\begin{DoxyReturn}{Returns}
+int The minimum initial bet amount 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_disruptive_rules_a250a0e9aef03f41a64b323a12accf734}{Disruptive\+Rules}}, and \mbox{\hyperlink{class_fitfluencer_rules_a1c529074f73c613135dd0f60bb1b6472}{Fitfluencer\+Rules}}.
+
+\Hypertarget{class_base_rules_af1ba1adfbecb0c0ee32466fb7e8db337}\index{BaseRules@{BaseRules}!NumberOfDecks@{NumberOfDecks}}
+\index{NumberOfDecks@{NumberOfDecks}!BaseRules@{BaseRules}}
+\doxysubsubsection{\texorpdfstring{NumberOfDecks()}{NumberOfDecks()}}
+{\footnotesize\ttfamily \label{class_base_rules_af1ba1adfbecb0c0ee32466fb7e8db337} 
+virtual int Base\+Rules\+::\+Number\+Of\+Decks (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the number of card decks used in the game. 
+
+\begin{DoxyReturn}{Returns}
+int Number of decks (default\+: 1) 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_disruptive_rules_ab8ee8398a4fa255fa3710fa5b90e9202}{Disruptive\+Rules}}, and \mbox{\hyperlink{class_fitfluencer_rules_aa9a55382a17e2f86d0908d3018933378}{Fitfluencer\+Rules}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Rules.\+h\end{DoxyCompactItemize}

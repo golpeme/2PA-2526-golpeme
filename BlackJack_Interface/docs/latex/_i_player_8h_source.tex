@@ -1,0 +1,24 @@
+\doxysection{IPlayer.\+h}
+\hypertarget{_i_player_8h_source}{}\label{_i_player_8h_source}\index{include/IPlayer.h@{include/IPlayer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ ESAT\_BLACKJACK\_INTERFACES\_IPLAYER\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ ESAT\_BLACKJACK\_INTERFACES\_IPLAYER\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}ITable.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_player}{IPlayer}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_player}{\string~IPlayer}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_table_acd84ec831174e02add7ae9094c140d33}{ITable::Action}}\ \mbox{\hyperlink{class_i_player_af09430a60a750e34fe8251944adb3a53}{DecidePlayerAction}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_table}{ITable}}\&\ table,\ \textcolor{keywordtype}{int}\ player\_index,\ \textcolor{keywordtype}{int}\ hand\_index)\ =\ 0;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_i_player_a267e8bcdb52ebd10ddae1dce8c643d84}{DecideInitialBet}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_table}{ITable}}\&\ table,\ \textcolor{keywordtype}{int}\ player\_index)\ =\ 0;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_player_aa1d1bb9ccb12a50c5c3411b3f01786be}{DecideUseSafe}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_table}{ITable}}\&\ table,\ \textcolor{keywordtype}{int}\ player\_index)\ =\ 0;}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ESAT\_BLACKJACK\_INTERFACES\_IPLAYER\_H}}
+
+\end{DoxyCode}

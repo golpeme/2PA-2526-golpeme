@@ -1,0 +1,32 @@
+\doxysection{Rules.\+h}
+\hypertarget{_rules_8h_source}{}\label{_rules_8h_source}\index{include/Rules.h@{include/Rules.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ ESAT\_BLACKJACK\_INTERFACES\_RULES\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ ESAT\_BLACKJACK\_INTERFACES\_RULES\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_base_rules}{BaseRules}}\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_base_rules}{\string~BaseRules}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_base_rules_ac66b1c93fc4a0b5dc8094468c9414c79}{GetWinPoint}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ 21;\ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_base_rules_af1ba1adfbecb0c0ee32466fb7e8db337}{NumberOfDecks}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ 1;\ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_base_rules_ad48493ad71eb1db68585f1df377a8e64}{InitialCards}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ 2;\ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_base_rules_aa6b020d312f5b15e55dc4b5b91022e4b}{InitialPlayerMoney}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ 4000;\ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_base_rules_a9c607b39bbc7e8293b98d66bd4c194c0}{InitialDealerMoney}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ 100000;\ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_base_rules_a73c81f5d96b6d10d3bfe981dc10ee6e7}{MinimumInitialBet}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ 100;\ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_base_rules_a185320a3e6ce5040d052b5f67a37b333}{MaximumInitialBet}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ 10000;\ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_base_rules_af90283a24cbd7d04e61ceb8a0bf81c56}{DealerStop}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ 17;\ \}}
+\DoxyCodeLine{00074\ \};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ESAT\_BLACKJACK\_INTERFACES\_RULES\_H}}
+
+\end{DoxyCode}

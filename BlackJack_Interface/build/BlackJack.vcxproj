@@ -42,14 +42,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(ProjectDir)bin\Debug\</OutDir>
-    <IntDir>$(ProjectDir)obj\Debug\</IntDir>
+    <IntDir>$(ProjectDir)obj\Debug\BlackJack\</IntDir>
     <TargetName>BlackJack</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(ProjectDir)bin\Release\</OutDir>
-    <IntDir>$(ProjectDir)obj\Release\</IntDir>
+    <IntDir>$(ProjectDir)obj\Release\BlackJack\</IntDir>
     <TargetName>BlackJack</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
@@ -57,7 +57,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>..\ftxui\install\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;..\ftxui\install\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
@@ -65,14 +65,14 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <AdditionalDependencies>ftxui-screen.lib;ftxui-dom.lib;ftxui-component.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..;..\ftxui\install\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\ftxui\install\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>..\ftxui\install\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;..\ftxui\install\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
@@ -80,26 +80,30 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <AdditionalDependencies>ftxui-screen.lib;ftxui-dom.lib;ftxui-component.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..;..\ftxui\install\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\ftxui\install\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\IGame.h" />
-    <ClInclude Include="..\IPlayer.h" />
-    <ClInclude Include="..\ITable.h" />
-    <ClInclude Include="..\MGMGame.h" />
-    <ClInclude Include="..\MGMPlayer.h" />
-    <ClInclude Include="..\MGMTable.h" />
-    <ClInclude Include="..\Rules.h" />
+    <ClInclude Include="..\include\IGame.h" />
+    <ClInclude Include="..\include\IPlayer.h" />
+    <ClInclude Include="..\include\ITable.h" />
+    <ClInclude Include="..\include\MGMGame.h" />
+    <ClInclude Include="..\include\MGMRules.h" />
+    <ClInclude Include="..\include\Rules.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\MGMGame.cc" />
-    <ClCompile Include="..\MGMPlayer.cc" />
-    <ClCompile Include="..\MGMTable.cc" />
-    <ClCompile Include="..\main.cc" />
+    <ClCompile Include="..\src\MGMGame.cc" />
+    <ClCompile Include="..\src\MGMPlayer.cc" />
+    <ClCompile Include="..\src\MGMTable.cc" />
+    <ClCompile Include="..\src\main.cc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\premake5.lua" />
+    <ProjectReference Include="MGMPlayer.vcxproj">
+      <Project>{1322876B-7F8C-3BE2-C8CA-EC8734741937}</Project>
+    </ProjectReference>
+    <ProjectReference Include="MGMTable.vcxproj">
+      <Project>{EE4DAB9E-DA1A-06AA-0334-F451EF5F3B38}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

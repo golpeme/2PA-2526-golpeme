@@ -1,0 +1,54 @@
+\doxysection{ITable\+::Round\+End\+Info Struct Reference}
+\hypertarget{struct_i_table_1_1_round_end_info}{}\label{struct_i_table_1_1_round_end_info}\index{ITable::RoundEndInfo@{ITable::RoundEndInfo}}
+
+
+Information about the end of a round.  
+
+
+
+
+{\ttfamily \#include $<$ITable.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_i_table_1_1_round_end_info_a2d44b65acc3012444ab22ad477d22949}\label{struct_i_table_1_1_round_end_info_a2d44b65acc3012444ab22ad477d22949} 
+enum class {\bfseries Bet\+Result} \{ {\bfseries Win}
+, {\bfseries Lose}
+, {\bfseries Tie}
+, {\bfseries end}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_i_table_1_1_round_end_info_a7cf787d779df5a732502f8d83bd3ae25}\label{struct_i_table_1_1_round_end_info_a7cf787d779df5a732502f8d83bd3ae25} 
+\mbox{\hyperlink{class_i_table_a6dc66c7f6b75ce4115ce0d9de3067ac7}{Hand}} {\bfseries dealer\+\_\+hand}
+\begin{DoxyCompactList}\small\item\em The dealer\textquotesingle{}s final hand. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ Bet\+Result $>$ $>$ \mbox{\hyperlink{struct_i_table_1_1_round_end_info_a6c20ca8c63fa3d072bc41e183df76c67}{winners}}
+\item 
+\Hypertarget{struct_i_table_1_1_round_end_info_aa9b1e6effec1d3088b34a5da7c5f7397}\label{struct_i_table_1_1_round_end_info_aa9b1e6effec1d3088b34a5da7c5f7397} 
+std\+::vector$<$ int $>$ {\bfseries player\+\_\+money\+\_\+delta}
+\begin{DoxyCompactList}\small\item\em Money won by each player in this round (money is already deducted when the bet is placed). \end{DoxyCompactList}\item 
+\Hypertarget{struct_i_table_1_1_round_end_info_a7b87196b184334f388f0f5d900fb9b23}\label{struct_i_table_1_1_round_end_info_a7b87196b184334f388f0f5d900fb9b23} 
+int {\bfseries dealer\+\_\+money\+\_\+delta}
+\begin{DoxyCompactList}\small\item\em Money won or lost by the dealer in this round. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Information about the end of a round. 
+
+\label{doc-variable-members}
+\Hypertarget{struct_i_table_1_1_round_end_info_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_i_table_1_1_round_end_info_a6c20ca8c63fa3d072bc41e183df76c67}\index{ITable::RoundEndInfo@{ITable::RoundEndInfo}!winners@{winners}}
+\index{winners@{winners}!ITable::RoundEndInfo@{ITable::RoundEndInfo}}
+\doxysubsubsection{\texorpdfstring{winners}{winners}}
+{\footnotesize\ttfamily \label{struct_i_table_1_1_round_end_info_a6c20ca8c63fa3d072bc41e183df76c67} 
+std\+::vector$<$std\+::vector$<$Bet\+Result$>$ $>$ ITable\+::\+Round\+End\+Info\+::winners}
+
+Whether each hand of each player won, lost, or tied Indexed as \mbox{[}player\+\_\+index\mbox{]}\mbox{[}hand\+\_\+index\mbox{]} 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ITable.\+h\end{DoxyCompactItemize}

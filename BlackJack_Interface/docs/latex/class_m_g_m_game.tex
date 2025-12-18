@@ -1,0 +1,75 @@
+\doxysection{MGMGame Class Reference}
+\hypertarget{class_m_g_m_game}{}\label{class_m_g_m_game}\index{MGMGame@{MGMGame}}
+
+
+Main game controller managing the blackjack game loop.  
+
+
+
+
+{\ttfamily \#include $<$MGMGame.\+h$>$}
+
+Inheritance diagram for MGMGame\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_m_g_m_game}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_m_g_m_game_a6c2f453df847daa8cb7ad32272b95c80}{MGMGame}} (\mbox{\hyperlink{class_m_g_m_table}{MGMTable}} \&table, std\+::vector$<$ \mbox{\hyperlink{class_m_g_m_player}{MGMPlayer}} \texorpdfstring{$\ast$}{*} $>$ players)
+\begin{DoxyCompactList}\small\item\em Constructs a game instance with a table and players. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_g_m_game_a2bf1bb824e52ae6eae90a029fe9ec13b}{Play\+Game}} () override
+\begin{DoxyCompactList}\small\item\em Executes the main game loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main game controller managing the blackjack game loop. 
+
+Orchestrates the complete game including initialization, round management, player interactions, and game termination. Integrates \doxylink{class_game_renderer}{Game\+Renderer} for UI display. 
+
+\label{doc-constructors}
+\Hypertarget{class_m_g_m_game_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_m_g_m_game_a6c2f453df847daa8cb7ad32272b95c80}\index{MGMGame@{MGMGame}!MGMGame@{MGMGame}}
+\index{MGMGame@{MGMGame}!MGMGame@{MGMGame}}
+\doxysubsubsection{\texorpdfstring{MGMGame()}{MGMGame()}}
+{\footnotesize\ttfamily \label{class_m_g_m_game_a6c2f453df847daa8cb7ad32272b95c80} 
+MGMGame\+::\+MGMGame (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_m_g_m_table}{MGMTable}} \&}]{table}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{class_m_g_m_player}{MGMPlayer}} \texorpdfstring{$\ast$}{*} $>$}]{players}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a game instance with a table and players. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & Reference to the game table \\
+\hline
+{\em players} & Vector of pointers to player objects \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_m_g_m_game_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_m_g_m_game_a2bf1bb824e52ae6eae90a029fe9ec13b}\index{MGMGame@{MGMGame}!PlayGame@{PlayGame}}
+\index{PlayGame@{PlayGame}!MGMGame@{MGMGame}}
+\doxysubsubsection{\texorpdfstring{PlayGame()}{PlayGame()}}
+{\footnotesize\ttfamily \label{class_m_g_m_game_a2bf1bb824e52ae6eae90a029fe9ec13b} 
+void MGMGame\+::\+Play\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the main game loop. 
+
+This method contains the complete game flow, including initialization, game rounds, and cleanup. It should handle the entire lifecycle of a game session from start to finish. 
+
+Implements \mbox{\hyperlink{class_i_game_a1f4ecfcd40effad3361cc2873495771c}{IGame}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/MGMGame.\+h\end{DoxyCompactItemize}

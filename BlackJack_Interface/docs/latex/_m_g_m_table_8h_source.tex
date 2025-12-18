@@ -1,0 +1,83 @@
+\doxysection{MGMTable.\+h}
+\hypertarget{_m_g_m_table_8h_source}{}\label{_m_g_m_table_8h_source}\index{include/MGMTable.h@{include/MGMTable.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}ITable.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Rules.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}MGMPlayer.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_m_g_m_table_a604ff4d766544b2a451bf8b975a9d02d}{MGMTable}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_table}{ITable}}\ \{}
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_m_g_m_table_a604ff4d766544b2a451bf8b975a9d02d}{MGMTable}}(\textcolor{keywordtype}{int}\ num\_players,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_base_rules}{BaseRules}}\&\ rules);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_i_table_a6dc66c7f6b75ce4115ce0d9de3067ac7}{Hand}}\ \mbox{\hyperlink{class_m_g_m_table_aadbbee82eb82c0732c9b884854d68fa0}{GetHand}}(\textcolor{keywordtype}{int}\ player\_index,\textcolor{keywordtype}{int}\ hand\_index)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_m_g_m_table_a2aa80d9bfbb32f1832bfab982acba08b}{GetNumberOfHands}}(\textcolor{keywordtype}{int}\ player\_index)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_m_g_m_table_ada26ac0b01467893202fdbe65c27aeba}{GetPlayerMoney}}(\textcolor{keywordtype}{int}\ player\_index)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00024\ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_m_g_m_table_a4e84e75fa983870c202cf74a49ad7a7f}{GetPlayerCurrentBet}}(\textcolor{keywordtype}{int}\ player\_index,\textcolor{keywordtype}{int}\ hand\_index)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_m_g_m_table_a42f7503c7e216e1393593ac42009eeae}{GetPlayerInitialBet}}(\textcolor{keywordtype}{int}\ player\_index)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_i_table_a17f5fa4045f260443be8993a198c448c}{Result}}\ \mbox{\hyperlink{class_m_g_m_table_a803a3524f61d398a86a490d5063f1c8f}{PlayInitialBet}}(\textcolor{keywordtype}{int}\ player\_index,\textcolor{keywordtype}{int}\ money)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{struct_i_table_1_1_card}{Card}}\ \mbox{\hyperlink{class_m_g_m_table_a0c234b6cb81bb29c8e65ba5cc0750768}{GetDealerCard}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_m_g_m_table_a5b2edfe6153a6a8a1d4733d8736ae01e}{DealerMoney}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00032\ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_m_g_m_table_a21055bd6c14981f4faf54d0020bfd2ad}{CleanTable}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_m_g_m_table_adf1666305d7e787c5fae47dc5cef778d}{DealCard}}(\textcolor{keywordtype}{int}\ player\_index,\textcolor{keywordtype}{int}\ hand\_index)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_i_table_a17f5fa4045f260443be8993a198c448c}{Result}}\ \mbox{\hyperlink{class_m_g_m_table_a4d891244de52d82380a1c9e7a7316949}{PlaySafeBet}}(\textcolor{keywordtype}{int}\ player\_index)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_i_table_a17f5fa4045f260443be8993a198c448c}{Result}}\ \mbox{\hyperlink{class_m_g_m_table_addecee156b995a717864ce4464d07237}{ApplyPlayerAction}}(\textcolor{keywordtype}{int}\ player\_index,\textcolor{keywordtype}{int}\ hand\_index,\mbox{\hyperlink{class_i_table_acd84ec831174e02add7ae9094c140d33}{Action}}\ action)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_m_g_m_table_ad7846a9030ae30397b1886b862c9be62}{StartRound}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{struct_i_table_1_1_round_end_info}{RoundEndInfo}}\ \mbox{\hyperlink{class_m_g_m_table_ae5e901fcec62758806941fd89b4559bd}{FinishRound}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_m_g_m_table_a62163c73d8c40ff8894e317ab60148f3}{FillDeck}}();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_m_g_m_table_af802600047f7b92ae15b276390615536}{ShuffleDeck}}();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_m_g_m_table_a08380da986fedb201a97a00f758a63ec}{SetPlayer}}(\textcolor{keywordtype}{int}\ player\_index,\ \mbox{\hyperlink{class_i_player}{IPlayer}}*\ player)\{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ players\_[player\_index]\ =\ player;}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_i_player}{IPlayer}}*\ \mbox{\hyperlink{class_m_g_m_table_a4e68723be35f1ce75de262b6a5e5de99}{GetPlayer}}(\textcolor{keywordtype}{int}\ player\_index)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ players\_[player\_index];}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_m_g_m_table_a00da72bd7857cfece371b876acaa6081}{GetPlayerNum}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ player\_num\_;\ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_m_g_m_table_a170ba2cc47e710a32250f44e5abb9300}{DealerRevealSecondCard}}();}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{class_i_table_a6dc66c7f6b75ce4115ce0d9de3067ac7}{Hand}}\ \mbox{\hyperlink{class_m_g_m_table_aeea249678fd49906612ed6e3500aa153}{GetDealerHand}}();}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00079\ \ \ \ \ std::vector<std::vector<Hand>\ >\ hands\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00080\ \ \ \ \ std::vector<std::vector<int>\ >\ player\_bets\_;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00081\ \ \ \ \ std::vector<int>\ total\_player\_money\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ std::vector<IPlayer*>\ players\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{int}\ player\_num\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00084\ \ \ \ \ std::vector<Card>\ deck\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{class_i_table_a6dc66c7f6b75ce4115ce0d9de3067ac7}{Hand}}\ dealer\_hand\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{int}\ dealer\_money\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_base_rules}{BaseRules}}\&\ rules\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ kSuitNum\ =\ 4;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ kValueNum\ =\ 13;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{int}\ GetCardValue(\mbox{\hyperlink{struct_i_table_1_1_card}{Card}}\ card);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{struct\ }HandInfo\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_pair;\ \ \ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_soft;\ \ \ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ total;\ \ \ \ \ \ }
+\DoxyCodeLine{00103\ \ \ \ \ \};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ RemovePlayers(\textcolor{keywordtype}{int}\ player\_index);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00112\ \ \ \ \ HandInfo\ HandData(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_table_a6dc66c7f6b75ce4115ce0d9de3067ac7}{Hand}}\&\ hand);}
+\DoxyCodeLine{00113\ \};}
+
+\end{DoxyCode}

@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BlackJack", "BlackJack.vcxproj", "{FBB271BF-671D-2636-B05B-D7DB1C05048B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MGMPlayer", "MGMPlayer.vcxproj", "{1322876B-7F8C-3BE2-C8CA-EC8734741937}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MGMTable", "MGMTable.vcxproj", "{EE4DAB9E-DA1A-06AA-0334-F451EF5F3B38}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -13,6 +17,14 @@ Global
 		{FBB271BF-671D-2636-B05B-D7DB1C05048B}.Debug|x64.Build.0 = Debug|x64
 		{FBB271BF-671D-2636-B05B-D7DB1C05048B}.Release|x64.ActiveCfg = Release|x64
 		{FBB271BF-671D-2636-B05B-D7DB1C05048B}.Release|x64.Build.0 = Release|x64
+		{1322876B-7F8C-3BE2-C8CA-EC8734741937}.Debug|x64.ActiveCfg = Debug|x64
+		{1322876B-7F8C-3BE2-C8CA-EC8734741937}.Debug|x64.Build.0 = Debug|x64
+		{1322876B-7F8C-3BE2-C8CA-EC8734741937}.Release|x64.ActiveCfg = Release|x64
+		{1322876B-7F8C-3BE2-C8CA-EC8734741937}.Release|x64.Build.0 = Release|x64
+		{EE4DAB9E-DA1A-06AA-0334-F451EF5F3B38}.Debug|x64.ActiveCfg = Debug|x64
+		{EE4DAB9E-DA1A-06AA-0334-F451EF5F3B38}.Debug|x64.Build.0 = Debug|x64
+		{EE4DAB9E-DA1A-06AA-0334-F451EF5F3B38}.Release|x64.ActiveCfg = Release|x64
+		{EE4DAB9E-DA1A-06AA-0334-F451EF5F3B38}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

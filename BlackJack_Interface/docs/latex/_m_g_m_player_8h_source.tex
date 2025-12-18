@@ -1,0 +1,155 @@
+\doxysection{MGMPlayer.\+h}
+\hypertarget{_m_g_m_player_8h_source}{}\label{_m_g_m_player_8h_source}\index{include/MGMPlayer.h@{include/MGMPlayer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}IPlayer.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}MGMTable.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}cstdlib"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}ctime"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_m_g_m_player_aba4f356814c502bca6fa5ece24372546}{MGMPlayer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_player}{IPlayer}}\ \{}
+\DoxyCodeLine{00014\ \ \ \textcolor{keyword}{public}:\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5ab}{PlayerBehaivour}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \mbox{\hyperlink{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5aba1a9aa07a406bdab4a05165976807da06}{kPB\_MatCorrect}}\ =\ 0,\ \ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \mbox{\hyperlink{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5aba5d92eea194f9113ded09ed158d45ae15}{kPB\_DrunkPlayer}},\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \mbox{\hyperlink{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5aba8eca882d5e42f837d0f11761aea11c30}{kPB\_FearOfSuccess}},\ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \mbox{\hyperlink{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5aba3f383be06bbde61e36def5b3f27c829f}{kPB\_DegenerateGambler}},\ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \mbox{\hyperlink{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5aba2bcd7f571d3cce9e1ad42094bd241a47}{kPB\_End}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_m_g_m_player_aba4f356814c502bca6fa5ece24372546}{MGMPlayer}}(\mbox{\hyperlink{class_base_rules}{BaseRules}}\&\ rules);}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_m_g_m_player_aba4f356814c502bca6fa5ece24372546}{\string~MGMPlayer}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_i_table_acd84ec831174e02add7ae9094c140d33}{ITable::Action}}\ \mbox{\hyperlink{class_m_g_m_player_a634ca9649f879dea4ba78e36242cca7a}{DecidePlayerAction}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_table}{ITable}}\&\ table,\ \textcolor{keywordtype}{int}\ player\_index,\ \textcolor{keywordtype}{int}\ hand\_index)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_m_g_m_player_a8e8c944449f8a3101d6e7353a103a7d1}{DecideInitialBet}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_table}{ITable}}\&\ table,\ \textcolor{keywordtype}{int}\ player\_index)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_m_g_m_player_a3e1fa5c02f2a8c11c92400fe4ff0de17}{DecideUseSafe}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_table}{ITable}}\&\ table,\ \textcolor{keywordtype}{int}\ player\_index)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_m_g_m_player_a9bcc3ab5d5d5c0e2b976cbbba69b4f3d}{SetRandomBehaivour}}();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5ab}{PlayerBehaivour}}\ \mbox{\hyperlink{class_m_g_m_player_a66e3ba7cd36349cf0a79a5dffb3cc084}{GetPlayerBehaivour}}(\mbox{\hyperlink{class_m_g_m_player_aba4f356814c502bca6fa5ece24372546}{MGMPlayer}}\ player)\ \{\ \textcolor{keywordflow}{return}\ player.behaivour\_;\ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_base_rules}{BaseRules}}\&\ rules\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5ab}{PlayerBehaivour}}\ behaivour\_\ =\ \mbox{\hyperlink{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5aba1a9aa07a406bdab4a05165976807da06}{kPB\_MatCorrect}};\ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{int}\ player\_index\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ hand\_index\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_i_table_a6dc66c7f6b75ce4115ce0d9de3067ac7}{ITable::Hand}}\ player\_hand\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{enum\ class}\ Decision\ :\ \textcolor{keywordtype}{int}\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ Stand\ =\ 0,\ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ Hit,\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ Split,\ \ \ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ Double,\ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ end\ =\ 4\ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ visible\ dealer\ card:}}
+\DoxyCodeLine{00062\ \textcolor{comment}{//\ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 6\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00063\ \textcolor{comment}{//\ \ \ \ \ \ 7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ A\ \ \ \ }}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00068\ std::vector<std::vector<Decision>\ >\ mat\_correct\_behaivour\_\ =\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Hard\ totals}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \{Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit\},\ \ \textcolor{comment}{//\ <=\ 8}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \{Decision::Hit,\ \ \ Decision::Double,Decision::Double,Decision::Double,Decision::Double,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit\},\ \ \textcolor{comment}{//\ 9}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \{Decision::Double,Decision::Double,Decision::Double,Decision::Double,Decision::Double,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ Decision::Double,Decision::Double,Decision::Double,Decision::Hit,\ \ \ Decision::Hit\},\ \ \textcolor{comment}{//\ 10}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \{Decision::Double,Decision::Double,Decision::Double,Decision::Double,Decision::Double,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ Decision::Double,Decision::Double,Decision::Double,Decision::Double,Decision::Hit\},\ \ \textcolor{comment}{//\ 11}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \{Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Stand,\ Decision::Stand,\ Decision::Stand,}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit\},\ \ \textcolor{comment}{//\ 12}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \{Decision::Stand,\ Decision::Stand,\ Decision::Stand,\ Decision::Stand,\ Decision::Stand,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit\},\ \ \textcolor{comment}{//\ 13}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \{Decision::Stand,\ Decision::Stand,\ Decision::Stand,\ Decision::Stand,\ Decision::Stand,}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit\},\ \ \textcolor{comment}{//\ 14}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \{Decision::Stand,\ Decision::Stand,\ Decision::Stand,\ Decision::Stand,\ Decision::Stand,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit\},\ \ \textcolor{comment}{//\ 15}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \{Decision::Stand,\ Decision::Stand,\ Decision::Stand,\ Decision::Stand,\ Decision::Stand,}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit\},\ \ \textcolor{comment}{//\ 16}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \{Decision::Stand,\ Decision::Stand,\ Decision::Stand,\ Decision::Stand,\ Decision::Stand,}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ Decision::Stand,\ Decision::Stand,\ Decision::Stand,\ Decision::Stand,\ Decision::Stand\},\ \textcolor{comment}{//\ >=\ 17}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Soft\ totals\ (A\ +\ X)}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \{Decision::Stand,\ Decision::Double,Decision::Double,Decision::Double,Decision::Double,}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ Decision::Stand,\ Decision::Stand,\ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit\},\ \ \textcolor{comment}{//\ A\ -\/\ 7}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \{Decision::Hit,\ \ \ Decision::Double,Decision::Double,Decision::Double,Decision::Double,}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit\},\ \ \textcolor{comment}{//\ A\ -\/\ 6}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \{Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Double,Decision::Double,Decision::Double,}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit\},\ \ \textcolor{comment}{//\ A\ -\/\ 5}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \{Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Double,Decision::Double,Decision::Double,}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit\},\ \ \textcolor{comment}{//\ A\ -\/\ 4}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \{Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Double,Decision::Double,}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit\},\ \ \textcolor{comment}{//\ A\ -\/\ 3}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \{Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Double,Decision::Double,}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit\},\ \ \textcolor{comment}{//\ A\ -\/\ 2}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pairs}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \{Decision::Split,\ Decision::Split,\ Decision::Split,\ Decision::Split,\ Decision::Split,}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ Decision::Split,\ Decision::Split,\ Decision::Split,\ Decision::Split,\ Decision::Split\},\ \textcolor{comment}{//\ A\ -\/\ A}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \{Decision::Split,\ Decision::Split,\ Decision::Split,\ Decision::Split,\ Decision::Split,}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ Decision::Stand,\ Decision::Split,\ Decision::Split,\ Decision::Stand,\ Decision::Stand\},\ \textcolor{comment}{//\ 9\ -\/\ 9}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \{Decision::Split,\ Decision::Split,\ Decision::Split,\ Decision::Split,\ Decision::Split,}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ Decision::Split,\ Decision::Split,\ Decision::Split,\ Decision::Split,\ Decision::Split\},\ \textcolor{comment}{//\ 8\ -\/\ 8}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \{Decision::Split,\ Decision::Split,\ Decision::Split,\ Decision::Split,\ Decision::Split,}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ Decision::Split,\ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit\},\ \ \textcolor{comment}{//\ 7\ -\/\ 7}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \{Decision::Split,\ Decision::Split,\ Decision::Split,\ Decision::Split,\ Decision::Split,}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit\},\ \ \textcolor{comment}{//\ 6\ -\/\ 6}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \{Decision::Double,Decision::Double,Decision::Double,Decision::Double,Decision::Double,}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ Decision::Double,Decision::Double,Decision::Double,Decision::Hit,\ \ \ Decision::Hit\},\ \ \textcolor{comment}{//\ 5\ -\/\ 5}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \{Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit\},\ \ \textcolor{comment}{//\ 4\ -\/\ 4}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \{Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Split,\ Decision::Split,\ Decision::Split,}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ Decision::Split,\ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit\},\ \ \textcolor{comment}{//\ 3\ -\/\ 3}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \{Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Split,\ Decision::Split,\ Decision::Split,}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ Decision::Split,\ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit,\ \ \ Decision::Hit\},\ \ \textcolor{comment}{//\ 2\ -\/\ 2}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \{Decision::Stand,\ Decision::Stand,\ Decision::Stand,\ Decision::Stand,\ Decision::Stand,}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ Decision::Stand,\ Decision::Stand,\ Decision::Stand,\ Decision::Stand,\ Decision::Stand\},\ \textcolor{comment}{//\ 10\ -\/\ 10}}
+\DoxyCodeLine{00149\ \ \ \ \ \};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{int}\ GetCardValue(ITable::Card\ card);}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keyword}{struct\ }HandInfo\{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_pair;\ \ \ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_soft;\ \ \ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ total;\ \ \ \ \ \ }
+\DoxyCodeLine{00164\ \ \ \ \ \};}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00170\ \ \ \ \ HandInfo\ HandData(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_table_a6dc66c7f6b75ce4115ce0d9de3067ac7}{ITable::Hand}}\&\ hand);}
+\DoxyCodeLine{00175\ \ \ \ \ Decision\ GetMatCorrectDecision(HandInfo\ info,\ ITable::Card\ dealer\_card);}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{int}\ HardRowIdx(\textcolor{keywordtype}{int}\ total);}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{int}\ SoftRowIdx(\textcolor{keywordtype}{int}\ total);}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ PairRowIdx(\textcolor{keywordtype}{int}\ pair\_rank);}
+\DoxyCodeLine{00194\ \};}
+\DoxyCodeLine{00195\ }
+
+\end{DoxyCode}

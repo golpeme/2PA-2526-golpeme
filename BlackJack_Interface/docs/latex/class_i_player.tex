@@ -1,0 +1,115 @@
+\doxysection{IPlayer Interface Reference}
+\hypertarget{class_i_player}{}\label{class_i_player}\index{IPlayer@{IPlayer}}
+
+
+Interface for player decision-\/making strategies in Blackjack.  
+
+
+
+
+{\ttfamily \#include $<$IPlayer.\+h$>$}
+
+Inheritance diagram for IPlayer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_player}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_table_acd84ec831174e02add7ae9094c140d33}{ITable\+::\+Action}} \mbox{\hyperlink{class_i_player_af09430a60a750e34fe8251944adb3a53}{Decide\+Player\+Action}} (const \mbox{\hyperlink{class_i_table}{ITable}} \&table, int player\+\_\+index, int hand\+\_\+index)=0
+\begin{DoxyCompactList}\small\item\em Decides the action to take for a specific hand. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_i_player_a267e8bcdb52ebd10ddae1dce8c643d84}{Decide\+Initial\+Bet}} (const \mbox{\hyperlink{class_i_table}{ITable}} \&table, int player\+\_\+index)=0
+\begin{DoxyCompactList}\small\item\em Decides the initial bet amount for a round. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_i_player_aa1d1bb9ccb12a50c5c3411b3f01786be}{Decide\+Use\+Safe}} (const \mbox{\hyperlink{class_i_table}{ITable}} \&table, int player\+\_\+index)=0
+\begin{DoxyCompactList}\small\item\em Decides whether to use a safe/insurance option when the dealer gets an ace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for player decision-\/making strategies in Blackjack. 
+
+This interface defines the contract for implementing different player behaviors in a Blackjack game. Implementations can represent human players, AI players, or different strategy patterns. 
+
+\label{doc-func-members}
+\Hypertarget{class_i_player_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_player_a267e8bcdb52ebd10ddae1dce8c643d84}\index{IPlayer@{IPlayer}!DecideInitialBet@{DecideInitialBet}}
+\index{DecideInitialBet@{DecideInitialBet}!IPlayer@{IPlayer}}
+\doxysubsubsection{\texorpdfstring{DecideInitialBet()}{DecideInitialBet()}}
+{\footnotesize\ttfamily \label{class_i_player_a267e8bcdb52ebd10ddae1dce8c643d84} 
+virtual int IPlayer\+::\+Decide\+Initial\+Bet (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_table}{ITable}} \&}]{table}{, }\item[{int}]{player\+\_\+index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Decides the initial bet amount for a round. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & Reference to the game table containing current game state \\
+\hline
+{\em player\+\_\+index} & Index of the player making the bet \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The bet amount to place 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_m_g_m_player_a8e8c944449f8a3101d6e7353a103a7d1}{MGMPlayer}}.
+
+\Hypertarget{class_i_player_af09430a60a750e34fe8251944adb3a53}\index{IPlayer@{IPlayer}!DecidePlayerAction@{DecidePlayerAction}}
+\index{DecidePlayerAction@{DecidePlayerAction}!IPlayer@{IPlayer}}
+\doxysubsubsection{\texorpdfstring{DecidePlayerAction()}{DecidePlayerAction()}}
+{\footnotesize\ttfamily \label{class_i_player_af09430a60a750e34fe8251944adb3a53} 
+virtual \mbox{\hyperlink{class_i_table_acd84ec831174e02add7ae9094c140d33}{ITable\+::\+Action}} IPlayer\+::\+Decide\+Player\+Action (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_table}{ITable}} \&}]{table}{, }\item[{int}]{player\+\_\+index}{, }\item[{int}]{hand\+\_\+index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Decides the action to take for a specific hand. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & Reference to the game table containing current game state \\
+\hline
+{\em player\+\_\+index} & Index of the player making the decision \\
+\hline
+{\em hand\+\_\+index} & Index of the hand to decide action for (supports split hands) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_i_table_acd84ec831174e02add7ae9094c140d33}{ITable\+::\+Action} The action chosen (e.\+g., hit, stand, double down, split) 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_m_g_m_player_a634ca9649f879dea4ba78e36242cca7a}{MGMPlayer}}.
+
+\Hypertarget{class_i_player_aa1d1bb9ccb12a50c5c3411b3f01786be}\index{IPlayer@{IPlayer}!DecideUseSafe@{DecideUseSafe}}
+\index{DecideUseSafe@{DecideUseSafe}!IPlayer@{IPlayer}}
+\doxysubsubsection{\texorpdfstring{DecideUseSafe()}{DecideUseSafe()}}
+{\footnotesize\ttfamily \label{class_i_player_aa1d1bb9ccb12a50c5c3411b3f01786be} 
+virtual bool IPlayer\+::\+Decide\+Use\+Safe (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_table}{ITable}} \&}]{table}{, }\item[{int}]{player\+\_\+index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Decides whether to use a safe/insurance option when the dealer gets an ace. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & Reference to the game table containing current game state \\
+\hline
+{\em player\+\_\+index} & Index of the player making the decision \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if the player wants to use the safe option, false otherwise 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_m_g_m_player_a3e1fa5c02f2a8c11c92400fe4ff0de17}{MGMPlayer}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/IPlayer.\+h\end{DoxyCompactItemize}

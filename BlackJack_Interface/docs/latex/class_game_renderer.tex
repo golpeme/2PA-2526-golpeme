@@ -1,0 +1,304 @@
+\doxysection{Game\+Renderer Class Reference}
+\hypertarget{class_game_renderer}{}\label{class_game_renderer}\index{GameRenderer@{GameRenderer}}
+
+
+Terminal UI renderer for the blackjack game using FTXUI.  
+
+
+
+
+{\ttfamily \#include $<$MGMGame.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Element \mbox{\hyperlink{class_game_renderer_a19b5ea895b778935fd55f50f5f79901c}{Draw\+Game\+Screen}} (\mbox{\hyperlink{class_m_g_m_table}{MGMTable}} \&table, int player\+\_\+index, int hand\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Renders the main gameplay screen. Displays dealer hand, player hand, current bet, and money status. \end{DoxyCompactList}\item 
+Element \mbox{\hyperlink{class_game_renderer_a9a2f47e24adea6ce61493b741092897e}{Draw\+Card}} (const \mbox{\hyperlink{struct_i_table_1_1_card}{ITable\+::\+Card}} \&card)
+\begin{DoxyCompactList}\small\item\em Renders a single playing card with border and suit color. \end{DoxyCompactList}\item 
+Element \mbox{\hyperlink{class_game_renderer_abdffe7cb369de9142f2d1d2972a5c426}{Draw\+Hand}} (const \mbox{\hyperlink{class_i_table_a6dc66c7f6b75ce4115ce0d9de3067ac7}{ITable\+::\+Hand}} \&hand)
+\begin{DoxyCompactList}\small\item\em Renders a complete hand of cards horizontally arranged. \end{DoxyCompactList}\item 
+Element \mbox{\hyperlink{class_game_renderer_abeff68523519b68e32907527fc5829ee}{Draw\+Dealer\+Hand}} (const \mbox{\hyperlink{class_i_table_a6dc66c7f6b75ce4115ce0d9de3067ac7}{MGMTable\+::\+Hand}} \&hand)
+\begin{DoxyCompactList}\small\item\em Renders the dealer\textquotesingle{}s visible hand during play. \end{DoxyCompactList}\item 
+Element \mbox{\hyperlink{class_game_renderer_ad45fb7cad3bdfb16d92cf151fc0d19bc}{Draw\+Final\+Dealer\+Hand}} (const \mbox{\hyperlink{class_i_table_a6dc66c7f6b75ce4115ce0d9de3067ac7}{MGMTable\+::\+Hand}} \&hand)
+\begin{DoxyCompactList}\small\item\em Renders the dealer\textquotesingle{}s final hand at round conclusion. \end{DoxyCompactList}\item 
+Element \mbox{\hyperlink{class_game_renderer_af7dcc123e466922daad56bec2e74232d}{Draw\+Balance}} (int money)
+\begin{DoxyCompactList}\small\item\em Renders a money amount with color coding (green/red). \end{DoxyCompactList}\item 
+Element \mbox{\hyperlink{class_game_renderer_a32230858bf5d16b0d31e1320d38ac84b}{Draw\+Player\+Behaviour\+Screen}} (int player\+\_\+index, \mbox{\hyperlink{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5ab}{MGMPlayer\+::\+Player\+Behaivour}} behaviour)
+\begin{DoxyCompactList}\small\item\em Renders the player behavior introduction screen. \end{DoxyCompactList}\item 
+Element \mbox{\hyperlink{class_game_renderer_a6aa60dac4c156dbe540263fafe0208ae}{Draw\+Action\+Result\+Screen}} (const \mbox{\hyperlink{class_i_table_acd84ec831174e02add7ae9094c140d33}{ITable\+::\+Action}} action, int player\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Renders the result of a player\textquotesingle{}s action. \end{DoxyCompactList}\item 
+Element \mbox{\hyperlink{class_game_renderer_aeb9f637b3a50f2cce2ef785585891677}{Draw\+Round\+End\+Screen}} (const \mbox{\hyperlink{struct_i_table_1_1_round_end_info}{ITable\+::\+Round\+End\+Info}} \&info, int player\+\_\+index, int player\+\_\+money)
+\begin{DoxyCompactList}\small\item\em Renders individual round result for a single player. \end{DoxyCompactList}\item 
+Element \mbox{\hyperlink{class_game_renderer_a0b30232764ddba167394137f4855c782}{Draw\+Betting\+Screen}} (int player\+\_\+index, int bet)
+\begin{DoxyCompactList}\small\item\em Renders the betting screen for a player. \end{DoxyCompactList}\item 
+Element \mbox{\hyperlink{class_game_renderer_ac117d1e64f0515d9b482c64679dfa05c}{Draw\+Round\+Summary\+Screen}} (const \mbox{\hyperlink{struct_i_table_1_1_round_end_info}{ITable\+::\+Round\+End\+Info}} \&info, const std\+::vector$<$ int $>$ \&player\+\_\+money, int dealer\+\_\+money)
+\begin{DoxyCompactList}\small\item\em Renders summary of all players\textquotesingle{} results for the round. Shows each player\textquotesingle{}s outcome and final money plus dealer balance. \end{DoxyCompactList}\item 
+Element \mbox{\hyperlink{class_game_renderer_aad04a7dc512ab872dbb65184c03b601a}{Draw\+Game\+End\+Screen}} (const std\+::vector$<$ int $>$ \&final\+\_\+money, int dealer\+\_\+money)
+\begin{DoxyCompactList}\small\item\em Renders the game end screen with final standings. \end{DoxyCompactList}\item 
+Element \mbox{\hyperlink{class_game_renderer_a396aac3380c960f5380c5581c8381c5b}{Draw\+Pause\+Screen}} ()
+\begin{DoxyCompactList}\small\item\em Renders a pause screen prompting for user input. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Terminal UI renderer for the blackjack game using FTXUI. 
+
+Handles all visual elements including cards, hands, game states, player information, and user prompts. Provides consistent styling and colors. 
+
+\label{doc-func-members}
+\Hypertarget{class_game_renderer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_game_renderer_a6aa60dac4c156dbe540263fafe0208ae}\index{GameRenderer@{GameRenderer}!DrawActionResultScreen@{DrawActionResultScreen}}
+\index{DrawActionResultScreen@{DrawActionResultScreen}!GameRenderer@{GameRenderer}}
+\doxysubsubsection{\texorpdfstring{DrawActionResultScreen()}{DrawActionResultScreen()}}
+{\footnotesize\ttfamily \label{class_game_renderer_a6aa60dac4c156dbe540263fafe0208ae} 
+Element Game\+Renderer\+::\+Draw\+Action\+Result\+Screen (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_table_acd84ec831174e02add7ae9094c140d33}{ITable\+::\+Action}}}]{action}{, }\item[{int}]{player\+\_\+index}{}\end{DoxyParamCaption})}
+
+
+
+Renders the result of a player\textquotesingle{}s action. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & The action taken (Hit, Stand, Double, Split) \\
+\hline
+{\em player\+\_\+index} & Index of the player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+FTXUI Element showing the action with color coding 
+\end{DoxyReturn}
+\Hypertarget{class_game_renderer_af7dcc123e466922daad56bec2e74232d}\index{GameRenderer@{GameRenderer}!DrawBalance@{DrawBalance}}
+\index{DrawBalance@{DrawBalance}!GameRenderer@{GameRenderer}}
+\doxysubsubsection{\texorpdfstring{DrawBalance()}{DrawBalance()}}
+{\footnotesize\ttfamily \label{class_game_renderer_af7dcc123e466922daad56bec2e74232d} 
+Element Game\+Renderer\+::\+Draw\+Balance (\begin{DoxyParamCaption}\item[{int}]{money}{}\end{DoxyParamCaption})}
+
+
+
+Renders a money amount with color coding (green/red). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em money} & Amount to display \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+FTXUI Element with formatted money value 
+\end{DoxyReturn}
+\Hypertarget{class_game_renderer_a0b30232764ddba167394137f4855c782}\index{GameRenderer@{GameRenderer}!DrawBettingScreen@{DrawBettingScreen}}
+\index{DrawBettingScreen@{DrawBettingScreen}!GameRenderer@{GameRenderer}}
+\doxysubsubsection{\texorpdfstring{DrawBettingScreen()}{DrawBettingScreen()}}
+{\footnotesize\ttfamily \label{class_game_renderer_a0b30232764ddba167394137f4855c782} 
+Element Game\+Renderer\+::\+Draw\+Betting\+Screen (\begin{DoxyParamCaption}\item[{int}]{player\+\_\+index}{, }\item[{int}]{bet}{}\end{DoxyParamCaption})}
+
+
+
+Renders the betting screen for a player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+\_\+index} & Index of the player \\
+\hline
+{\em bet} & Amount of the bet \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+FTXUI Element showing bet amount 
+\end{DoxyReturn}
+\Hypertarget{class_game_renderer_a9a2f47e24adea6ce61493b741092897e}\index{GameRenderer@{GameRenderer}!DrawCard@{DrawCard}}
+\index{DrawCard@{DrawCard}!GameRenderer@{GameRenderer}}
+\doxysubsubsection{\texorpdfstring{DrawCard()}{DrawCard()}}
+{\footnotesize\ttfamily \label{class_game_renderer_a9a2f47e24adea6ce61493b741092897e} 
+Element Game\+Renderer\+::\+Draw\+Card (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_table_1_1_card}{ITable\+::\+Card}} \&}]{card}{}\end{DoxyParamCaption})}
+
+
+
+Renders a single playing card with border and suit color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em card} & The card to render \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+FTXUI Element representing the card 
+\end{DoxyReturn}
+\Hypertarget{class_game_renderer_abeff68523519b68e32907527fc5829ee}\index{GameRenderer@{GameRenderer}!DrawDealerHand@{DrawDealerHand}}
+\index{DrawDealerHand@{DrawDealerHand}!GameRenderer@{GameRenderer}}
+\doxysubsubsection{\texorpdfstring{DrawDealerHand()}{DrawDealerHand()}}
+{\footnotesize\ttfamily \label{class_game_renderer_abeff68523519b68e32907527fc5829ee} 
+Element Game\+Renderer\+::\+Draw\+Dealer\+Hand (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_table_a6dc66c7f6b75ce4115ce0d9de3067ac7}{MGMTable\+::\+Hand}} \&}]{hand}{}\end{DoxyParamCaption})}
+
+
+
+Renders the dealer\textquotesingle{}s visible hand during play. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hand} & The dealer\textquotesingle{}s hand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+FTXUI Element with "{}\+DEALER"{} label and hand 
+\end{DoxyReturn}
+\Hypertarget{class_game_renderer_ad45fb7cad3bdfb16d92cf151fc0d19bc}\index{GameRenderer@{GameRenderer}!DrawFinalDealerHand@{DrawFinalDealerHand}}
+\index{DrawFinalDealerHand@{DrawFinalDealerHand}!GameRenderer@{GameRenderer}}
+\doxysubsubsection{\texorpdfstring{DrawFinalDealerHand()}{DrawFinalDealerHand()}}
+{\footnotesize\ttfamily \label{class_game_renderer_ad45fb7cad3bdfb16d92cf151fc0d19bc} 
+Element Game\+Renderer\+::\+Draw\+Final\+Dealer\+Hand (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_table_a6dc66c7f6b75ce4115ce0d9de3067ac7}{MGMTable\+::\+Hand}} \&}]{hand}{}\end{DoxyParamCaption})}
+
+
+
+Renders the dealer\textquotesingle{}s final hand at round conclusion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hand} & The dealer\textquotesingle{}s final hand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+FTXUI Element with "{}\+FINAL DEALER HAND"{} label 
+\end{DoxyReturn}
+\Hypertarget{class_game_renderer_aad04a7dc512ab872dbb65184c03b601a}\index{GameRenderer@{GameRenderer}!DrawGameEndScreen@{DrawGameEndScreen}}
+\index{DrawGameEndScreen@{DrawGameEndScreen}!GameRenderer@{GameRenderer}}
+\doxysubsubsection{\texorpdfstring{DrawGameEndScreen()}{DrawGameEndScreen()}}
+{\footnotesize\ttfamily \label{class_game_renderer_aad04a7dc512ab872dbb65184c03b601a} 
+Element Game\+Renderer\+::\+Draw\+Game\+End\+Screen (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{final\+\_\+money}{, }\item[{int}]{dealer\+\_\+money}{}\end{DoxyParamCaption})}
+
+
+
+Renders the game end screen with final standings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em final\+\_\+money} & Vector with final money for each player \\
+\hline
+{\em dealer\+\_\+money} & Dealer\textquotesingle{}s final money amount \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+FTXUI Element with game end summary 
+\end{DoxyReturn}
+\Hypertarget{class_game_renderer_a19b5ea895b778935fd55f50f5f79901c}\index{GameRenderer@{GameRenderer}!DrawGameScreen@{DrawGameScreen}}
+\index{DrawGameScreen@{DrawGameScreen}!GameRenderer@{GameRenderer}}
+\doxysubsubsection{\texorpdfstring{DrawGameScreen()}{DrawGameScreen()}}
+{\footnotesize\ttfamily \label{class_game_renderer_a19b5ea895b778935fd55f50f5f79901c} 
+Element Game\+Renderer\+::\+Draw\+Game\+Screen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_m_g_m_table}{MGMTable}} \&}]{table}{, }\item[{int}]{player\+\_\+index}{, }\item[{int}]{hand\+\_\+index}{}\end{DoxyParamCaption})}
+
+
+
+Renders the main gameplay screen. Displays dealer hand, player hand, current bet, and money status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & Reference to the game table \\
+\hline
+{\em player\+\_\+index} & Index of the player to display \\
+\hline
+{\em hand\+\_\+index} & Index of the hand to display (for splits) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+FTXUI Element containing the complete game screen 
+\end{DoxyReturn}
+\Hypertarget{class_game_renderer_abdffe7cb369de9142f2d1d2972a5c426}\index{GameRenderer@{GameRenderer}!DrawHand@{DrawHand}}
+\index{DrawHand@{DrawHand}!GameRenderer@{GameRenderer}}
+\doxysubsubsection{\texorpdfstring{DrawHand()}{DrawHand()}}
+{\footnotesize\ttfamily \label{class_game_renderer_abdffe7cb369de9142f2d1d2972a5c426} 
+Element Game\+Renderer\+::\+Draw\+Hand (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_table_a6dc66c7f6b75ce4115ce0d9de3067ac7}{ITable\+::\+Hand}} \&}]{hand}{}\end{DoxyParamCaption})}
+
+
+
+Renders a complete hand of cards horizontally arranged. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hand} & Vector of cards to display \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+FTXUI Element with all cards in the hand 
+\end{DoxyReturn}
+\Hypertarget{class_game_renderer_a396aac3380c960f5380c5581c8381c5b}\index{GameRenderer@{GameRenderer}!DrawPauseScreen@{DrawPauseScreen}}
+\index{DrawPauseScreen@{DrawPauseScreen}!GameRenderer@{GameRenderer}}
+\doxysubsubsection{\texorpdfstring{DrawPauseScreen()}{DrawPauseScreen()}}
+{\footnotesize\ttfamily \label{class_game_renderer_a396aac3380c960f5380c5581c8381c5b} 
+Element Game\+Renderer\+::\+Draw\+Pause\+Screen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Renders a pause screen prompting for user input. 
+
+\begin{DoxyReturn}{Returns}
+FTXUI Element with pause message in a box 
+\end{DoxyReturn}
+\Hypertarget{class_game_renderer_a32230858bf5d16b0d31e1320d38ac84b}\index{GameRenderer@{GameRenderer}!DrawPlayerBehaviourScreen@{DrawPlayerBehaviourScreen}}
+\index{DrawPlayerBehaviourScreen@{DrawPlayerBehaviourScreen}!GameRenderer@{GameRenderer}}
+\doxysubsubsection{\texorpdfstring{DrawPlayerBehaviourScreen()}{DrawPlayerBehaviourScreen()}}
+{\footnotesize\ttfamily \label{class_game_renderer_a32230858bf5d16b0d31e1320d38ac84b} 
+Element Game\+Renderer\+::\+Draw\+Player\+Behaviour\+Screen (\begin{DoxyParamCaption}\item[{int}]{player\+\_\+index}{, }\item[{\mbox{\hyperlink{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5ab}{MGMPlayer\+::\+Player\+Behaivour}}}]{behaviour}{}\end{DoxyParamCaption})}
+
+
+
+Renders the player behavior introduction screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+\_\+index} & Index of the player \\
+\hline
+{\em behaviour} & The player\textquotesingle{}s behavioral strategy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+FTXUI Element describing the player 
+\end{DoxyReturn}
+\Hypertarget{class_game_renderer_aeb9f637b3a50f2cce2ef785585891677}\index{GameRenderer@{GameRenderer}!DrawRoundEndScreen@{DrawRoundEndScreen}}
+\index{DrawRoundEndScreen@{DrawRoundEndScreen}!GameRenderer@{GameRenderer}}
+\doxysubsubsection{\texorpdfstring{DrawRoundEndScreen()}{DrawRoundEndScreen()}}
+{\footnotesize\ttfamily \label{class_game_renderer_aeb9f637b3a50f2cce2ef785585891677} 
+Element Game\+Renderer\+::\+Draw\+Round\+End\+Screen (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_table_1_1_round_end_info}{ITable\+::\+Round\+End\+Info}} \&}]{info}{, }\item[{int}]{player\+\_\+index}{, }\item[{int}]{player\+\_\+money}{}\end{DoxyParamCaption})}
+
+
+
+Renders individual round result for a single player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em info} & Round end information for all players \\
+\hline
+{\em player\+\_\+index} & Index of the player \\
+\hline
+{\em player\+\_\+money} & Final money amount for this player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+FTXUI Element showing Win/\+Lose/\+Tie and money 
+\end{DoxyReturn}
+\Hypertarget{class_game_renderer_ac117d1e64f0515d9b482c64679dfa05c}\index{GameRenderer@{GameRenderer}!DrawRoundSummaryScreen@{DrawRoundSummaryScreen}}
+\index{DrawRoundSummaryScreen@{DrawRoundSummaryScreen}!GameRenderer@{GameRenderer}}
+\doxysubsubsection{\texorpdfstring{DrawRoundSummaryScreen()}{DrawRoundSummaryScreen()}}
+{\footnotesize\ttfamily \label{class_game_renderer_ac117d1e64f0515d9b482c64679dfa05c} 
+Element Game\+Renderer\+::\+Draw\+Round\+Summary\+Screen (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_table_1_1_round_end_info}{ITable\+::\+Round\+End\+Info}} \&}]{info}{, }\item[{const std\+::vector$<$ int $>$ \&}]{player\+\_\+money}{, }\item[{int}]{dealer\+\_\+money}{}\end{DoxyParamCaption})}
+
+
+
+Renders summary of all players\textquotesingle{} results for the round. Shows each player\textquotesingle{}s outcome and final money plus dealer balance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em info} & Round end information containing all results \\
+\hline
+{\em player\+\_\+money} & Vector with final money for each player \\
+\hline
+{\em dealer\+\_\+money} & Dealer\textquotesingle{}s final money amount \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+FTXUI Element with round summary table 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/MGMGame.\+h\end{DoxyCompactItemize}

@@ -1,6 +1,6 @@
 ﻿  MGMGame.cc
-C:\Users\manug\Documents\2PA-2526-golpeme\BlackJack_Interface\MGMGame.cc(268,8): warning C4566: character represented by universal-character-name '\u2550' cannot be represented in the current code page (1252)
-C:\Users\manug\Documents\2PA-2526-golpeme\BlackJack_Interface\MGMGame.cc(270,8): warning C4566: character represented by universal-character-name '\u2550' cannot be represented in the current code page (1252)
+  main.cc
+  Generating Code...
   BlackJack.vcxproj -> C:\Users\manug\Documents\2PA-2526-golpeme\BlackJack_Interface\build\bin\Debug\BlackJack.exe
   "pwsh.exe" no se reconoce como un comando interno o externo,
   programa o archivo por lotes ejecutable.

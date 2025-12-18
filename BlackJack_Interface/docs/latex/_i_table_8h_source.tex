@@ -1,0 +1,106 @@
+\doxysection{ITable.\+h}
+\hypertarget{_i_table_8h_source}{}\label{_i_table_8h_source}\index{include/ITable.h@{include/ITable.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ ESAT\_BLACKJACK\_INTERFACES\_ITABLE\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ ESAT\_BLACKJACK\_INTERFACES\_ITABLE\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_table}{ITable}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_table}{\string~ITable}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_i_table_acd84ec831174e02add7ae9094c140d33}{Action}}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_acd84ec831174e02add7ae9094c140d33af5e531e3638cf8a722a9cd26831e108f}{Stand}},\ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_acd84ec831174e02add7ae9094c140d33aebfe5e1791db03c4cd6ab95801e0977d}{Hit}},\ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_acd84ec831174e02add7ae9094c140d33ad909d38d705ce75386dd86e611a82f5b}{Double}},\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_acd84ec831174e02add7ae9094c140d33a8a9e64d86ed12ad40de129bc7f4683b2}{Split}}\ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_i_table_a17f5fa4045f260443be8993a198c448c}{Result}}\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_a17f5fa4045f260443be8993a198c448caa60852f204ed8028c1c58808b746d115}{Ok}},\ \ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_a17f5fa4045f260443be8993a198c448ca71f91e12ab77fda34a39063650e3b2e7}{Illegal}}\ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744}{Value}}\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744a757f4749aebb1891ef5ac2a9b5439cea}{ACE}}\ =\ 1,\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744a0f82d86afa0f5dc965c5c15aca58dcfb}{TWO}},\ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744a413af0de1f97a2155acf2b8b26ab36e2}{THREE}},\ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744a341fee9692a2ed8f09906d40d23fb1f9}{FOUR}},\ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744a180bb5e381e316e2246b88c92770ee75}{FIVE}},\ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744a48041ef8474caedcbcf2fe8996056b7f}{SIX}},\ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744aebcf71d9bbc715c43f24a10cce77dab4}{SEVEN}},\ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744a960df6d77e65cd185ca4f3501db634eb}{EIGHT}},\ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744a73995fb90f0ebefe78b90731e67789cd}{NINE}},\ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744a25e822c5a6128d9e957062a9ec28a29d}{TEN}},\ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744ab9b507acdaa100f6590fda3779d15e99}{JACK}},\ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744a02d144e18eda99bcb94f3a764756805e}{QUEEN}},\ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744a123b28961dd0f97d91bcb55d7a3b7c1c}{KING}},\ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744a7f021a1415b86f2d013b2618fb31ae53}{end}}\ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_i_table_a71f07744cea28279a957f64efa9fd247}{Suit}}\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_a71f07744cea28279a957f64efa9fd247ad52d2d4c0b7218c48897d2e69e156ba4}{HEARTS}},\ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_a71f07744cea28279a957f64efa9fd247ad85016c04fa090ced22a82729fac4307}{CLUBS}},\ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_a71f07744cea28279a957f64efa9fd247a46a3bd9b0bb333d0b7521054dd6f8a06}{SPADES}},\ \ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_a71f07744cea28279a957f64efa9fd247a6ada586d0768a1f9c8d67e819f9c70af}{DIAMONDS}},\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744a7f021a1415b86f2d013b2618fb31ae53}{end}}\ \ \ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_i_table_1_1_card}{Card}}\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744}{Value}}\ \mbox{\hyperlink{struct_i_table_1_1_card_aa656f52fd6b8b4840e518c43b05db272}{value\_}};\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_a71f07744cea28279a957f64efa9fd247}{Suit}}\ \mbox{\hyperlink{struct_i_table_1_1_card_ab221b033060d4263bd0c809468a374b1}{suit\_}};\ \ \ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_i_table_a6dc66c7f6b75ce4115ce0d9de3067ac7}{Hand}}\ =\ std::vector<Card>;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_i_table_1_1_round_end_info}{RoundEndInfo}}\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_table_a6dc66c7f6b75ce4115ce0d9de3067ac7}{Hand}}\ \mbox{\hyperlink{struct_i_table_1_1_round_end_info_a7cf787d779df5a732502f8d83bd3ae25}{dealer\_hand}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum\ class}\ BetResult\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Win,}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Lose,}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Tie,}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ end}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::vector<BetResult>>\ \mbox{\hyperlink{struct_i_table_1_1_round_end_info_a6c20ca8c63fa3d072bc41e183df76c67}{winners}};}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{struct_i_table_1_1_round_end_info_aa9b1e6effec1d3088b34a5da7c5f7397}{player\_money\_delta}};\ \ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_i_table_1_1_round_end_info_a7b87196b184334f388f0f5d900fb9b23}{dealer\_money\_delta}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_i_table_a7c6ef8796d9a8defc412f895f33bdfc1}{kMaxPlayers}}\ =\ 7;}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_table_a6dc66c7f6b75ce4115ce0d9de3067ac7}{Hand}}\ \mbox{\hyperlink{class_i_table_aa3a8ed99150b6ac2e085dabf95be432a}{GetHand}}(\textcolor{keywordtype}{int}\ player\_index,\textcolor{keywordtype}{int}\ hand\_index)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_i_table_a0b81646691720abd446fe31efd9da25a}{GetNumberOfHands}}(\textcolor{keywordtype}{int}\ player\_index)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_i_table_a414eea61caba4b37ddbd33ecbb57fe4a}{GetPlayerCurrentBet}}(\textcolor{keywordtype}{int}\ player\_index,\textcolor{keywordtype}{int}\ hand\_index)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_i_table_adbbf8a62e95332a48f80408db24a787a}{GetPlayerMoney}}(\textcolor{keywordtype}{int}\ player\_index)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_i_table_ae595d0dc39aa56468b1fab28156fb488}{GetPlayerInitialBet}}(\textcolor{keywordtype}{int}\ player\_index)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_i_table_1_1_card}{Card}}\ \mbox{\hyperlink{class_i_table_a1ed3546b27c097f72e941e5e21f3b25f}{GetDealerCard}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_i_table_a04107056d2e326c2d68eca1b7de1830d}{DealerMoney}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_table_aeddaa2fbba1af8c38cf07ebdafc88b3f}{DealCard}}(\textcolor{keywordtype}{int}\ player\_index,\textcolor{keywordtype}{int}\ hand\_index)\ =\ 0;}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_table_a17f5fa4045f260443be8993a198c448c}{Result}}\ \mbox{\hyperlink{class_i_table_a4b8723ac10d2c4757529890583342b40}{PlayInitialBet}}(\textcolor{keywordtype}{int}\ player\_index,\textcolor{keywordtype}{int}\ money)\ =\ 0;}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_table_a17f5fa4045f260443be8993a198c448c}{Result}}\ \mbox{\hyperlink{class_i_table_a744a873cb31126254c7ddccda23547ff}{PlaySafeBet}}(\textcolor{keywordtype}{int}\ player\_index)\ =\ 0;}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_table_a17f5fa4045f260443be8993a198c448c}{Result}}\ \mbox{\hyperlink{class_i_table_aba0d93347aff7ee63969223f55480e77}{ApplyPlayerAction}}(\textcolor{keywordtype}{int}\ player\_index,\textcolor{keywordtype}{int}\ hand\_index,\mbox{\hyperlink{class_i_table_acd84ec831174e02add7ae9094c140d33}{Action}}\ action)\ =\ 0;}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_table_aa67f6f33e5e9de5d2ad8bb6b671db15f}{StartRound}}()\ =\ 0;}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_i_table_1_1_round_end_info}{RoundEndInfo}}\ \mbox{\hyperlink{class_i_table_a864e014e6d788039789b01a80b427f86}{FinishRound}}()\ =\ 0;}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_table_ac66b9f8fc8910143fd40aaba67096561}{CleanTable}}()\ =\ 0;}
+\DoxyCodeLine{00229\ \};}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ESAT\_BLACKJACK\_INTERFACES\_ITABLE\_H}}
+
+\end{DoxyCode}

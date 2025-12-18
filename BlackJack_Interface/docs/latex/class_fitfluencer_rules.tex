@@ -1,0 +1,187 @@
+\doxysection{Fitfluencer\+Rules Class Reference}
+\hypertarget{class_fitfluencer_rules}{}\label{class_fitfluencer_rules}\index{FitfluencerRules@{FitfluencerRules}}
+
+
+Standard ruleset with reduced winning threshold of 20.  
+
+
+
+
+{\ttfamily \#include $<$MGMRules.\+h$>$}
+
+Inheritance diagram for Fitfluencer\+Rules\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_fitfluencer_rules}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_fitfluencer_rules_a73d0ea0bc4e4da79aedfdc47ba5c4912}{Get\+Win\+Point}} () const
+\begin{DoxyCompactList}\small\item\em Gets the target winning point. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_fitfluencer_rules_aa9a55382a17e2f86d0908d3018933378}{Number\+Of\+Decks}} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of decks used. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_fitfluencer_rules_ada16d09665eed0a933f83ddc032c2317}{Initial\+Cards}} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of initial cards dealt to each player. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_fitfluencer_rules_a05fe6fc178c61255dc1a9a3339a58a7e}{Initial\+Player\+Money}} () const
+\begin{DoxyCompactList}\small\item\em Gets the starting money for players. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_fitfluencer_rules_aa687fea5200de15841a11b0cd62e852e}{Initial\+Dealer\+Money}} () const
+\begin{DoxyCompactList}\small\item\em Gets the starting money for the dealer. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_fitfluencer_rules_a1c529074f73c613135dd0f60bb1b6472}{Minimum\+Initial\+Bet}} () const
+\begin{DoxyCompactList}\small\item\em Gets the minimum allowed bet. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_fitfluencer_rules_acfb9821a86d02dfc660d6b35313523c6}{Maximum\+Initial\+Bet}} () const
+\begin{DoxyCompactList}\small\item\em Gets the maximum allowed bet. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_fitfluencer_rules_ab0298d804c01e3ab43d3f92290c9338c}{Dealer\+Stop}} () const
+\begin{DoxyCompactList}\small\item\em Gets the value at which the dealer must stand. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Standard ruleset with reduced winning threshold of 20. 
+
+Classic single-\/deck blackjack with traditional 2 initial cards and soft 17 rule (dealer hits on soft 17, stands on hard 17+). Most closely resembles standard casino blackjack rules. 
+
+\label{doc-func-members}
+\Hypertarget{class_fitfluencer_rules_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_fitfluencer_rules_ab0298d804c01e3ab43d3f92290c9338c}\index{FitfluencerRules@{FitfluencerRules}!DealerStop@{DealerStop}}
+\index{DealerStop@{DealerStop}!FitfluencerRules@{FitfluencerRules}}
+\doxysubsubsection{\texorpdfstring{DealerStop()}{DealerStop()}}
+{\footnotesize\ttfamily \label{class_fitfluencer_rules_ab0298d804c01e3ab43d3f92290c9338c} 
+virtual int Fitfluencer\+Rules\+::\+Dealer\+Stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the value at which the dealer must stand. 
+
+\begin{DoxyReturn}{Returns}
+16 points (soft 17 rule\+: dealer hits on soft 17) 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_base_rules_af90283a24cbd7d04e61ceb8a0bf81c56}{Base\+Rules}}.
+
+\Hypertarget{class_fitfluencer_rules_a73d0ea0bc4e4da79aedfdc47ba5c4912}\index{FitfluencerRules@{FitfluencerRules}!GetWinPoint@{GetWinPoint}}
+\index{GetWinPoint@{GetWinPoint}!FitfluencerRules@{FitfluencerRules}}
+\doxysubsubsection{\texorpdfstring{GetWinPoint()}{GetWinPoint()}}
+{\footnotesize\ttfamily \label{class_fitfluencer_rules_a73d0ea0bc4e4da79aedfdc47ba5c4912} 
+int Fitfluencer\+Rules\+::\+Get\+Win\+Point (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the target winning point. 
+
+\begin{DoxyReturn}{Returns}
+20 points required to win in this ruleset 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_base_rules_ac66b1c93fc4a0b5dc8094468c9414c79}{Base\+Rules}}.
+
+\Hypertarget{class_fitfluencer_rules_ada16d09665eed0a933f83ddc032c2317}\index{FitfluencerRules@{FitfluencerRules}!InitialCards@{InitialCards}}
+\index{InitialCards@{InitialCards}!FitfluencerRules@{FitfluencerRules}}
+\doxysubsubsection{\texorpdfstring{InitialCards()}{InitialCards()}}
+{\footnotesize\ttfamily \label{class_fitfluencer_rules_ada16d09665eed0a933f83ddc032c2317} 
+virtual int Fitfluencer\+Rules\+::\+Initial\+Cards (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the number of initial cards dealt to each player. 
+
+\begin{DoxyReturn}{Returns}
+2 cards per player at round start 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_base_rules_ad48493ad71eb1db68585f1df377a8e64}{Base\+Rules}}.
+
+\Hypertarget{class_fitfluencer_rules_aa687fea5200de15841a11b0cd62e852e}\index{FitfluencerRules@{FitfluencerRules}!InitialDealerMoney@{InitialDealerMoney}}
+\index{InitialDealerMoney@{InitialDealerMoney}!FitfluencerRules@{FitfluencerRules}}
+\doxysubsubsection{\texorpdfstring{InitialDealerMoney()}{InitialDealerMoney()}}
+{\footnotesize\ttfamily \label{class_fitfluencer_rules_aa687fea5200de15841a11b0cd62e852e} 
+virtual int Fitfluencer\+Rules\+::\+Initial\+Dealer\+Money (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the starting money for the dealer. 
+
+\begin{DoxyReturn}{Returns}
+100000 currency units for the dealer 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_base_rules_a9c607b39bbc7e8293b98d66bd4c194c0}{Base\+Rules}}.
+
+\Hypertarget{class_fitfluencer_rules_a05fe6fc178c61255dc1a9a3339a58a7e}\index{FitfluencerRules@{FitfluencerRules}!InitialPlayerMoney@{InitialPlayerMoney}}
+\index{InitialPlayerMoney@{InitialPlayerMoney}!FitfluencerRules@{FitfluencerRules}}
+\doxysubsubsection{\texorpdfstring{InitialPlayerMoney()}{InitialPlayerMoney()}}
+{\footnotesize\ttfamily \label{class_fitfluencer_rules_a05fe6fc178c61255dc1a9a3339a58a7e} 
+virtual int Fitfluencer\+Rules\+::\+Initial\+Player\+Money (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the starting money for players. 
+
+\begin{DoxyReturn}{Returns}
+4000 currency units per player 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_base_rules_aa6b020d312f5b15e55dc4b5b91022e4b}{Base\+Rules}}.
+
+\Hypertarget{class_fitfluencer_rules_acfb9821a86d02dfc660d6b35313523c6}\index{FitfluencerRules@{FitfluencerRules}!MaximumInitialBet@{MaximumInitialBet}}
+\index{MaximumInitialBet@{MaximumInitialBet}!FitfluencerRules@{FitfluencerRules}}
+\doxysubsubsection{\texorpdfstring{MaximumInitialBet()}{MaximumInitialBet()}}
+{\footnotesize\ttfamily \label{class_fitfluencer_rules_acfb9821a86d02dfc660d6b35313523c6} 
+virtual int Fitfluencer\+Rules\+::\+Maximum\+Initial\+Bet (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the maximum allowed bet. 
+
+\begin{DoxyReturn}{Returns}
+10000 currency units maximum bet 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_base_rules_a185320a3e6ce5040d052b5f67a37b333}{Base\+Rules}}.
+
+\Hypertarget{class_fitfluencer_rules_a1c529074f73c613135dd0f60bb1b6472}\index{FitfluencerRules@{FitfluencerRules}!MinimumInitialBet@{MinimumInitialBet}}
+\index{MinimumInitialBet@{MinimumInitialBet}!FitfluencerRules@{FitfluencerRules}}
+\doxysubsubsection{\texorpdfstring{MinimumInitialBet()}{MinimumInitialBet()}}
+{\footnotesize\ttfamily \label{class_fitfluencer_rules_a1c529074f73c613135dd0f60bb1b6472} 
+virtual int Fitfluencer\+Rules\+::\+Minimum\+Initial\+Bet (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the minimum allowed bet. 
+
+\begin{DoxyReturn}{Returns}
+100 currency units minimum bet 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_base_rules_a73c81f5d96b6d10d3bfe981dc10ee6e7}{Base\+Rules}}.
+
+\Hypertarget{class_fitfluencer_rules_aa9a55382a17e2f86d0908d3018933378}\index{FitfluencerRules@{FitfluencerRules}!NumberOfDecks@{NumberOfDecks}}
+\index{NumberOfDecks@{NumberOfDecks}!FitfluencerRules@{FitfluencerRules}}
+\doxysubsubsection{\texorpdfstring{NumberOfDecks()}{NumberOfDecks()}}
+{\footnotesize\ttfamily \label{class_fitfluencer_rules_aa9a55382a17e2f86d0908d3018933378} 
+int Fitfluencer\+Rules\+::\+Number\+Of\+Decks (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the number of decks used. 
+
+\begin{DoxyReturn}{Returns}
+1 deck 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_base_rules_af1ba1adfbecb0c0ee32466fb7e8db337}{Base\+Rules}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/MGMRules.\+h\end{DoxyCompactItemize}

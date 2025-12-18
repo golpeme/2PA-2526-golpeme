@@ -1,0 +1,74 @@
+\doxysection{MGMGame.\+h}
+\hypertarget{_m_g_m_game_8h_source}{}\label{_m_g_m_game_8h_source}\index{include/MGMGame.h@{include/MGMGame.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}IGame.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}MGMPlayer.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}MGMTable.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <ftxui/screen/screen.hpp>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <ftxui/dom/elements.hpp>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <ftxui/component/component.hpp>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{using\ namespace\ }ftxui;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_m_g_m_game_a6c2f453df847daa8cb7ad32272b95c80}{MGMGame}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_game}{IGame}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \mbox{\hyperlink{class_m_g_m_game_a6c2f453df847daa8cb7ad32272b95c80}{MGMGame}}(\mbox{\hyperlink{class_m_g_m_table}{MGMTable}}\&\ table,\ std::vector<MGMPlayer*>\ players);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_m_g_m_game_a2bf1bb824e52ae6eae90a029fe9ec13b}{PlayGame}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032\ \ \ \mbox{\hyperlink{class_m_g_m_table}{MGMTable}}\&\ table\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ std::vector<MGMPlayer*>\ players\_;\ \ \ \ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{bool}\ AnyAlivePlayers();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{int}\ CountCurrentPlayers(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_base_rules}{BaseRules}}\&\ rules);}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_renderer}{GameRenderer}}\ \{}
+\DoxyCodeLine{00052\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00060\ \ \ Element\ \mbox{\hyperlink{class_game_renderer_a19b5ea895b778935fd55f50f5f79901c}{DrawGameScreen}}(\mbox{\hyperlink{class_m_g_m_table}{MGMTable}}\&\ table,\ \textcolor{keywordtype}{int}\ player\_index,\ \textcolor{keywordtype}{int}\ hand\_index);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00065\ \ \ Element\ \mbox{\hyperlink{class_game_renderer_a9a2f47e24adea6ce61493b741092897e}{DrawCard}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_i_table_1_1_card}{ITable::Card}}\&\ card);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00070\ \ \ Element\ \mbox{\hyperlink{class_game_renderer_abdffe7cb369de9142f2d1d2972a5c426}{DrawHand}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_table_a6dc66c7f6b75ce4115ce0d9de3067ac7}{ITable::Hand}}\&\ hand);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00075\ \ \ Element\ \mbox{\hyperlink{class_game_renderer_abeff68523519b68e32907527fc5829ee}{DrawDealerHand}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_table_a6dc66c7f6b75ce4115ce0d9de3067ac7}{MGMTable::Hand}}\&\ hand);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00080\ \ \ Element\ \mbox{\hyperlink{class_game_renderer_ad45fb7cad3bdfb16d92cf151fc0d19bc}{DrawFinalDealerHand}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_table_a6dc66c7f6b75ce4115ce0d9de3067ac7}{MGMTable::Hand}}\&\ hand);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00085\ \ \ Element\ \mbox{\hyperlink{class_game_renderer_af7dcc123e466922daad56bec2e74232d}{DrawBalance}}(\textcolor{keywordtype}{int}\ money);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00091\ \ \ Element\ \mbox{\hyperlink{class_game_renderer_a32230858bf5d16b0d31e1320d38ac84b}{DrawPlayerBehaviourScreen}}(\textcolor{keywordtype}{int}\ player\_index,\ \mbox{\hyperlink{class_m_g_m_player_acca18f03cfc7dba2040215c703cab5ab}{MGMPlayer::PlayerBehaivour}}\ behaviour);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00097\ \ \ Element\ \mbox{\hyperlink{class_game_renderer_a6aa60dac4c156dbe540263fafe0208ae}{DrawActionResultScreen}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_table_acd84ec831174e02add7ae9094c140d33}{ITable::Action}}\ action,\ \textcolor{keywordtype}{int}\ player\_index);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00104\ \ \ Element\ \mbox{\hyperlink{class_game_renderer_aeb9f637b3a50f2cce2ef785585891677}{DrawRoundEndScreen}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_i_table_1_1_round_end_info}{ITable::RoundEndInfo}}\&\ info,\ \textcolor{keywordtype}{int}\ player\_index,\ \textcolor{keywordtype}{int}\ player\_money);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00110\ \ \ Element\ \mbox{\hyperlink{class_game_renderer_a0b30232764ddba167394137f4855c782}{DrawBettingScreen}}(\textcolor{keywordtype}{int}\ player\_index,\ \textcolor{keywordtype}{int}\ bet);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00118\ \ \ Element\ \mbox{\hyperlink{class_game_renderer_ac117d1e64f0515d9b482c64679dfa05c}{DrawRoundSummaryScreen}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_i_table_1_1_round_end_info}{ITable::RoundEndInfo}}\&\ info,\ \textcolor{keyword}{const}\ std::vector<int>\&\ player\_money,\ \textcolor{keywordtype}{int}\ dealer\_money);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00124\ \ \ Element\ \mbox{\hyperlink{class_game_renderer_aad04a7dc512ab872dbb65184c03b601a}{DrawGameEndScreen}}(\textcolor{keyword}{const}\ std::vector<int>\&\ final\_money,\ \textcolor{keywordtype}{int}\ dealer\_money);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00128\ \ \ Element\ \mbox{\hyperlink{class_game_renderer_a396aac3380c960f5380c5581c8381c5b}{DrawPauseScreen}}();}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00135\ \ \ std::string\ ValueToString(\mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744}{ITable::Value}}\ value);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00141\ \ \ std::string\ SuitToString(\mbox{\hyperlink{class_i_table_a71f07744cea28279a957f64efa9fd247}{ITable::Suit}}\ suit);}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00147\ \ \ Color\ GetSuitColor(\mbox{\hyperlink{class_i_table_a71f07744cea28279a957f64efa9fd247}{ITable::Suit}}\ suit);}
+\DoxyCodeLine{00148\ \};}
+
+\end{DoxyCode}

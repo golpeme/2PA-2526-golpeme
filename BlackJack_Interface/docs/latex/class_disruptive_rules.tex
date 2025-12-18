@@ -1,0 +1,187 @@
+\doxysection{Disruptive\+Rules Class Reference}
+\hypertarget{class_disruptive_rules}{}\label{class_disruptive_rules}\index{DisruptiveRules@{DisruptiveRules}}
+
+
+Advanced ruleset with elevated difficulty and winning threshold of 25.  
+
+
+
+
+{\ttfamily \#include $<$MGMRules.\+h$>$}
+
+Inheritance diagram for Disruptive\+Rules\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_disruptive_rules}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_disruptive_rules_a7ad98af7947f8c5ada7f223447284b92}{Get\+Win\+Point}} () const
+\begin{DoxyCompactList}\small\item\em Gets the target winning point. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_disruptive_rules_ab8ee8398a4fa255fa3710fa5b90e9202}{Number\+Of\+Decks}} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of decks used. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_disruptive_rules_a783f1d9bb1d06ce39ead0ff74bed425c}{Initial\+Cards}} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of initial cards dealt to each player. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_disruptive_rules_ab2e51bf6661703e484795f123e9aa7f2}{Initial\+Player\+Money}} () const
+\begin{DoxyCompactList}\small\item\em Gets the starting money for players. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_disruptive_rules_a1a869110f1d583cfacea193f9134ed1e}{Initial\+Dealer\+Money}} () const
+\begin{DoxyCompactList}\small\item\em Gets the starting money for the dealer. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_disruptive_rules_a250a0e9aef03f41a64b323a12accf734}{Minimum\+Initial\+Bet}} () const
+\begin{DoxyCompactList}\small\item\em Gets the minimum allowed bet. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_disruptive_rules_a9d459bb34746155e27482cede2af4f98}{Maximum\+Initial\+Bet}} () const
+\begin{DoxyCompactList}\small\item\em Gets the maximum allowed bet. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_disruptive_rules_a016a24f80b4822ab981161f81d6a7ff1}{Dealer\+Stop}} () const
+\begin{DoxyCompactList}\small\item\em Gets the value at which the dealer must stand. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Advanced ruleset with elevated difficulty and winning threshold of 25. 
+
+Implements challenging gameplay conditions including 2-\/deck shoe, 3 initial cards per player, and dealer standing at 21. Provides higher risk and reward dynamic compared to standard rules. 
+
+\label{doc-func-members}
+\Hypertarget{class_disruptive_rules_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_disruptive_rules_a016a24f80b4822ab981161f81d6a7ff1}\index{DisruptiveRules@{DisruptiveRules}!DealerStop@{DealerStop}}
+\index{DealerStop@{DealerStop}!DisruptiveRules@{DisruptiveRules}}
+\doxysubsubsection{\texorpdfstring{DealerStop()}{DealerStop()}}
+{\footnotesize\ttfamily \label{class_disruptive_rules_a016a24f80b4822ab981161f81d6a7ff1} 
+virtual int Disruptive\+Rules\+::\+Dealer\+Stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the value at which the dealer must stand. 
+
+\begin{DoxyReturn}{Returns}
+21 points (dealer must stand at or above) 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_base_rules_af90283a24cbd7d04e61ceb8a0bf81c56}{Base\+Rules}}.
+
+\Hypertarget{class_disruptive_rules_a7ad98af7947f8c5ada7f223447284b92}\index{DisruptiveRules@{DisruptiveRules}!GetWinPoint@{GetWinPoint}}
+\index{GetWinPoint@{GetWinPoint}!DisruptiveRules@{DisruptiveRules}}
+\doxysubsubsection{\texorpdfstring{GetWinPoint()}{GetWinPoint()}}
+{\footnotesize\ttfamily \label{class_disruptive_rules_a7ad98af7947f8c5ada7f223447284b92} 
+int Disruptive\+Rules\+::\+Get\+Win\+Point (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the target winning point. 
+
+\begin{DoxyReturn}{Returns}
+25 points required to win in this ruleset 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_base_rules_ac66b1c93fc4a0b5dc8094468c9414c79}{Base\+Rules}}.
+
+\Hypertarget{class_disruptive_rules_a783f1d9bb1d06ce39ead0ff74bed425c}\index{DisruptiveRules@{DisruptiveRules}!InitialCards@{InitialCards}}
+\index{InitialCards@{InitialCards}!DisruptiveRules@{DisruptiveRules}}
+\doxysubsubsection{\texorpdfstring{InitialCards()}{InitialCards()}}
+{\footnotesize\ttfamily \label{class_disruptive_rules_a783f1d9bb1d06ce39ead0ff74bed425c} 
+virtual int Disruptive\+Rules\+::\+Initial\+Cards (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the number of initial cards dealt to each player. 
+
+\begin{DoxyReturn}{Returns}
+3 cards per player at round start 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_base_rules_ad48493ad71eb1db68585f1df377a8e64}{Base\+Rules}}.
+
+\Hypertarget{class_disruptive_rules_a1a869110f1d583cfacea193f9134ed1e}\index{DisruptiveRules@{DisruptiveRules}!InitialDealerMoney@{InitialDealerMoney}}
+\index{InitialDealerMoney@{InitialDealerMoney}!DisruptiveRules@{DisruptiveRules}}
+\doxysubsubsection{\texorpdfstring{InitialDealerMoney()}{InitialDealerMoney()}}
+{\footnotesize\ttfamily \label{class_disruptive_rules_a1a869110f1d583cfacea193f9134ed1e} 
+virtual int Disruptive\+Rules\+::\+Initial\+Dealer\+Money (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the starting money for the dealer. 
+
+\begin{DoxyReturn}{Returns}
+100000 currency units for the dealer 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_base_rules_a9c607b39bbc7e8293b98d66bd4c194c0}{Base\+Rules}}.
+
+\Hypertarget{class_disruptive_rules_ab2e51bf6661703e484795f123e9aa7f2}\index{DisruptiveRules@{DisruptiveRules}!InitialPlayerMoney@{InitialPlayerMoney}}
+\index{InitialPlayerMoney@{InitialPlayerMoney}!DisruptiveRules@{DisruptiveRules}}
+\doxysubsubsection{\texorpdfstring{InitialPlayerMoney()}{InitialPlayerMoney()}}
+{\footnotesize\ttfamily \label{class_disruptive_rules_ab2e51bf6661703e484795f123e9aa7f2} 
+virtual int Disruptive\+Rules\+::\+Initial\+Player\+Money (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the starting money for players. 
+
+\begin{DoxyReturn}{Returns}
+4000 currency units per player 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_base_rules_aa6b020d312f5b15e55dc4b5b91022e4b}{Base\+Rules}}.
+
+\Hypertarget{class_disruptive_rules_a9d459bb34746155e27482cede2af4f98}\index{DisruptiveRules@{DisruptiveRules}!MaximumInitialBet@{MaximumInitialBet}}
+\index{MaximumInitialBet@{MaximumInitialBet}!DisruptiveRules@{DisruptiveRules}}
+\doxysubsubsection{\texorpdfstring{MaximumInitialBet()}{MaximumInitialBet()}}
+{\footnotesize\ttfamily \label{class_disruptive_rules_a9d459bb34746155e27482cede2af4f98} 
+virtual int Disruptive\+Rules\+::\+Maximum\+Initial\+Bet (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the maximum allowed bet. 
+
+\begin{DoxyReturn}{Returns}
+10000 currency units maximum bet 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_base_rules_a185320a3e6ce5040d052b5f67a37b333}{Base\+Rules}}.
+
+\Hypertarget{class_disruptive_rules_a250a0e9aef03f41a64b323a12accf734}\index{DisruptiveRules@{DisruptiveRules}!MinimumInitialBet@{MinimumInitialBet}}
+\index{MinimumInitialBet@{MinimumInitialBet}!DisruptiveRules@{DisruptiveRules}}
+\doxysubsubsection{\texorpdfstring{MinimumInitialBet()}{MinimumInitialBet()}}
+{\footnotesize\ttfamily \label{class_disruptive_rules_a250a0e9aef03f41a64b323a12accf734} 
+virtual int Disruptive\+Rules\+::\+Minimum\+Initial\+Bet (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the minimum allowed bet. 
+
+\begin{DoxyReturn}{Returns}
+100 currency units minimum bet 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_base_rules_a73c81f5d96b6d10d3bfe981dc10ee6e7}{Base\+Rules}}.
+
+\Hypertarget{class_disruptive_rules_ab8ee8398a4fa255fa3710fa5b90e9202}\index{DisruptiveRules@{DisruptiveRules}!NumberOfDecks@{NumberOfDecks}}
+\index{NumberOfDecks@{NumberOfDecks}!DisruptiveRules@{DisruptiveRules}}
+\doxysubsubsection{\texorpdfstring{NumberOfDecks()}{NumberOfDecks()}}
+{\footnotesize\ttfamily \label{class_disruptive_rules_ab8ee8398a4fa255fa3710fa5b90e9202} 
+int Disruptive\+Rules\+::\+Number\+Of\+Decks (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the number of decks used. 
+
+\begin{DoxyReturn}{Returns}
+2 decks in the shoe 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_base_rules_af1ba1adfbecb0c0ee32466fb7e8db337}{Base\+Rules}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/MGMRules.\+h\end{DoxyCompactItemize}

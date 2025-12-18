@@ -1,0 +1,519 @@
+\doxysection{MGMTable Class Reference}
+\hypertarget{class_m_g_m_table}{}\label{class_m_g_m_table}\index{MGMTable@{MGMTable}}
+
+
+Manages the blackjack table state, deck, hands, and money flow.  
+
+
+
+
+{\ttfamily \#include $<$MGMTable.\+h$>$}
+
+Inheritance diagram for MGMTable\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_m_g_m_table}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_m_g_m_table_a604ff4d766544b2a451bf8b975a9d02d}{MGMTable}} (int num\+\_\+players, const \mbox{\hyperlink{class_base_rules}{Base\+Rules}} \&rules)
+\begin{DoxyCompactList}\small\item\em Constructs the table for a specific number of players. Initializes deck, player money, and dealer state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_i_table_a6dc66c7f6b75ce4115ce0d9de3067ac7}{Hand}} \mbox{\hyperlink{class_m_g_m_table_aadbbee82eb82c0732c9b884854d68fa0}{Get\+Hand}} (int player\+\_\+index, int hand\+\_\+index) const override
+\begin{DoxyCompactList}\small\item\em Gets a specific hand for a player. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_m_g_m_table_a2aa80d9bfbb32f1832bfab982acba08b}{Get\+Number\+Of\+Hands}} (int player\+\_\+index) const override
+\begin{DoxyCompactList}\small\item\em Gets the current number of hands for a player. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_m_g_m_table_ada26ac0b01467893202fdbe65c27aeba}{Get\+Player\+Money}} (int player\+\_\+index) const override
+\begin{DoxyCompactList}\small\item\em Gets the remaining unbet money for a player. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_m_g_m_table_a4e84e75fa983870c202cf74a49ad7a7f}{Get\+Player\+Current\+Bet}} (int player\+\_\+index, int hand\+\_\+index) const override
+\begin{DoxyCompactList}\small\item\em Gets the current total bet for a specific hand. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_m_g_m_table_a42f7503c7e216e1393593ac42009eeae}{Get\+Player\+Initial\+Bet}} (int player\+\_\+index) const override
+\begin{DoxyCompactList}\small\item\em Gets the initial bet amount placed by a player. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_i_table_a17f5fa4045f260443be8993a198c448c}{Result}} \mbox{\hyperlink{class_m_g_m_table_a803a3524f61d398a86a490d5063f1c8f}{Play\+Initial\+Bet}} (int player\+\_\+index, int money) override
+\begin{DoxyCompactList}\small\item\em Places an initial bet for a player. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_i_table_1_1_card}{Card}} \mbox{\hyperlink{class_m_g_m_table_a0c234b6cb81bb29c8e65ba5cc0750768}{Get\+Dealer\+Card}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the dealer\textquotesingle{}s visible card. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_m_g_m_table_a5b2edfe6153a6a8a1d4733d8736ae01e}{Dealer\+Money}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the dealer\textquotesingle{}s current money. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_g_m_table_a21055bd6c14981f4faf54d0020bfd2ad}{Clean\+Table}} () override
+\begin{DoxyCompactList}\small\item\em Cleans up the table after a round. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_g_m_table_adf1666305d7e787c5fae47dc5cef778d}{Deal\+Card}} (int player\+\_\+index, int hand\+\_\+index) override
+\begin{DoxyCompactList}\small\item\em Deals a card to a specific player hand. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_i_table_a17f5fa4045f260443be8993a198c448c}{Result}} \mbox{\hyperlink{class_m_g_m_table_a4d891244de52d82380a1c9e7a7316949}{Play\+Safe\+Bet}} (int player\+\_\+index) override
+\begin{DoxyCompactList}\small\item\em Places a safe/insurance bet for a player. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_i_table_a17f5fa4045f260443be8993a198c448c}{Result}} \mbox{\hyperlink{class_m_g_m_table_addecee156b995a717864ce4464d07237}{Apply\+Player\+Action}} (int player\+\_\+index, int hand\+\_\+index, \mbox{\hyperlink{class_i_table_acd84ec831174e02add7ae9094c140d33}{Action}} action) override
+\begin{DoxyCompactList}\small\item\em Applies a player action to a specific hand. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_g_m_table_ad7846a9030ae30397b1886b862c9be62}{Start\+Round}} () override
+\begin{DoxyCompactList}\small\item\em Prepares the start of a round. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_i_table_1_1_round_end_info}{Round\+End\+Info}} \mbox{\hyperlink{class_m_g_m_table_ae5e901fcec62758806941fd89b4559bd}{Finish\+Round}} () override
+\begin{DoxyCompactList}\small\item\em Calculates the end of a round. \end{DoxyCompactList}\item 
+\Hypertarget{class_m_g_m_table_a62163c73d8c40ff8894e317ab60148f3}\label{class_m_g_m_table_a62163c73d8c40ff8894e317ab60148f3} 
+void {\bfseries Fill\+Deck} ()
+\begin{DoxyCompactList}\small\item\em Fills the deck with all cards according to rules. Creates complete deck(s) based on Number\+Of\+Decks rule. \end{DoxyCompactList}\item 
+\Hypertarget{class_m_g_m_table_af802600047f7b92ae15b276390615536}\label{class_m_g_m_table_af802600047f7b92ae15b276390615536} 
+void {\bfseries Shuffle\+Deck} ()
+\begin{DoxyCompactList}\small\item\em Randomly shuffles the current deck. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_g_m_table_a08380da986fedb201a97a00f758a63ec}{Set\+Player}} (int player\+\_\+index, \mbox{\hyperlink{class_i_player}{IPlayer}} \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Registers a player at a specific table position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_i_player}{IPlayer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_m_g_m_table_a4e68723be35f1ce75de262b6a5e5de99}{Get\+Player}} (int player\+\_\+index) const
+\begin{DoxyCompactList}\small\item\em Retrieves the player at a specific position. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_m_g_m_table_a00da72bd7857cfece371b876acaa6081}{Get\+Player\+Num}} () const
+\begin{DoxyCompactList}\small\item\em Gets the total number of players at the table. \end{DoxyCompactList}\item 
+\Hypertarget{class_m_g_m_table_a170ba2cc47e710a32250f44e5abb9300}\label{class_m_g_m_table_a170ba2cc47e710a32250f44e5abb9300} 
+void {\bfseries Dealer\+Reveal\+Second\+Card} ()
+\begin{DoxyCompactList}\small\item\em Reveals the dealer\textquotesingle{}s second (hole) card. Called at the end of player actions, before dealer plays. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_i_table_a6dc66c7f6b75ce4115ce0d9de3067ac7}{Hand}} \mbox{\hyperlink{class_m_g_m_table_aeea249678fd49906612ed6e3500aa153}{Get\+Dealer\+Hand}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the dealer\textquotesingle{}s complete hand. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_i_table}{ITable}}}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_i_table_acd84ec831174e02add7ae9094c140d33}{Action}} \{ \mbox{\hyperlink{class_i_table_acd84ec831174e02add7ae9094c140d33af5e531e3638cf8a722a9cd26831e108f}{Stand}}
+, \mbox{\hyperlink{class_i_table_acd84ec831174e02add7ae9094c140d33aebfe5e1791db03c4cd6ab95801e0977d}{Hit}}
+, \mbox{\hyperlink{class_i_table_acd84ec831174e02add7ae9094c140d33ad909d38d705ce75386dd86e611a82f5b}{Double}}
+, \mbox{\hyperlink{class_i_table_acd84ec831174e02add7ae9094c140d33a8a9e64d86ed12ad40de129bc7f4683b2}{Split}}
+ \}
+\begin{DoxyCompactList}\small\item\em Available player actions during a Blackjack round. \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{class_i_table_a17f5fa4045f260443be8993a198c448c}{Result}} \{ \mbox{\hyperlink{class_i_table_a17f5fa4045f260443be8993a198c448caa60852f204ed8028c1c58808b746d115}{Ok}}
+, \mbox{\hyperlink{class_i_table_a17f5fa4045f260443be8993a198c448ca71f91e12ab77fda34a39063650e3b2e7}{Illegal}}
+ \}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_i_table_a17f5fa4045f260443be8993a198c448c}{Result} of an operation on the table. \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744}{Value}} \{ \newline
+\mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744a757f4749aebb1891ef5ac2a9b5439cea}{ACE}} = 1
+, \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744a0f82d86afa0f5dc965c5c15aca58dcfb}{TWO}}
+, \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744a413af0de1f97a2155acf2b8b26ab36e2}{THREE}}
+, \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744a341fee9692a2ed8f09906d40d23fb1f9}{FOUR}}
+, \newline
+\mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744a180bb5e381e316e2246b88c92770ee75}{FIVE}}
+, \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744a48041ef8474caedcbcf2fe8996056b7f}{SIX}}
+, \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744aebcf71d9bbc715c43f24a10cce77dab4}{SEVEN}}
+, \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744a960df6d77e65cd185ca4f3501db634eb}{EIGHT}}
+, \newline
+\mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744a73995fb90f0ebefe78b90731e67789cd}{NINE}}
+, \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744a25e822c5a6128d9e957062a9ec28a29d}{TEN}}
+, \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744ab9b507acdaa100f6590fda3779d15e99}{JACK}}
+, \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744a02d144e18eda99bcb94f3a764756805e}{QUEEN}}
+, \newline
+\mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744a123b28961dd0f97d91bcb55d7a3b7c1c}{KING}}
+, \mbox{\hyperlink{class_i_table_a6c1f50b15a90244eb6785d273eb55744a7f021a1415b86f2d013b2618fb31ae53}{end}}
+ \}
+\begin{DoxyCompactList}\small\item\em \doxylink{struct_i_table_1_1_card}{Card} values in the deck. \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{class_i_table_a71f07744cea28279a957f64efa9fd247}{Suit}} \{ \newline
+\mbox{\hyperlink{class_i_table_a71f07744cea28279a957f64efa9fd247ad52d2d4c0b7218c48897d2e69e156ba4}{HEARTS}}
+, \mbox{\hyperlink{class_i_table_a71f07744cea28279a957f64efa9fd247ad85016c04fa090ced22a82729fac4307}{CLUBS}}
+, \mbox{\hyperlink{class_i_table_a71f07744cea28279a957f64efa9fd247a46a3bd9b0bb333d0b7521054dd6f8a06}{SPADES}}
+, \mbox{\hyperlink{class_i_table_a71f07744cea28279a957f64efa9fd247a6ada586d0768a1f9c8d67e819f9c70af}{DIAMONDS}}
+, \newline
+\mbox{\hyperlink{class_i_table_a71f07744cea28279a957f64efa9fd247a7f021a1415b86f2d013b2618fb31ae53}{end}}
+ \}
+\begin{DoxyCompactList}\small\item\em \doxylink{struct_i_table_1_1_card}{Card} suits in the deck. \end{DoxyCompactList}\item 
+using {\bfseries Hand} = std\+::vector$<$\mbox{\hyperlink{struct_i_table_1_1_card}{Card}}$>$
+\begin{DoxyCompactList}\small\item\em Type alias for a hand of cards. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_i_table}{ITable}}}
+\begin{DoxyCompactItemize}
+\item 
+static const int {\bfseries k\+Max\+Players} = 7
+\begin{DoxyCompactList}\small\item\em Maximum number of players at the table (reduce if running out of cards during a round). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the blackjack table state, deck, hands, and money flow. 
+
+Central game state manager handling deck creation/shuffling, card dealing, hand tracking, betting, player elimination, and round completion logic. Enforces dealer rules during hand evaluation. 
+
+\label{doc-constructors}
+\Hypertarget{class_m_g_m_table_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_m_g_m_table_a604ff4d766544b2a451bf8b975a9d02d}\index{MGMTable@{MGMTable}!MGMTable@{MGMTable}}
+\index{MGMTable@{MGMTable}!MGMTable@{MGMTable}}
+\doxysubsubsection{\texorpdfstring{MGMTable()}{MGMTable()}}
+{\footnotesize\ttfamily \label{class_m_g_m_table_a604ff4d766544b2a451bf8b975a9d02d} 
+MGMTable\+::\+MGMTable (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+players}{, }\item[{const \mbox{\hyperlink{class_base_rules}{Base\+Rules}} \&}]{rules}{}\end{DoxyParamCaption})}
+
+
+
+Constructs the table for a specific number of players. Initializes deck, player money, and dealer state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+players} & Number of players (typically 1-\/6) ~\newline
+ \\
+\hline
+{\em rules} & Reference to game rules governing play \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_m_g_m_table_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_m_g_m_table_addecee156b995a717864ce4464d07237}\index{MGMTable@{MGMTable}!ApplyPlayerAction@{ApplyPlayerAction}}
+\index{ApplyPlayerAction@{ApplyPlayerAction}!MGMTable@{MGMTable}}
+\doxysubsubsection{\texorpdfstring{ApplyPlayerAction()}{ApplyPlayerAction()}}
+{\footnotesize\ttfamily \label{class_m_g_m_table_addecee156b995a717864ce4464d07237} 
+\mbox{\hyperlink{class_i_table_a17f5fa4045f260443be8993a198c448c}{Result}} MGMTable\+::\+Apply\+Player\+Action (\begin{DoxyParamCaption}\item[{int}]{player\+\_\+index}{, }\item[{int}]{hand\+\_\+index}{, }\item[{\mbox{\hyperlink{class_i_table_acd84ec831174e02add7ae9094c140d33}{Action}}}]{action}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies a player action to a specific hand. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+\_\+index} & Index of the player taking the action \\
+\hline
+{\em hand\+\_\+index} & Index of the hand to apply the action to \\
+\hline
+{\em action} & The action to perform (Stand, Hit, Double, Split) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_i_table_a17f5fa4045f260443be8993a198c448c}{Result} Ok if the action was valid, Illegal otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_table_aba0d93347aff7ee63969223f55480e77}{ITable}}.
+
+\Hypertarget{class_m_g_m_table_a21055bd6c14981f4faf54d0020bfd2ad}\index{MGMTable@{MGMTable}!CleanTable@{CleanTable}}
+\index{CleanTable@{CleanTable}!MGMTable@{MGMTable}}
+\doxysubsubsection{\texorpdfstring{CleanTable()}{CleanTable()}}
+{\footnotesize\ttfamily \label{class_m_g_m_table_a21055bd6c14981f4faf54d0020bfd2ad} 
+void MGMTable\+::\+Clean\+Table (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Cleans up the table after a round. 
+
+This method performs the following operations\+:
+\begin{DoxyItemize}
+\item Clears hands, clears bets, and returns cards to the deck if necessary 
+\end{DoxyItemize}
+
+Implements \mbox{\hyperlink{class_i_table_ac66b9f8fc8910143fd40aaba67096561}{ITable}}.
+
+\Hypertarget{class_m_g_m_table_adf1666305d7e787c5fae47dc5cef778d}\index{MGMTable@{MGMTable}!DealCard@{DealCard}}
+\index{DealCard@{DealCard}!MGMTable@{MGMTable}}
+\doxysubsubsection{\texorpdfstring{DealCard()}{DealCard()}}
+{\footnotesize\ttfamily \label{class_m_g_m_table_adf1666305d7e787c5fae47dc5cef778d} 
+void MGMTable\+::\+Deal\+Card (\begin{DoxyParamCaption}\item[{int}]{player\+\_\+index}{, }\item[{int}]{hand\+\_\+index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Deals a card to a specific player hand. 
+
+The dealer is part of the table and has no choices beyond applying the rules.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+\_\+index} & Index of the player receiving the card \\
+\hline
+{\em hand\+\_\+index} & Index of the hand receiving the card \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_table_aeddaa2fbba1af8c38cf07ebdafc88b3f}{ITable}}.
+
+\Hypertarget{class_m_g_m_table_a5b2edfe6153a6a8a1d4733d8736ae01e}\index{MGMTable@{MGMTable}!DealerMoney@{DealerMoney}}
+\index{DealerMoney@{DealerMoney}!MGMTable@{MGMTable}}
+\doxysubsubsection{\texorpdfstring{DealerMoney()}{DealerMoney()}}
+{\footnotesize\ttfamily \label{class_m_g_m_table_a5b2edfe6153a6a8a1d4733d8736ae01e} 
+int MGMTable\+::\+Dealer\+Money (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the dealer\textquotesingle{}s current money. 
+
+\begin{DoxyReturn}{Returns}
+int The dealer\textquotesingle{}s money amount 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_table_a04107056d2e326c2d68eca1b7de1830d}{ITable}}.
+
+\Hypertarget{class_m_g_m_table_ae5e901fcec62758806941fd89b4559bd}\index{MGMTable@{MGMTable}!FinishRound@{FinishRound}}
+\index{FinishRound@{FinishRound}!MGMTable@{MGMTable}}
+\doxysubsubsection{\texorpdfstring{FinishRound()}{FinishRound()}}
+{\footnotesize\ttfamily \label{class_m_g_m_table_ae5e901fcec62758806941fd89b4559bd} 
+\mbox{\hyperlink{struct_i_table_1_1_round_end_info}{Round\+End\+Info}} MGMTable\+::\+Finish\+Round (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Calculates the end of a round. 
+
+This method performs the following operations\+:
+\begin{DoxyItemize}
+\item Plays the dealer\textquotesingle{}s hand according to rules
+\item Determines whether each player wins or loses
+\item Resolves bet winnings
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_i_table_1_1_round_end_info}{Round\+End\+Info} Information about the round results 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_table_a864e014e6d788039789b01a80b427f86}{ITable}}.
+
+\Hypertarget{class_m_g_m_table_a0c234b6cb81bb29c8e65ba5cc0750768}\index{MGMTable@{MGMTable}!GetDealerCard@{GetDealerCard}}
+\index{GetDealerCard@{GetDealerCard}!MGMTable@{MGMTable}}
+\doxysubsubsection{\texorpdfstring{GetDealerCard()}{GetDealerCard()}}
+{\footnotesize\ttfamily \label{class_m_g_m_table_a0c234b6cb81bb29c8e65ba5cc0750768} 
+\mbox{\hyperlink{struct_i_table_1_1_card}{Card}} MGMTable\+::\+Get\+Dealer\+Card (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the dealer\textquotesingle{}s visible card. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_i_table_1_1_card}{Card} The dealer\textquotesingle{}s face-\/up card 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_table_a1ed3546b27c097f72e941e5e21f3b25f}{ITable}}.
+
+\Hypertarget{class_m_g_m_table_aeea249678fd49906612ed6e3500aa153}\index{MGMTable@{MGMTable}!GetDealerHand@{GetDealerHand}}
+\index{GetDealerHand@{GetDealerHand}!MGMTable@{MGMTable}}
+\doxysubsubsection{\texorpdfstring{GetDealerHand()}{GetDealerHand()}}
+{\footnotesize\ttfamily \label{class_m_g_m_table_aeea249678fd49906612ed6e3500aa153} 
+\mbox{\hyperlink{class_i_table_a6dc66c7f6b75ce4115ce0d9de3067ac7}{Hand}} MGMTable\+::\+Get\+Dealer\+Hand (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the dealer\textquotesingle{}s complete hand. 
+
+\begin{DoxyReturn}{Returns}
+Vector of cards in the dealer\textquotesingle{}s hand 
+\end{DoxyReturn}
+\Hypertarget{class_m_g_m_table_aadbbee82eb82c0732c9b884854d68fa0}\index{MGMTable@{MGMTable}!GetHand@{GetHand}}
+\index{GetHand@{GetHand}!MGMTable@{MGMTable}}
+\doxysubsubsection{\texorpdfstring{GetHand()}{GetHand()}}
+{\footnotesize\ttfamily \label{class_m_g_m_table_aadbbee82eb82c0732c9b884854d68fa0} 
+\mbox{\hyperlink{class_i_table_a6dc66c7f6b75ce4115ce0d9de3067ac7}{Hand}} MGMTable\+::\+Get\+Hand (\begin{DoxyParamCaption}\item[{int}]{player\+\_\+index}{, }\item[{int}]{hand\+\_\+index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets a specific hand for a player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+\_\+index} & Index of the player \\
+\hline
+{\em hand\+\_\+index} & Index of the hand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_i_table_a6dc66c7f6b75ce4115ce0d9de3067ac7}{Hand} The requested hand 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_table_aa3a8ed99150b6ac2e085dabf95be432a}{ITable}}.
+
+\Hypertarget{class_m_g_m_table_a2aa80d9bfbb32f1832bfab982acba08b}\index{MGMTable@{MGMTable}!GetNumberOfHands@{GetNumberOfHands}}
+\index{GetNumberOfHands@{GetNumberOfHands}!MGMTable@{MGMTable}}
+\doxysubsubsection{\texorpdfstring{GetNumberOfHands()}{GetNumberOfHands()}}
+{\footnotesize\ttfamily \label{class_m_g_m_table_a2aa80d9bfbb32f1832bfab982acba08b} 
+int MGMTable\+::\+Get\+Number\+Of\+Hands (\begin{DoxyParamCaption}\item[{int}]{player\+\_\+index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the current number of hands for a player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+\_\+index} & Index of the player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Number of hands the player currently has 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_table_a0b81646691720abd446fe31efd9da25a}{ITable}}.
+
+\Hypertarget{class_m_g_m_table_a4e68723be35f1ce75de262b6a5e5de99}\index{MGMTable@{MGMTable}!GetPlayer@{GetPlayer}}
+\index{GetPlayer@{GetPlayer}!MGMTable@{MGMTable}}
+\doxysubsubsection{\texorpdfstring{GetPlayer()}{GetPlayer()}}
+{\footnotesize\ttfamily \label{class_m_g_m_table_a4e68723be35f1ce75de262b6a5e5de99} 
+\mbox{\hyperlink{class_i_player}{IPlayer}} \texorpdfstring{$\ast$}{*} MGMTable\+::\+Get\+Player (\begin{DoxyParamCaption}\item[{int}]{player\+\_\+index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the player at a specific position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+\_\+index} & Position of the player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the player object at this position 
+\end{DoxyReturn}
+\Hypertarget{class_m_g_m_table_a4e84e75fa983870c202cf74a49ad7a7f}\index{MGMTable@{MGMTable}!GetPlayerCurrentBet@{GetPlayerCurrentBet}}
+\index{GetPlayerCurrentBet@{GetPlayerCurrentBet}!MGMTable@{MGMTable}}
+\doxysubsubsection{\texorpdfstring{GetPlayerCurrentBet()}{GetPlayerCurrentBet()}}
+{\footnotesize\ttfamily \label{class_m_g_m_table_a4e84e75fa983870c202cf74a49ad7a7f} 
+int MGMTable\+::\+Get\+Player\+Current\+Bet (\begin{DoxyParamCaption}\item[{int}]{player\+\_\+index}{, }\item[{int}]{hand\+\_\+index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the current total bet for a specific hand. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+\_\+index} & Index of the player \\
+\hline
+{\em hand\+\_\+index} & Index of the hand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The current bet amount for this hand 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_table_a414eea61caba4b37ddbd33ecbb57fe4a}{ITable}}.
+
+\Hypertarget{class_m_g_m_table_a42f7503c7e216e1393593ac42009eeae}\index{MGMTable@{MGMTable}!GetPlayerInitialBet@{GetPlayerInitialBet}}
+\index{GetPlayerInitialBet@{GetPlayerInitialBet}!MGMTable@{MGMTable}}
+\doxysubsubsection{\texorpdfstring{GetPlayerInitialBet()}{GetPlayerInitialBet()}}
+{\footnotesize\ttfamily \label{class_m_g_m_table_a42f7503c7e216e1393593ac42009eeae} 
+int MGMTable\+::\+Get\+Player\+Initial\+Bet (\begin{DoxyParamCaption}\item[{int}]{player\+\_\+index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the initial bet amount placed by a player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+\_\+index} & Index of the player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The money the player bet in their initial bet 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_table_ae595d0dc39aa56468b1fab28156fb488}{ITable}}.
+
+\Hypertarget{class_m_g_m_table_ada26ac0b01467893202fdbe65c27aeba}\index{MGMTable@{MGMTable}!GetPlayerMoney@{GetPlayerMoney}}
+\index{GetPlayerMoney@{GetPlayerMoney}!MGMTable@{MGMTable}}
+\doxysubsubsection{\texorpdfstring{GetPlayerMoney()}{GetPlayerMoney()}}
+{\footnotesize\ttfamily \label{class_m_g_m_table_ada26ac0b01467893202fdbe65c27aeba} 
+int MGMTable\+::\+Get\+Player\+Money (\begin{DoxyParamCaption}\item[{int}]{player\+\_\+index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the remaining unbet money for a player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+\_\+index} & Index of the player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The player\textquotesingle{}s remaining money not currently bet 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_table_adbbf8a62e95332a48f80408db24a787a}{ITable}}.
+
+\Hypertarget{class_m_g_m_table_a00da72bd7857cfece371b876acaa6081}\index{MGMTable@{MGMTable}!GetPlayerNum@{GetPlayerNum}}
+\index{GetPlayerNum@{GetPlayerNum}!MGMTable@{MGMTable}}
+\doxysubsubsection{\texorpdfstring{GetPlayerNum()}{GetPlayerNum()}}
+{\footnotesize\ttfamily \label{class_m_g_m_table_a00da72bd7857cfece371b876acaa6081} 
+int MGMTable\+::\+Get\+Player\+Num (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the total number of players at the table. 
+
+\begin{DoxyReturn}{Returns}
+Number of players (constant throughout game) 
+\end{DoxyReturn}
+\Hypertarget{class_m_g_m_table_a803a3524f61d398a86a490d5063f1c8f}\index{MGMTable@{MGMTable}!PlayInitialBet@{PlayInitialBet}}
+\index{PlayInitialBet@{PlayInitialBet}!MGMTable@{MGMTable}}
+\doxysubsubsection{\texorpdfstring{PlayInitialBet()}{PlayInitialBet()}}
+{\footnotesize\ttfamily \label{class_m_g_m_table_a803a3524f61d398a86a490d5063f1c8f} 
+\mbox{\hyperlink{class_i_table_a17f5fa4045f260443be8993a198c448c}{Result}} MGMTable\+::\+Play\+Initial\+Bet (\begin{DoxyParamCaption}\item[{int}]{player\+\_\+index}{, }\item[{int}]{money}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Places an initial bet for a player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+\_\+index} & Index of the player placing the bet \\
+\hline
+{\em money} & Amount of money to bet \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_i_table_a17f5fa4045f260443be8993a198c448c}{Result} Ok if the bet was valid, Illegal otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_table_a4b8723ac10d2c4757529890583342b40}{ITable}}.
+
+\Hypertarget{class_m_g_m_table_a4d891244de52d82380a1c9e7a7316949}\index{MGMTable@{MGMTable}!PlaySafeBet@{PlaySafeBet}}
+\index{PlaySafeBet@{PlaySafeBet}!MGMTable@{MGMTable}}
+\doxysubsubsection{\texorpdfstring{PlaySafeBet()}{PlaySafeBet()}}
+{\footnotesize\ttfamily \label{class_m_g_m_table_a4d891244de52d82380a1c9e7a7316949} 
+\mbox{\hyperlink{class_i_table_a17f5fa4045f260443be8993a198c448c}{Result}} MGMTable\+::\+Play\+Safe\+Bet (\begin{DoxyParamCaption}\item[{int}]{player\+\_\+index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Places a safe/insurance bet for a player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+\_\+index} & Index of the player placing the safe bet \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_i_table_a17f5fa4045f260443be8993a198c448c}{Result} Ok if the bet was valid, Illegal otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_table_a744a873cb31126254c7ddccda23547ff}{ITable}}.
+
+\Hypertarget{class_m_g_m_table_a08380da986fedb201a97a00f758a63ec}\index{MGMTable@{MGMTable}!SetPlayer@{SetPlayer}}
+\index{SetPlayer@{SetPlayer}!MGMTable@{MGMTable}}
+\doxysubsubsection{\texorpdfstring{SetPlayer()}{SetPlayer()}}
+{\footnotesize\ttfamily \label{class_m_g_m_table_a08380da986fedb201a97a00f758a63ec} 
+void MGMTable\+::\+Set\+Player (\begin{DoxyParamCaption}\item[{int}]{player\+\_\+index}{, }\item[{\mbox{\hyperlink{class_i_player}{IPlayer}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registers a player at a specific table position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+\_\+index} & Position for this player ~\newline
+ \\
+\hline
+{\em player} & Pointer to the player object \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_m_g_m_table_ad7846a9030ae30397b1886b862c9be62}\index{MGMTable@{MGMTable}!StartRound@{StartRound}}
+\index{StartRound@{StartRound}!MGMTable@{MGMTable}}
+\doxysubsubsection{\texorpdfstring{StartRound()}{StartRound()}}
+{\footnotesize\ttfamily \label{class_m_g_m_table_ad7846a9030ae30397b1886b862c9be62} 
+void MGMTable\+::\+Start\+Round (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Prepares the start of a round. 
+
+This method performs the following operations\+:
+\begin{DoxyItemize}
+\item Shuffles the deck
+\item Deals one card to the dealer 
+\end{DoxyItemize}
+
+Implements \mbox{\hyperlink{class_i_table_aa67f6f33e5e9de5d2ad8bb6b671db15f}{ITable}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/MGMTable.\+h\end{DoxyCompactItemize}
